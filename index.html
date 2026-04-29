@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>ランスポECサイト運用ガイド｜くみさん・パパさんへ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:linear-gradient(135deg,#F8F8F7 0%,#E8EBF5 100%);
+  color:#0A0E1A;line-height:1.75;letter-spacing:0.01em;
+  min-height:100vh;
+}
+.container{max-width:920px;margin:0 auto;padding:32px 20px 80px}
+
+/* ─────────── 表紙 ─────────── */
+.cover{
+  background:linear-gradient(135deg,#0F1A3D 0%,#1E3A8A 50%,#3B5BA9 100%);
+  color:#fff;padding:72px 40px;border-radius:28px;
+  text-align:center;margin-bottom:48px;
+  box-shadow:0 24px 60px rgba(15,26,61,0.35);
+  position:relative;overflow:hidden;
+}
+.cover::before{
+  content:"";position:absolute;top:-50%;right:-20%;width:60%;height:200%;
+  background:radial-gradient(circle,rgba(255,255,255,0.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cover .logo-icon{font-size:4em;margin-bottom:16px;display:block}
+.cover h1{font-size:2.6em;font-weight:900;margin-bottom:14px;line-height:1.3}
+.cover .url{
+  display:inline-block;background:rgba(255,255,255,0.15);padding:10px 24px;
+  border-radius:50px;font-size:1em;margin-top:8px;backdrop-filter:blur(10px);
+  font-family:Menlo,Monaco,monospace;
+}
+.cover .recipients{
+  margin-top:36px;padding:24px;background:rgba(255,255,255,0.12);
+  border-radius:16px;backdrop-filter:blur(10px);font-size:1.2em;font-weight:700;
+}
+.cover .recipients small{display:block;font-size:0.65em;font-weight:400;opacity:0.85;margin-top:8px}
+
+/* ─────────── セクション共通 ─────────── */
+section{
+  background:#fff;border-radius:24px;padding:44px 40px;margin-bottom:32px;
+  box-shadow:0 8px 32px rgba(15,26,61,0.06);
+}
+section h2{
+  font-size:1.7em;font-weight:900;margin-bottom:28px;padding-bottom:18px;
+  border-bottom:5px solid;display:flex;align-items:center;gap:14px;
+}
+section h2 .h-emoji{font-size:1.3em;line-height:1}
+section h3{font-size:1.15em;font-weight:700;margin-bottom:8px;color:#0F1A3D}
+section p{margin-bottom:12px;color:#3a3f55}
+section .lead{font-size:1.1em;color:#0F1A3D;font-weight:500;margin-bottom:24px}
+
+/* カラーアクセント */
+.c-blue{border-color:#4361EE;color:#4361EE}
+.c-mint{border-color:#4ECDC4;color:#0E9F8C}
+.c-orange{border-color:#FF9F1C;color:#E07F00}
+.c-red{border-color:#FF6B6B;color:#E04848}
+.c-purple{border-color:#9B5DE5;color:#7A3DCB}
+.c-yellow{border-color:#FFD93D;color:#B89400}
+
+/* ─────────── サイト概要カード ─────────── */
+.intro-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:16px;margin-top:8px;
+}
+.intro-card{
+  background:linear-gradient(135deg,#F0F4FF 0%,#FFF 100%);
+  padding:24px;border-radius:16px;text-align:center;
+  border:2px solid #E8EBF5;
+}
+.intro-card .ic{font-size:2.4em;margin-bottom:10px;display:block}
+.intro-card .label{font-size:0.85em;color:#6c7280;font-weight:500;margin-bottom:6px}
+.intro-card .val{font-size:1.05em;color:#0F1A3D;font-weight:700;line-height:1.3}
+
+/* 商品カード */
+.product-row{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:14px;margin-top:24px;
+}
+.product-card{
+  background:linear-gradient(135deg,#FFF 0%,#FFF8E7 100%);
+  padding:20px 16px;border-radius:14px;text-align:center;
+  border:2px solid #FFD93D;
+}
+.product-card .pname{font-weight:900;font-size:1.3em;color:#0F1A3D}
+.product-card .pprice{font-size:1.4em;color:#FF6B6B;font-weight:900;margin-top:6px}
+.product-card .pnote{font-size:0.75em;color:#6c7280;margin-top:4px}
+
+/* ─────────── 3人チーム ─────────── */
+.team-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;margin-top:8px;
+}
+.member{
+  background:#fff;border:3px solid;border-radius:20px;padding:28px 20px;
+  text-align:center;transition:transform 0.2s;
+}
+.member:hover{transform:translateY(-4px)}
+.member.fuji{border-color:#4361EE;background:linear-gradient(135deg,#fff 0%,#F0F4FF 100%)}
+.member.kumi{border-color:#FF6B6B;background:linear-gradient(135deg,#fff 0%,#FFF0F0 100%)}
+.member.papa{border-color:#4ECDC4;background:linear-gradient(135deg,#fff 0%,#E0F8F4 100%)}
+.member .avatar{font-size:3.5em;margin-bottom:8px;display:block}
+.member .mname{font-size:1.4em;font-weight:900;color:#0F1A3D;margin-bottom:6px}
+.member .mrole{font-size:0.95em;color:#3a3f55;line-height:1.5}
+.flat-banner{
+  margin-top:28px;padding:24px;background:linear-gradient(90deg,#FFE66D 0%,#FFA751 100%);
+  border-radius:16px;text-align:center;font-weight:700;font-size:1.1em;color:#0F1A3D;
+}
+
+/* ─────────── 受注→発送ステップ ─────────── */
+.step-flow{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.step{
+  display:flex;align-items:center;gap:20px;
+  background:linear-gradient(90deg,#F0F4FF 0%,#fff 100%);
+  padding:22px 24px;border-radius:18px;border-left:6px solid #4361EE;
+  position:relative;
+}
+.step-num{
+  flex-shrink:0;width:54px;height:54px;border-radius:50%;
+  background:#4361EE;color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:1.6em;font-weight:900;box-shadow:0 4px 12px rgba(67,97,238,0.4);
+}
+.step-icon{font-size:2.2em;flex-shrink:0}
+.step-body{flex:1;min-width:0}
+.step-body h4{font-size:1.15em;font-weight:700;color:#0F1A3D;margin-bottom:4px}
+.step-body p{font-size:0.95em;color:#555;margin:0}
+.step-arrow{
+  text-align:center;color:#4361EE;font-size:1.5em;line-height:0;
+  margin:-4px 0 -4px 30px;
+}
+
+/* ─────────── 編集場所カード ─────────── */
+.edit-cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;margin-top:8px;
+}
+.edit-card{
+  background:#fff;border:2px solid #E8EBF5;border-radius:16px;
+  padding:24px;transition:all 0.2s;
+}
+.edit-card:hover{border-color:#9B5DE5;box-shadow:0 8px 24px rgba(155,93,229,0.15)}
+.edit-card .ec-icon{font-size:2.4em;margin-bottom:10px;display:block}
+.edit-card h4{font-size:1.15em;font-weight:700;color:#0F1A3D;margin-bottom:8px}
+.edit-card p{font-size:0.92em;color:#555;margin-bottom:8px}
+.edit-card .path{
+  font-size:0.8em;font-family:Menlo,Monaco,monospace;background:#F0F4FF;
+  padding:6px 10px;border-radius:6px;color:#4361EE;display:inline-block;margin-top:4px;
+}
+
+/* ─────────── 警告・注意 ─────────── */
+.alert{
+  padding:20px 24px;border-radius:14px;margin:14px 0;
+  display:flex;gap:16px;align-items:flex-start;
+}
+.alert-red{background:#FFE8E8;border-left:6px solid #FF6B6B}
+.alert-yellow{background:#FFF8DC;border-left:6px solid #FFD93D}
+.alert-blue{background:#E8F0FF;border-left:6px solid #4361EE}
+.alert-green{background:#E0F8F4;border-left:6px solid #4ECDC4}
+.alert .ai{font-size:1.8em;flex-shrink:0;line-height:1}
+.alert .at{flex:1}
+.alert .at strong{color:#0F1A3D;display:block;margin-bottom:4px;font-weight:700}
+.alert .at p{font-size:0.95em;margin:0;color:#3a3f55}
+
+/* ─────────── エディタ2タイプ比較 ─────────── */
+.editor-compare{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px;
+}
+@media (max-width:600px){.editor-compare{grid-template-columns:1fr}}
+.ed-box{padding:24px;border-radius:16px}
+.ed-box.ok{background:linear-gradient(135deg,#E0F8F4 0%,#fff 100%);border:2px solid #4ECDC4}
+.ed-box.ng{background:linear-gradient(135deg,#FFE8E8 0%,#fff 100%);border:2px solid #FF6B6B}
+.ed-box .badge{
+  display:inline-block;padding:4px 12px;border-radius:50px;
+  font-size:0.8em;font-weight:700;color:#fff;margin-bottom:10px;
+}
+.ed-box.ok .badge{background:#4ECDC4}
+.ed-box.ng .badge{background:#FF6B6B}
+.ed-box h4{font-size:1.1em;color:#0F1A3D;margin-bottom:10px;font-weight:700}
+.ed-box ul{list-style:none;padding:0}
+.ed-box li{padding:6px 0;padding-left:22px;position:relative;font-size:0.92em;color:#3a3f55}
+.ed-box.ok li::before{content:"✅";position:absolute;left:0;font-size:0.9em}
+.ed-box.ng li::before{content:"❌";position:absolute;left:0;font-size:0.9em}
+
+/* ─────────── 会計連動 ─────────── */
+.accounting-flow{
+  display:grid;grid-template-columns:1fr auto 1fr auto 1fr;
+  align-items:center;gap:14px;margin-top:8px;
+}
+@media (max-width:700px){
+  .accounting-flow{grid-template-columns:1fr;gap:8px}
+  .accounting-flow .arr{transform:rotate(90deg)}
+}
+.flow-node{
+  background:#fff;border:3px solid #FFD93D;border-radius:14px;padding:20px 16px;
+  text-align:center;
+}
+.flow-node .fn-ic{font-size:2.2em;margin-bottom:6px;display:block}
+.flow-node .fn-label{font-size:0.85em;color:#6c7280;margin-bottom:4px}
+.flow-node .fn-name{font-weight:700;color:#0F1A3D}
+.arr{font-size:1.8em;color:#FF9F1C;text-align:center;font-weight:900}
+
+/* ─────────── 困ったらフロー ─────────── */
+.help-list{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.help-item{
+  display:flex;align-items:center;gap:16px;
+  padding:18px 22px;background:#F8F8F7;border-radius:14px;
+  border-left:5px solid #6C7CFC;
+}
+.help-num{
+  flex-shrink:0;width:40px;height:40px;border-radius:50%;
+  background:#fff;border:3px solid #6C7CFC;color:#6C7CFC;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:1.1em;
+}
+.help-body{flex:1}
+.help-body strong{color:#0F1A3D;font-size:1.05em;display:block;margin-bottom:2px}
+.help-body span{font-size:0.9em;color:#6c7280}
+
+/* ─────────── 参照リンク ─────────── */
+.ref-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;margin-top:8px;
+}
+.ref-card{
+  padding:16px 18px;background:#F0F4FF;border-radius:12px;
+  border:2px solid transparent;transition:all 0.2s;
+}
+.ref-card:hover{border-color:#4361EE;background:#fff}
+.ref-card .rt{font-weight:700;color:#0F1A3D;font-size:0.95em;margin-bottom:4px}
+.ref-card .rd{font-size:0.82em;color:#6c7280;line-height:1.5}
+
+/* ─────────── 大きい数字 ─────────── */
+.bigstat-row{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px;margin:14px 0;
+}
+.bigstat{
+  text-align:center;padding:24px 18px;border-radius:16px;color:#fff;
+}
+.bs1{background:linear-gradient(135deg,#4361EE 0%,#6C7CFC 100%)}
+.bs2{background:linear-gradient(135deg,#4ECDC4 0%,#7FE5DC 100%)}
+.bs3{background:linear-gradient(135deg,#FF9F1C 0%,#FFB957 100%)}
+.bs4{background:linear-gradient(135deg,#FF6B6B 0%,#FF9999 100%)}
+.bigstat .num{font-size:2.4em;font-weight:900;line-height:1;margin-bottom:6px}
+.bigstat .lbl{font-size:0.85em;font-weight:500;opacity:0.95}
+
+/* ─────────── フッター ─────────── */
+footer{
+  text-align:center;padding:32px 20px;color:#6c7280;font-size:0.85em;
+}
+footer .heart{color:#FF6B6B}
+
+/* ─────────── 印刷対応 ─────────── */
+@media print{
+  body{background:#fff}
+  .container{padding:0;max-width:100%}
+  section,.cover{box-shadow:none;page-break-inside:avoid}
+}
+
+/* スマホ調整 */
+@media (max-width:600px){
+  .container{padding:20px 12px 60px}
+  .cover{padding:48px 24px}
+  .cover h1{font-size:1.9em}
+  .cover .logo-icon{font-size:3em}
+  section{padding:28px 22px}
+  section h2{font-size:1.35em}
+  .step{padding:18px 16px;gap:14px}
+  .step-num{width:44px;height:44px;font-size:1.3em}
+  .step-icon{font-size:1.7em}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ━━━━━━━━ 表紙 ━━━━━━━━ -->
+<div class="cover">
+  <span class="logo-icon">🛍️</span>
+  <h1>ランスポECサイト<br>運用ガイド</h1>
+  <span class="url">runspo.square.site</span>
+  <div class="recipients">
+    📨 くみさん・パパさんへ
+    <small>これからは2人もサイトを触っていきます<br>権限は3人みんなフラット 🤝</small>
+  </div>
+</div>
+
+<!-- ━━━━━━━━ 1. サイトとは ━━━━━━━━ -->
+<section>
+  <h2 class="c-blue"><span class="h-emoji">🎯</span>ランスポECサイトって？</h2>
+  <p class="lead">私たちのバドミントンシャトル直販サイト。Squareという無料サービスで作っています。</p>
+
+  <div class="intro-grid">
+    <div class="intro-card">
+      <span class="ic">🌐</span>
+      <div class="label">使ってるサービス</div>
+      <div class="val">Square Online<br><small style="font-size:0.8em;color:#6c7280;font-weight:400">月額¥0プラン</small></div>
+    </div>
+    <div class="intro-card">
+      <span class="ic">💳</span>
+      <div class="label">決済手数料</div>
+      <div class="val">3.6%<br><small style="font-size:0.7em;color:#6c7280;font-weight:400">メルカリ10%より安い</small></div>
+    </div>
+    <div class="intro-card">
+      <span class="ic">📦</span>
+      <div class="label">商品数</div>
+      <div class="val">4種類</div>
+    </div>
+    <div class="intro-card">
+      <span class="ic">🚀</span>
+      <div class="label">公開日</div>
+      <div class="val">2026/4/28</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px;margin-bottom:12px">🪶 売っているシャトル(全4種)</h3>
+  <div class="product-row">
+    <div class="product-card">
+      <div class="pname">DR-10</div>
+      <div class="pprice">¥3,500</div>
+      <div class="pnote">/筒(12本)</div>
+    </div>
+    <div class="product-card">
+      <div class="pname">DR-12</div>
+      <div class="pprice">¥4,000</div>
+      <div class="pnote">/筒(12本)</div>
+    </div>
+    <div class="product-card">
+      <div class="pname">DR-14</div>
+      <div class="pprice">¥4,500</div>
+      <div class="pnote">/筒(12本)</div>
+    </div>
+    <div class="product-card" style="border-color:#FF9F1C;background:linear-gradient(135deg,#fff 0%,#FFF4E0 100%)">
+      <div class="pname">DR-15</div>
+      <div class="pprice">¥5,000</div>
+      <div class="pnote">5月中旬入荷</div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ 2. 役割 ━━━━━━━━ -->
+<section>
+  <h2 class="c-mint"><span class="h-emoji">👥</span>みんなの役割</h2>
+  <p class="lead">主担当はあるけど、Squareサイトは3人全員が触ってOKです。</p>
+
+  <div class="team-grid">
+    <div class="member fuji">
+      <span class="avatar">👨‍💻</span>
+      <div class="mname">フジ</div>
+      <div class="mrole">経営戦略<br>サイト改修・仕入れ</div>
+    </div>
+    <div class="member kumi">
+      <span class="avatar">👩‍💼</span>
+      <div class="mname">くみさん</div>
+      <div class="mrole">営業・ECショップ<br>コミュニケーション・チラシ</div>
+    </div>
+    <div class="member papa">
+      <span class="avatar">👨‍🔧</span>
+      <div class="mname">パパさん</div>
+      <div class="mrole">経理・在庫管理<br>倉庫・発送</div>
+    </div>
+  </div>
+
+  <div class="flat-banner">
+    🤝 サイト編集の<strong>承認は不要</strong>。判断に迷ったら3人で相談しましょう。
+  </div>
+</section>
+
+<!-- ━━━━━━━━ 3. ログインURL ━━━━━━━━ -->
+<section>
+  <h2 class="c-purple"><span class="h-emoji">🔑</span>2つのURLを覚えるだけ</h2>
+
+  <div class="edit-cards">
+    <div class="edit-card" style="border-color:#9B5DE5;background:linear-gradient(135deg,#F5EFFE 0%,#fff 100%)">
+      <span class="ec-icon">🌐</span>
+      <h4>① お客様が見るサイト</h4>
+      <p>商品を買ってもらうページ。ここを綺麗にする。</p>
+      <span class="path">https://runspo.square.site</span>
+    </div>
+    <div class="edit-card" style="border-color:#4361EE;background:linear-gradient(135deg,#F0F4FF 0%,#fff 100%)">
+      <span class="ec-icon">⚙️</span>
+      <h4>② 私たちの管理画面</h4>
+      <p>注文の確認・商品編集・在庫管理など全部ここ。</p>
+      <span class="path">app.squareup.com/dashboard</span>
+    </div>
+  </div>
+
+  <div class="alert alert-blue">
+    <span class="ai">🔐</span>
+    <div class="at">
+      <strong>ログイン情報について</strong>
+      <p>ID・パスワード・2要素認証(パパさん携帯)はLINEで別途共有します。詰まったらすぐ3人で確認。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ 4. 受注→発送 ━━━━━━━━ -->
+<section>
+  <h2 class="c-orange"><span class="h-emoji">📦</span>受注から発送まで 5ステップ</h2>
+  <p class="lead">注文が入ってから商品を送るまでの流れ。これだけ覚えればOK。</p>
+
+  <div class="step-flow">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-icon">📧</div>
+      <div class="step-body">
+        <h4>注文が入る</h4>
+        <p>Square管理画面と <strong>runspo.shuttle@gmail.com</strong> に通知が届きます。</p>
+      </div>
+    </div>
+    <div class="step-arrow">⬇</div>
+
+    <div class="step" style="border-left-color:#9B5DE5">
+      <div class="step-num" style="background:#9B5DE5;box-shadow:0 4px 12px rgba(155,93,229,0.4)">2</div>
+      <div class="step-icon">🔍</div>
+      <div class="step-body">
+        <h4>注文内容を確認</h4>
+        <p>管理画面 →「<strong>Orders</strong>」タブで商品/数量/配送先をチェック。</p>
+      </div>
+    </div>
+    <div class="step-arrow" style="color:#9B5DE5">⬇</div>
+
+    <div class="step" style="border-left-color:#4ECDC4">
+      <div class="step-num" style="background:#4ECDC4;box-shadow:0 4px 12px rgba(78,205,196,0.4)">3</div>
+      <div class="step-icon">📮</div>
+      <div class="step-body">
+        <h4>発送する</h4>
+        <p>倉庫から商品を出してヤマト運輸で発送。<strong>注文後3〜5営業日以内</strong>。</p>
+      </div>
+    </div>
+    <div class="step-arrow" style="color:#4ECDC4">⬇</div>
+
+    <div class="step" style="border-left-color:#FF9F1C">
+      <div class="step-num" style="background:#FF9F1C;box-shadow:0 4px 12px rgba(255,159,28,0.4)">4</div>
+      <div class="step-icon">✅</div>
+      <div class="step-body">
+        <h4>「発送済み」マーク</h4>
+        <p>Squareダッシュボードで「<strong>Mark as fulfilled</strong>」ボタン。お客様に発送通知メールが自動送信されます。</p>
+      </div>
+    </div>
+    <div class="step-arrow" style="color:#FF9F1C">⬇</div>
+
+    <div class="step" style="border-left-color:#FF6B6B">
+      <div class="step-num" style="background:#FF6B6B;box-shadow:0 4px 12px rgba(255,107,107,0.4)">5</div>
+      <div class="step-icon">💰</div>
+      <div class="step-body">
+        <h4>会計に記帳 + 在庫を減らす</h4>
+        <p>Tab1(取引入力)に売上記帳。Squareの在庫数も同期。<strong>同日に必ず両方</strong>。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bigstat-row" style="margin-top:32px">
+    <div class="bigstat bs1"><div class="num">3〜5</div><div class="lbl">営業日以内に発送</div></div>
+    <div class="bigstat bs2"><div class="num">翌日</div><div class="lbl">パパさん口座に振込</div></div>
+    <div class="bigstat bs3"><div class="num">3.6%</div><div class="lbl">決済手数料</div></div>
+    <div class="bigstat bs4"><div class="num">24h</div><div class="lbl">不良品クレーム期限</div></div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ 5. よく触るところ ━━━━━━━━ -->
+<section>
+  <h2 class="c-purple"><span class="h-emoji">✏️</span>よく触る場所はここ</h2>
+  <p class="lead">日常的に編集するのはほぼこの3つだけです。</p>
+
+  <div class="edit-cards">
+    <div class="edit-card">
+      <span class="ec-icon">🛒</span>
+      <h4>商品の編集</h4>
+      <p>名前・価格・説明・在庫数を変える。</p>
+      <span class="path">管理画面 → Items</span>
+    </div>
+    <div class="edit-card">
+      <span class="ec-icon">📷</span>
+      <h4>写真の差替え</h4>
+      <p>DR-15は5月中旬の入荷後にくみさん撮影 → 差替え。</p>
+      <span class="path">Items → 商品 → Photos</span>
+    </div>
+    <div class="edit-card">
+      <span class="ec-icon">📝</span>
+      <h4>キャッチコピー等</h4>
+      <p>トップページの文言は自由に編集できる。</p>
+      <span class="path">Online → Edit Site</span>
+    </div>
+  </div>
+
+  <div class="alert alert-yellow" style="margin-top:24px">
+    <span class="ai">💡</span>
+    <div class="at">
+      <strong>価格を変える時だけは3人で相談</strong>
+      <p>全販路で揃える経営判断。それ以外(説明文・写真・コピー)は自分の判断でOK。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ 6. 触る前の3つの約束 ━━━━━━━━ -->
+<section>
+  <h2 class="c-red"><span class="h-emoji">🚨</span>触る前の3つの約束</h2>
+  <p class="lead">知らないと詰まるポイントです。これだけ守れば安全。</p>
+
+  <h3 style="margin-top:24px;margin-bottom:8px">① 触る前にバックアップ</h3>
+  <div class="alert alert-blue">
+    <span class="ai">📸</span>
+    <div class="at">
+      <p>大きく変える前は、CCに「<strong>サイトのバックアップ取って</strong>」と頼めば自動で保存します。元に戻したい時に必要。</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:28px;margin-bottom:12px">② エディタには2タイプある</h3>
+  <p>Squareエディタは部品ごとに性格が違います。間違って触ると編集できないことがあるので注意。</p>
+
+  <div class="editor-compare">
+    <div class="ed-box ok">
+      <span class="badge">編集しやすい</span>
+      <h4>📄 自由パラグラフ型</h4>
+      <ul>
+        <li>特商法・利用規約・プライバシーポリシー</li>
+        <li>お支払い方法ページ</li>
+        <li>ホームのキャッチコピー</li>
+        <li>クリックして直接タイプOK</li>
+      </ul>
+    </div>
+    <div class="ed-box ng">
+      <span class="badge">手動でしか触れない</span>
+      <h4>🧩 構造化テンプレ型</h4>
+      <ul>
+        <li>「テキスト」「テキストと画像」セクション</li>
+        <li>「おすすめ商品」セクション</li>
+        <li>タイトル部分が触れない</li>
+        <li><strong>ダブルクリック</strong>で編集モードに入る</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:28px;margin-bottom:8px">③ 公開ボタンを押さないと反映されない</h3>
+  <div class="alert alert-red">
+    <span class="ai">⚠️</span>
+    <div class="at">
+      <strong>「Save」だけだと公開されません</strong>
+      <p>編集後は必ず<strong>右上の「Publish」ボタン</strong>を押す。反映は数秒〜十数秒。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ 7. 会計連動 ━━━━━━━━ -->
+<section>
+  <h2 class="c-yellow"><span class="h-emoji">💰</span>お金の流れと会計</h2>
+  <p class="lead">注文 → 振込 → 記帳 のシンプルな流れです。</p>
+
+  <div class="accounting-flow">
+    <div class="flow-node">
+      <span class="fn-ic">🛒</span>
+      <div class="fn-label">お客様</div>
+      <div class="fn-name">注文・決済</div>
+    </div>
+    <div class="arr">→</div>
+    <div class="flow-node" style="border-color:#4361EE">
+      <span class="fn-ic">💳</span>
+      <div class="fn-label">翌営業日</div>
+      <div class="fn-name">パパさん口座</div>
+    </div>
+    <div class="arr">→</div>
+    <div class="flow-node" style="border-color:#4ECDC4">
+      <span class="fn-ic">📝</span>
+      <div class="fn-label">振込日基準</div>
+      <div class="fn-name">Tab1に記帳</div>
+    </div>
+  </div>
+
+  <div class="alert alert-green" style="margin-top:24px">
+    <span class="ai">📋</span>
+    <div class="at">
+      <strong>記帳のお約束(team-context/会計記帳ルール.md)</strong>
+      <p>
+        ・編集できるのは<strong>Tab1(取引入力)だけ</strong><br>
+        ・取引IDは <code style="background:#fff;padding:2px 6px;border-radius:4px">[MMDDx]</code> 形式 (例: [0429A])<br>
+        ・記帳日は<strong>振込日</strong>(注文日ではない)<br>
+        ・画像証跡を必ず添付
+      </p>
+    </div>
+  </div>
+
+  <div class="alert alert-red">
+    <span class="ai">🚨</span>
+    <div class="at">
+      <strong>異常があったら自動でアラート</strong>
+      <p>毎朝のmorning-checkで自動検知。販売停止品(DR-16/19)の売上 / 在庫マイナス は即報告してください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ 8. 困ったら ━━━━━━━━ -->
+<section>
+  <h2 class="c-blue"><span class="h-emoji">🆘</span>困ったらこの順番で</h2>
+  <p class="lead">迷ったらまず上から確認。それでもわからなければ次へ。</p>
+
+  <div class="help-list">
+    <div class="help-item">
+      <div class="help-num">1</div>
+      <div class="help-body">
+        <strong>各CC(くみCC・パパCC)に聞く</strong>
+        <span>「Squareの〇〇について教えて」と話しかければOK</span>
+      </div>
+    </div>
+    <div class="help-item">
+      <div class="help-num">2</div>
+      <div class="help-body">
+        <strong>team-context/ECサイト開設状況.md を見る</strong>
+        <span>サイトの最新状況・確定情報がここにあります</span>
+      </div>
+    </div>
+    <div class="help-item">
+      <div class="help-num">3</div>
+      <div class="help-body">
+        <strong>CC同士で相談(cc-dialogue)</strong>
+        <span>くみCC ⇄ パパCC ⇄ フジCCで議論ファイルを作れます</span>
+      </div>
+    </div>
+    <div class="help-item">
+      <div class="help-num">4</div>
+      <div class="help-body">
+        <strong>LINEでフジに直接連絡</strong>
+        <span>緊急時・判断に迷う時はすぐにLINEで聞いてください</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ 9. やらないこと ━━━━━━━━ -->
+<section>
+  <h2 class="c-red"><span class="h-emoji">🛑</span>やらないこと(コンプラ)</h2>
+  <p class="lead">過去に検討したけど不採用にした運用。同じ失敗を繰り返さないように。</p>
+
+  <div class="alert alert-red">
+    <span class="ai">❌</span>
+    <div class="at">
+      <strong>在庫がないのに「先行予約」で売る</strong>
+      <p>景表法の優良誤認に該当。入荷遅延でクレームのリスク大。<strong>在庫が来てから販売開始</strong>が鉄則。</p>
+    </div>
+  </div>
+
+  <div class="alert alert-red">
+    <span class="ai">❌</span>
+    <div class="at">
+      <strong>銀行振込・代引きをサイト上で受ける</strong>
+      <p>Square Onlineは仕様上未対応(クレカ・Apple Pay・Google Payのみ)。希望者には<strong>Gmail経由で個別対応</strong>。</p>
+    </div>
+  </div>
+
+  <div class="alert alert-red">
+    <span class="ai">❌</span>
+    <div class="at">
+      <strong>販売停止品(DR-16/19)を売る</strong>
+      <p>もう仕入れない商品。間違って売ると会計アラートが出ます。</p>
+    </div>
+  </div>
+
+  <div class="alert alert-yellow">
+    <span class="ai">🛡️</span>
+    <div class="at">
+      <strong>新しい施策を考える時の3点チェック</strong>
+      <p>① 景表法に違反しないか ② Squareの規約に違反しないか ③ クレームになるリスクは無いか — この3つを必ず確認。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ 10. 今後やること ━━━━━━━━ -->
+<section>
+  <h2 class="c-orange"><span class="h-emoji">🎯</span>これから1ヶ月のタスク</h2>
+
+  <div class="step-flow">
+    <div class="step" style="border-left-color:#FF6B6B">
+      <div class="step-num" style="background:#FF6B6B">!</div>
+      <div class="step-icon">⏰</div>
+      <div class="step-body">
+        <h4>Square決済承認確認(4/30前後)</h4>
+        <p>承認が下りたら通知ON設定の確認。クーポン動作テスト開始。</p>
+      </div>
+    </div>
+    <div class="step" style="border-left-color:#FF9F1C">
+      <div class="step-num" style="background:#FF9F1C">📋</div>
+      <div class="step-icon">📦</div>
+      <div class="step-body">
+        <h4>ヤマト宅急便コレクト契約(パパさん)</h4>
+        <p>代引き対応用。フジから別途LINE依頼します。</p>
+      </div>
+    </div>
+    <div class="step" style="border-left-color:#FFD93D">
+      <div class="step-num" style="background:#FFD93D;color:#0F1A3D">📷</div>
+      <div class="step-icon">🪶</div>
+      <div class="step-body">
+        <h4>DR-15の写真撮影(5月中旬・くみさん)</h4>
+        <p>入荷後にくみさんが撮影 → サイトに反映。</p>
+      </div>
+    </div>
+    <div class="step" style="border-left-color:#4ECDC4">
+      <div class="step-num" style="background:#4ECDC4">📝</div>
+      <div class="step-icon">📨</div>
+      <div class="step-body">
+        <h4>受注メールが届くか確認</h4>
+        <p>runspo.shuttle@gmail.com に通知が来るかテスト。</p>
+      </div>
+    </div>
+    <div class="step" style="border-left-color:#4361EE">
+      <div class="step-num" style="background:#4361EE">🎨</div>
+      <div class="step-icon">🌟</div>
+      <div class="step-body">
+        <h4>細かい改善(任意)</h4>
+        <p>お問い合わせフォーム追加・ファビコン・OGP設定など。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ 11. もっと知りたい ━━━━━━━━ -->
+<section>
+  <h2 class="c-purple"><span class="h-emoji">📚</span>もっと詳しく知りたい時は</h2>
+  <p class="lead">team-context/ にある資料(各CCに聞けば中身を読み上げてくれます)</p>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="rt">📋 ECサイト開設状況.md</div>
+      <div class="rd">サイトの公式ステータス。価格・商品・配送設定など最新情報</div>
+    </div>
+    <div class="ref-card">
+      <div class="rt">🤝 全員共通前提.md</div>
+      <div class="rd">役割分担・組織・ナレッジ管理ルール</div>
+    </div>
+    <div class="ref-card">
+      <div class="rt">📊 会計記帳ルール.md</div>
+      <div class="rd">Tab1記帳の絶対ルール(必読)</div>
+    </div>
+    <div class="ref-card">
+      <div class="rt">🚨 会計スプシ異常検知ルール.md</div>
+      <div class="rd">4層の異常検知システム</div>
+    </div>
+    <div class="ref-card">
+      <div class="rt">📨 runspo_email_template_2026-04-26.md</div>
+      <div class="rd">顧客返信のテンプレ集(受注確認・発送通知など)</div>
+    </div>
+    <div class="ref-card">
+      <div class="rt">🎫 初回購入クーポン運用.md</div>
+      <div class="rd">クーポン関連</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  作成: フジCC・2026年4月29日<br>
+  ランスポチームのみんなで作るECサイトを成功させましょう <span class="heart">❤️</span>
+</footer>
+
+</div>
+</body>
+</html>
