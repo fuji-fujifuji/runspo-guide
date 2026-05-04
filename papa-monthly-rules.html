@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<title>パパさん向け 月末実査・売上記帳ルール</title>
+<title>パパさん向け 月末実査・売上記帳ルール v2</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -25,6 +25,14 @@ header {
 }
 header h1 { font-size: 1.5em; margin-bottom: 8px; }
 header .sub { font-size: 0.9em; opacity: 0.95; }
+.version-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.25);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  margin-top: 6px;
+}
 .card {
   background: white;
   border-radius: 12px;
@@ -87,6 +95,14 @@ li { margin-bottom: 8px; }
   margin: 12px 0;
 }
 .tip-box::before { content: "💡 "; font-weight: bold; }
+.new-box {
+  background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+  border-left: 5px solid #ec4899;
+  padding: 14px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+.new-box::before { content: "🆕 "; font-weight: bold; }
 .example-box {
   background: #f8fafc;
   padding: 14px;
@@ -115,6 +131,14 @@ li { margin-bottom: 8px; }
   text-align: center;
   font-size: 1.05em;
 }
+.line-group {
+  background: #ecfdf5;
+  border: 2px solid #34A853;
+  padding: 14px;
+  border-radius: 10px;
+  margin: 12px 0;
+}
+.line-group h4 { color: #047857; font-size: 1.05em; margin-bottom: 8px; }
 footer { text-align: center; color: #888; font-size: 0.85em; padding: 20px; margin-top: 20px; }
 @media (max-width: 600px) {
   body { padding: 10px; }
@@ -127,21 +151,42 @@ footer { text-align: center; color: #888; font-size: 0.85em; padding: 20px; marg
 <div class="container">
 
 <header>
-<h1>📋 パパさん向け<br>月末実査・売上記帳ルール</h1>
+<h1>📋 パパさん向け<br>会計運用ルール</h1>
 <div class="sub">2026-05-04作成 / これだけ読めばOK / 困ったらパパCCに聞いてください</div>
+<div class="version-badge">v2(サンプル渡しルール追加)</div>
 </header>
 
 <div class="card">
 <h2>🎯 大事なこと(これだけ覚えて)</h2>
 <div class="callout-big">
-売上・経費は<br>
+売上・経費・サンプル渡しは<br>
 「<strong>画像で証拠</strong>」+「<strong>1行コメント</strong>」を<br>
-LINE経理に送るだけでOK。<br>
+LINEに送るだけでOK。<br>
 あとはCCがやります。
 </div>
 <p style="text-align:center; color:#ea580c; font-weight:bold; margin-top:14px;">
 推測で書かない・分からなければ「分からない」と言う。これがいちばん大事。
 </p>
+</div>
+
+<div class="card">
+<h2>📱 LINE グループの使い分け(NEW)</h2>
+
+<div class="line-group">
+<h4>📍 LINE経理</h4>
+<p><strong>用途:</strong> 売上画像・経費画像・月末残高スクショ</p>
+<p><strong>送る例:</strong> メルカリ売上スクショ・領収書・各アカウント月末残高</p>
+</div>
+
+<div class="line-group">
+<h4>📍 LINE【共有】(NEW)</h4>
+<p><strong>用途:</strong> 銀行間振込通知・在庫関連連絡・サンプル渡し報告</p>
+<p><strong>送る例:</strong> 「サンプル渡し DR-14 1本 くみ手元」「銀行振込¥4,500実行」</p>
+</div>
+
+<div class="tip-box">
+迷ったらどちらに送ってもCCが判定してくれます。基本「お金の動きは経理・それ以外は共有」と覚えてOK。
+</div>
 </div>
 
 <div class="card">
@@ -151,18 +196,48 @@ LINE経理に送るだけでOK。<br>
 <p>メルカリ・ラクマ・PayPay・Square・リベシティの「取引情報」「受取通知」「残高変動」など、画面そのままでOK。</p>
 </div>
 <div class="step-card">
-<span class="step-num">2</span><strong>LINE経理グループに画像を送信</strong>
+<span class="step-num">2</span><strong>LINE経理に画像を送信</strong>
 <p>あわせて1行のメモを送ってください。</p>
 <div class="example-box">📸 (画像)<br>メルカリ ¥4,500 DR-14×1本</div>
 <div class="example-box">📸 (画像)<br>現金 ¥9,000 DR-12×3本 体育館オフ会</div>
-<div class="example-box">📸 (画像)<br>リベP ¥4,500 DR-10×1本 サウナさん</div>
 </div>
 <div class="step-card">
 <span class="step-num">3</span><strong>あとはCCが自動で記帳します</strong>
-<p>画像をAIが読み取って、取引タブに自動入力します。パパさんは何もしなくてOK。</p>
+<p>画像をAIが読み取って、取引タブに自動入力。</p>
 </div>
+</div>
+
+<div class="card">
+<h2>🆕 サンプル渡し(NEW・重要)</h2>
+
+<div class="new-box">
+<strong>2026-05-04 新ルール</strong><br>
+チームメンバー(フジ/パパ/くみ)へのサンプル渡し・お客様への試供品は<br>
+<strong>売上計上せず・在庫タブで「誰が持ってるか」だけ管理</strong>します。
+</div>
+
+<h3>サンプル渡し時のLINE報告</h3>
+
+<div class="step-card">
+<span class="step-num">1</span><strong>LINE【共有】に1行送る</strong>
+<div class="example-box">サンプル渡し DR-14 1本 くみ手元</div>
+<div class="example-box">サンプル渡し DR-12 2本 フジ手元</div>
+<div class="example-box">サンプル渡し EN-1 1本 試供品(お客様A)</div>
+</div>
+
+<div class="step-card">
+<span class="step-num">2</span><strong>CCが在庫タブの「誰が何本持ってるか」を更新</strong>
+<p>商品在庫(=合計数)は変わりません。「うちフジ/うちパパ/うちくみ」列で内訳管理。</p>
+</div>
+
 <div class="tip-box">
-画像が無い場合は文字だけでもOKですが、後で「証拠は?」と聞かれた時に困るので、できれば画像を撮ってください。
+<strong>なぜ売上計上しないか?</strong><br>
+過去にくみさんがサンプルを買い取って売上計上 → 後で売れたら原価分をくみさんに返金、というややこしい流れがあったため。「在庫管理先が変わっただけ」のシンプル運用にしました。
+</div>
+
+<div class="dont-box">
+<strong>無計画な大量配布はNG</strong><br>
+税務上「事業性疑義」になるため、お客様への試供品は計画的に。迷ったらフジ相談。
 </div>
 </div>
 
@@ -204,39 +279,42 @@ LINE経理に送るだけでOK。<br>
 </div>
 <div class="step-card">
 <span class="step-num">2</span><strong>LINE経理にまとめて送信</strong>
-<div class="example-box">📸 (画像7枚)<br>2026年5月末 残高<br>①事業口座: ¥XX,XXX<br>PayPay: ¥XX,XXX<br>メルペイ: ¥XX,XXX<br>ラクマP: ¥XX,XXX<br>Square: ¥XX,XXX<br>リベP: ¥XX,XXX<br>現金: ¥X,XXX</div>
 </div>
 <div class="step-card">
 <span class="step-num">3</span><strong>CCが照合・差額調整して報告</strong>
-<p>帳簿との差額が¥10以下なら自動調整・¥10超ならアラート報告。<br>パパさんはCCの報告を見て、不自然な差額がないか確認するだけ。</p>
-</div>
-<div class="tip-box">
-リベシティポイントは「事業の販売で得たもの」と「パパさん個人で他のことに使った/受けた」で混ざるので、事業由来分だけ判定して報告してください(難しければ目安でOK)。
+<p>差額¥10以下=自動調整・¥10超=アラート報告。</p>
 </div>
 </div>
 
 <div class="card">
 <h2>💳 立替経費の精算フロー</h2>
-<p>パパさんが個人カード・個人現金で事業の経費を立替えた時の流れです。</p>
+<p>パパさんが個人カード・個人現金で事業の経費を立替えた時の流れ。</p>
 <h3>パパさんがやること</h3>
 <ol>
 <li>立替えた時にレシート/領収書をスクショ → LINE経理に送る</li>
 <li>1行コメント追記: 「メルカリ梱包材 ¥4,877 パパ立替」など</li>
 </ol>
-<h3>CCが自動でやること</h3>
-<ul>
-<li>取引タブに「N=パパ借」で記帳</li>
-<li>月末締めで合計算出</li>
-<li>パパさんに通知: 「今月のパパ立替合計 ¥XX,XXX」</li>
-</ul>
 <h3>月初に精算実行</h3>
 <div class="callout-big" style="font-size:0.95em;">
 楽天事業口座 ➡ パパ楽天個人口座<br>
 (<strong>同行振込なので無料・即時・通帳に履歴残る</strong>)
 </div>
 <div class="tip-box">
-楽天事業口座が開設されるまで(約1ヶ月)はパパ立替は溜めておいてOK。開設後にまとめて精算します。
+楽天事業口座が開設されるまで(約1ヶ月)はパパ立替は溜めておいてOK。開設後にまとめて精算。
 </div>
+</div>
+
+<div class="card">
+<h2>🔄 過去くみさん買取分(R34-R43)について</h2>
+<div class="new-box">
+<strong>2026-05-04 方針確定</strong><br>
+過去くみさんが買い取ったサンプル分(¥32,040)は、<br>
+<strong>管理表が落ち着いたら一括返金</strong>します。<br>
+返金後は「くみ借」として記録 → くみさんの事業立替として帳簿管理。
+</div>
+<p style="font-size:0.92em;color:#666;">
+理由: 売上のままだと「サンプルが売れた時に¥3,000をくみさんに返金」が必要 → 結局同じ流れになるため、最初から返金してシンプル化。
+</p>
 </div>
 
 <div class="card">
@@ -245,7 +323,6 @@ LINE経理に送るだけでOK。<br>
 これがいちばん大事!<br>
 パパさんの事業意識を高めるための仕組みです。
 </div>
-<h3>分け方</h3>
 <div class="account-grid">
 <div class="account-card" style="border-color:#34A853;">
 <div class="name" style="color:#34A853;">🏢 事業のお金</div>
@@ -256,28 +333,21 @@ LINE経理に送るだけでOK。<br>
 <div class="what">パパ個人楽天・個人カード・個人現金・リベP個人分</div>
 </div>
 </div>
-<h3>意識すること</h3>
-<ul>
-<li>事業のお金で個人の買い物をしない</li>
-<li>個人のお金で事業の経費を払ったら → 必ず「立替」として記録(LINE報告)</li>
-<li>立替は月末に必ず楽天で精算 → パパさん個人口座にお金が戻る</li>
-<li>「お金が戻ってきた感」が大事 → 領収書感覚で記録する</li>
-</ul>
 </div>
 
 <div class="card">
-<h2>🚫 やってはいけないこと</h2>
+<h2>🚫 やってはいけないこと(超重要)</h2>
+<div class="dont-box">
+<strong>スプシを直接編集しない</strong><br>
+2026-05-04ルール強化: 取引タブ・在庫タブを直接開いて数字を変えるのは禁止。誰がいつ何を変えたか追えなくなります。必ずLINE経由でCCに依頼してください。
+</div>
 <div class="dont-box">
 <strong>推測で記帳しない</strong><br>
 「たぶんメルペイで来た」「だいたい¥5,000ぐらい」 → ダメ。実際の数字を画像で確認してから。
 </div>
 <div class="dont-box">
 <strong>口頭・手打ちだけで報告しない</strong><br>
-「今月¥XX売れたよ」だけだと証拠が残りません。必ず画面スクショとセットで。
-</div>
-<div class="dont-box">
-<strong>事業のお金を個人で使い回さない</strong><br>
-事業預金を生活費に使う・個人カードを事業仕入れに使うを混ぜると、後から分からなくなります。
+必ず画面スクショとセットで。
 </div>
 <div class="dont-box">
 <strong>「分からない」を隠さない</strong><br>
@@ -287,9 +357,10 @@ LINE経理に送るだけでOK。<br>
 
 <div class="card">
 <h2>✅ やるべきこと(まとめ)</h2>
-<div class="do-box">売上発生したら → 画像+1行コメント</div>
-<div class="do-box">経費立替したら → レシート画像+1行コメント</div>
-<div class="do-box">月末になったら → 全アカウント残高スクショ</div>
+<div class="do-box">売上発生したら → LINE経理に画像+1行コメント</div>
+<div class="do-box">経費立替したら → LINE経理にレシート画像+1行コメント</div>
+<div class="do-box">サンプル渡したら → LINE【共有】に1行コメント(NEW)</div>
+<div class="do-box">月末になったら → LINE経理に全アカウント残高スクショ</div>
 <div class="do-box">分からないことは → 「分からない」とCCに伝える</div>
 <div class="do-box">事業と個人のお金を → 物理的に分けて管理</div>
 </div>
@@ -304,7 +375,7 @@ LINE経理に送るだけでOK。<br>
 </div>
 
 <footer>
-作成: フジ&CC / 2026-05-04<br>
+作成: フジ&CC / 2026-05-04 v2<br>
 質問・修正依頼はパパCCまで
 </footer>
 
