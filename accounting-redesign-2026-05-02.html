@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>ランスポ会計スプシ 大改修まとめ(2026-05-02)</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+  background: linear-gradient(135deg, #f8f9fc 0%, #e8eef9 100%);
+  color: #1a1a2e;
+  line-height: 1.7;
+  padding: 16px;
+}
+.container { max-width: 760px; margin: 0 auto; }
+header {
+  background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+  color: white;
+  padding: 32px 24px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+header h1 { font-size: 1.6em; margin-bottom: 8px; }
+header .sub { font-size: 0.95em; opacity: 0.95; }
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+h2 {
+  font-size: 1.25em;
+  color: #4285F4;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e8eef9;
+}
+h3 { font-size: 1.05em; color: #1a1a2e; margin: 14px 0 8px; }
+p { margin-bottom: 10px; }
+ul, ol { margin-left: 24px; margin-bottom: 10px; }
+li { margin-bottom: 6px; }
+.highlight-box {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-left: 5px solid #FBBC04;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 14px 0;
+}
+.danger-box {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  border-left: 5px solid #EA4335;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 14px 0;
+}
+.success-box {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  border-left: 5px solid #34A853;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 14px 0;
+}
+.principle-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 14px 0; }
+.principle {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 14px;
+  border-left: 4px solid #4285F4;
+}
+.principle .num {
+  display: inline-block;
+  background: #4285F4;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  line-height: 28px;
+  margin-right: 8px;
+}
+.principle .title { font-weight: bold; font-size: 1.05em; }
+.principle .desc { color: #555; font-size: 0.92em; margin-top: 6px; }
+.pulldown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 14px 0; }
+.pulldown-item {
+  background: #f0f4ff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.95em;
+  border: 1px solid #d6e1ff;
+}
+.tag-asset { border-left: 3px solid #34A853; }
+.tag-liability { border-left: 3px solid #EA4335; }
+.tag-card { border-left: 3px solid #FBBC04; }
+.before-after { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 14px 0; }
+.ba-block { background: #f8fafc; padding: 12px; border-radius: 8px; }
+.ba-block.before { border-top: 4px solid #EA4335; }
+.ba-block.after { border-top: 4px solid #34A853; }
+.ba-label { font-weight: bold; font-size: 0.85em; color: #666; margin-bottom: 6px; }
+.flow-diagram {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  padding: 18px;
+  border-radius: 10px;
+  margin: 14px 0;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.88em;
+  line-height: 1.8;
+  white-space: pre;
+  overflow-x: auto;
+}
+.kpi-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 14px 0; }
+.kpi {
+  background: linear-gradient(135deg, #4285F4 0%, #2563eb 100%);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+.kpi .label { font-size: 0.8em; opacity: 0.9; }
+.kpi .value { font-size: 1.3em; font-weight: bold; margin-top: 4px; }
+.next-action {
+  background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+  color: white;
+  padding: 18px;
+  border-radius: 12px;
+  margin: 14px 0;
+}
+.next-action h3 { color: white; margin-bottom: 10px; }
+.next-action ul { color: white; }
+footer { text-align: center; color: #888; font-size: 0.85em; padding: 20px; margin-top: 20px; }
+@media (max-width: 600px) {
+  body { padding: 10px; }
+  header h1 { font-size: 1.3em; }
+  .pulldown-grid { grid-template-columns: 1fr; }
+  .kpi-row { grid-template-columns: 1fr; }
+  .flow-diagram { font-size: 0.78em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>📊 ランスポ会計スプシ 大改修まとめ</h1>
+<div class="sub">2026-05-02夜〜2026-05-04作業 / フジ&CC作成</div>
+</header>
+
+<div class="card">
+<h2>🎯 一言まとめ</h2>
+<div class="success-box">
+<strong>「数字が絡み合わない・続けられる会計体系」</strong>を再設計しました。
+8つの設計原則を確立し、BS_PLは保管場所別の透明な残高表示に。楽天事業口座開設後(約1ヶ月)から本格運用開始予定です。
+</div>
+<div class="kpi-row">
+<div class="kpi"><div class="label">設計原則</div><div class="value">8つ</div></div>
+<div class="kpi"><div class="label">N列保管場所</div><div class="value">12種</div></div>
+<div class="kpi"><div class="label">B/S差額</div><div class="value">¥0 ✅</div></div>
+</div>
+</div>
+
+<div class="card">
+<h2>🔑 会計設計8原則(新確立・絶対遵守)</h2>
+<div class="principle-grid">
+<div class="principle">
+<div><span class="num">1</span><span class="title">取引タブとのみ直結</span></div>
+<div class="desc">他タブ参照禁止。各シートは「取引」タブから直接 SUMIFS 集計。タブ間連鎖は壊れる原因。</div>
+</div>
+<div class="principle">
+<div><span class="num">2</span><span class="title">着地原価 = 参考値分離</span></div>
+<div class="desc">会計帳簿は本体価格ベース(B案徹底)。諸掛込みの着地原価は「着地計算」シートで参考値として表示。</div>
+</div>
+<div class="principle">
+<div><span class="num">3</span><span class="title">諸掛は混合按分</span></div>
+<div class="desc">海外送料 = 数量按分(物理量比例) / 関税・輸入消費税・代行手数料 = 金額按分(価格比例)。</div>
+</div>
+<div class="principle">
+<div><span class="num">4</span><span class="title">端数は雑収入で吸収</span></div>
+<div class="desc">移動平均ROUND誤差(±10円)は雑収入(端数調整)で帳簿上¥0に。会計実務「重要性原則」標準。</div>
+</div>
+<div class="principle">
+<div><span class="num">5</span><span class="title">売上保管場所は実態ベース・推測禁止</span></div>
+<div class="desc">「①事業口座と書いてあっても実残ゼロ」のリスク。LINE報告画像から実態を判定して記帳。</div>
+</div>
+<div class="principle">
+<div><span class="num">6</span><span class="title">楽天銀行統一・全員同行で精算手数料ゼロ</span></div>
+<div class="desc">全員楽天銀行 → 同行間振込無料・即時・通帳記録残る。プライベートと事業の物理分離も実現。</div>
+</div>
+<div class="principle">
+<div><span class="num">7</span><span class="title">月次精算ルール(金額問わず毎月)</span></div>
+<div class="desc">立替金は積立せず毎月精算。フジ・くみが立替で損する不安を解消。</div>
+</div>
+<div class="principle">
+<div><span class="num">8</span><span class="title">現金・PayPayは即精算</span></div>
+<div class="desc">記録残らない現金・プライベート混在リスクのPayPayは、その場でフジ/くみに精算。</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>📍 N列(入出金場所)プルダウン12種類</h2>
+<p>取引タブのN列で「実際にどこにお金が入った/出た」かを記録します。</p>
+<h3>💰 売上の入金先(資産系)</h3>
+<div class="pulldown-grid">
+<div class="pulldown-item tag-asset">①事業口座(楽天)</div>
+<div class="pulldown-item tag-asset">PayPay</div>
+<div class="pulldown-item tag-asset">メルペイ</div>
+<div class="pulldown-item tag-asset">ラクマP</div>
+<div class="pulldown-item tag-asset">Square</div>
+<div class="pulldown-item tag-asset">リベP</div>
+<div class="pulldown-item tag-asset">現金(フジ)</div>
+<div class="pulldown-item tag-asset">現金(パパ)</div>
+<div class="pulldown-item tag-asset">現金(くみ)</div>
+</div>
+<h3>📋 立替・支払系</h3>
+<div class="pulldown-grid">
+<div class="pulldown-item tag-liability">フジ借</div>
+<div class="pulldown-item tag-liability">パパ借</div>
+<div class="pulldown-item tag-liability">くみ借</div>
+<div class="pulldown-item tag-card">②会社カード</div>
+</div>
+</div>
+
+<div class="card">
+<h2>🆕 D列に「精算」区分追加</h2>
+<p>取引区分(D列)プルダウンに「精算」を追加。月次精算実行時の出金記録に使います。</p>
+<div class="before-after">
+<div class="ba-block before">
+<div class="ba-label">変更前(4種)</div>
+仕入 / 売上 / 経費 / 借入金
+</div>
+<div class="ba-block after">
+<div class="ba-label">変更後(5種)</div>
+仕入 / 売上 / 経費 / 借入金 / <strong>精算 ⬅ NEW</strong>
+</div>
+</div>
+<h3>「精算」記帳例</h3>
+<div class="flow-diagram">月末: パパ立替¥4,877 → 楽天事業口座から振込精算
+
+[新規記帳]
+D="精算" / N="①事業口座(楽天)"
+M="銀行振込" / P=4877
+AAメモ="[精算] R155 パパ立替分 → 楽天振込"
+
+[元の立替取引]
+O列 "要確認" → "精算済" に更新</div>
+</div>
+
+<div class="card">
+<h2>📑 BS_PL 構成変更</h2>
+<p>月次BS/PL タブが、保管場所別の透明な残高表示になりました。</p>
+<h3>新セクション一覧</h3>
+<ul>
+<li>① 月次P/L(売上原価=本体ベース移動平均)</li>
+<li>② 月末B/S(資産・負債・純資産)</li>
+<li>📊 メンバー別 借入残高(R46-51)</li>
+<li>📊 商品別 売上原価計算エリア(R55-72)</li>
+<li>📊 <strong>保管場所別 残高内訳</strong>(R75-89・新設)</li>
+</ul>
+<div class="highlight-box">
+<strong>💡 月末実査の流れ</strong><br>
+パパさんが各アカウント残高をスクショ → BS_PL R77-89 のC列「月末実査(手入力)」に値を入力 → 帳簿残高と自動照合 → 差額¥10超で🔴アラート
+</div>
+</div>
+
+<div class="card">
+<h2>🆕 着地計算シート 新設</h2>
+<p>商品別の「参考着地原価」を取引タブから直接計算する専用シート。価格決定の参考値として使います。</p>
+<div class="success-box">
+<strong>会計帳簿には影響しない参考値</strong>。値上げ・値下げ判断の時にH列「参考着地原価」を見ます。
+</div>
+<h3>計算例(DR-15)</h3>
+<div class="flow-diagram">本体移動平均: ¥3,689
+諸掛配賦額(数量+金額混合按分): +¥528/本
+─────────────
+参考着地原価: ¥4,217</div>
+</div>
+
+<div class="card">
+<h2>💸 月次精算フロー(楽天統一後)</h2>
+<div class="flow-diagram">月末締め(毎月最終日)
+   │
+   ▼
+パパ全アカウント残高スクショ → LINE経理
+   │
+   ▼
+CC帳簿照合 + 各人立替金集計 → LINEレポート
+   │
+   ▼
+翌月3営業日以内に精算
+   │
+   ├→ 楽天事業 → フジ楽天個人(立替分) [無料・即時]
+   ├→ 楽天事業 → くみ楽天個人(立替分) [無料・即時]
+   └→ 楽天事業 → パパ楽天個人(立替分) [無料・即時]
+   │
+   ▼
+取引タブにD="精算"・O="精算済" 自動記帳
+   │
+   ▼
+CCダブルチェック → ✅完了</div>
+<div class="highlight-box">
+<strong>📅 集約振込ルール</strong><br>
+メルペイ・ラクマP・リベP等が <strong>¥100,000超</strong> で溜まったら → 楽天事業口座へ集約振込
+</div>
+</div>
+
+<div class="card">
+<h2>📸 売上画像 → Vision自動記帳パイプライン</h2>
+<div class="flow-diagram">[売上発生・現場]
+        │
+        ▼
+LINE経理に画像送信
+(メルペイ/PayPay/Square等のスクショ)
+        │
+        ▼
+cf-worker → GitHub → Mac CC
+        │
+        ▼
+CC-Vision 解析
+(M列・N列・金額・日付 自動判定)
+        │
+        ▼
+取引タブに自動記帳
+        │
+        ▼
+BS_PL自動更新</div>
+<p>本日(2026-05-02)、既存売上35件のうち <strong>13件をVision解析で振り分け確定</strong>。残り22件は5月末の月末実査で実態確認予定。</p>
+</div>
+
+<div class="card">
+<h2>📊 現状の主要数値(2026-05-04時点)</h2>
+<h3>BS_PL 主要</h3>
+<ul>
+<li>資産合計: <strong>¥2,160,425</strong></li>
+<li>負債(立替金): <strong>¥940,785</strong></li>
+<li>純資産: <strong>¥1,219,640</strong></li>
+<li>差額検証: <strong>¥0 ✅</strong></li>
+</ul>
+<h3>メンバー別 借入残高</h3>
+<ul>
+<li>フジ借: <strong>¥2,125,162</strong></li>
+<li>パパ借: <strong>¥58,077</strong></li>
+<li>くみ借: <strong>¥0</strong></li>
+</ul>
+<h3>保管場所別 帳簿残高(月末実査前)</h3>
+<ul>
+<li>①事業口座(楽天): ¥1,400,922</li>
+<li>メルペイ: ¥130,300</li>
+<li>ラクマP: ¥11,700</li>
+<li>リベP: ¥17,000</li>
+<li>現金(フジ): ¥13,000</li>
+</ul>
+</div>
+
+<div class="next-action">
+<h3>🚀 これからの運用</h3>
+<ul>
+<li>パパさん: 月末実査スクショ・売上画像LINE送付</li>
+<li>フジ・くみ: 立替経費発生時に画像+1行コメントLINE</li>
+<li>CC: 全自動で取引タブ記帳・BS_PL更新</li>
+<li>楽天事業口座開設後: 月次精算スタート</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🔗 関連リンク</h2>
+<ul>
+<li>会計スプシ: <code>https://docs.google.com/spreadsheets/d/12jMMw4Z_68cwWCvlRLKHU2C7tsshZyr6chIzgK7Kivc/edit</code></li>
+</ul>
+</div>
+
+<footer>
+作成: フジ&CC / 2026-05-04 / 質問は担当のCCまで
+</footer>
+</div>
+</body>
+</html>

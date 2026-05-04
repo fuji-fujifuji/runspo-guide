@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>パパさん向け 月末実査・売上記帳ルール</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+  background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+  color: #1a1a2e;
+  line-height: 1.7;
+  padding: 16px;
+}
+.container { max-width: 720px; margin: 0 auto; }
+header {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: white;
+  padding: 32px 24px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+header h1 { font-size: 1.5em; margin-bottom: 8px; }
+header .sub { font-size: 0.9em; opacity: 0.95; }
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+h2 {
+  font-size: 1.25em;
+  color: #ea580c;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #fed7aa;
+}
+h3 { font-size: 1.05em; color: #1a1a2e; margin: 14px 0 8px; }
+p { margin-bottom: 10px; }
+ul, ol { margin-left: 24px; margin-bottom: 10px; }
+li { margin-bottom: 8px; }
+.step-card {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  padding: 18px;
+  border-radius: 10px;
+  margin: 12px 0;
+  border-left: 5px solid #f59e0b;
+}
+.step-num {
+  display: inline-block;
+  background: #f59e0b;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  line-height: 32px;
+  margin-right: 10px;
+  font-size: 1.1em;
+}
+.do-box {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  border-left: 5px solid #34A853;
+  padding: 14px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+.do-box::before { content: "✅ "; font-weight: bold; }
+.dont-box {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  border-left: 5px solid #EA4335;
+  padding: 14px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+.dont-box::before { content: "❌ "; font-weight: bold; }
+.tip-box {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border-left: 5px solid #4285F4;
+  padding: 14px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+.tip-box::before { content: "💡 "; font-weight: bold; }
+.example-box {
+  background: #f8fafc;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e1;
+  margin: 10px 0;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.92em;
+}
+.account-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
+.account-card {
+  background: white;
+  border: 2px solid #fed7aa;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+.account-card .name { font-weight: bold; font-size: 1em; color: #ea580c; }
+.account-card .what { font-size: 0.82em; color: #666; margin-top: 4px; }
+.callout-big {
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  color: white;
+  padding: 22px;
+  border-radius: 14px;
+  margin: 14px 0;
+  text-align: center;
+  font-size: 1.05em;
+}
+footer { text-align: center; color: #888; font-size: 0.85em; padding: 20px; margin-top: 20px; }
+@media (max-width: 600px) {
+  body { padding: 10px; }
+  header h1 { font-size: 1.3em; }
+  .account-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>📋 パパさん向け<br>月末実査・売上記帳ルール</h1>
+<div class="sub">2026-05-04作成 / これだけ読めばOK / 困ったらパパCCに聞いてください</div>
+</header>
+
+<div class="card">
+<h2>🎯 大事なこと(これだけ覚えて)</h2>
+<div class="callout-big">
+売上・経費は<br>
+「<strong>画像で証拠</strong>」+「<strong>1行コメント</strong>」を<br>
+LINE経理に送るだけでOK。<br>
+あとはCCがやります。
+</div>
+<p style="text-align:center; color:#ea580c; font-weight:bold; margin-top:14px;">
+推測で書かない・分からなければ「分からない」と言う。これがいちばん大事。
+</p>
+</div>
+
+<div class="card">
+<h2>💰 売上が発生したらやること</h2>
+<div class="step-card">
+<span class="step-num">1</span><strong>その場で売上画面のスクショを撮る</strong>
+<p>メルカリ・ラクマ・PayPay・Square・リベシティの「取引情報」「受取通知」「残高変動」など、画面そのままでOK。</p>
+</div>
+<div class="step-card">
+<span class="step-num">2</span><strong>LINE経理グループに画像を送信</strong>
+<p>あわせて1行のメモを送ってください。</p>
+<div class="example-box">📸 (画像)<br>メルカリ ¥4,500 DR-14×1本</div>
+<div class="example-box">📸 (画像)<br>現金 ¥9,000 DR-12×3本 体育館オフ会</div>
+<div class="example-box">📸 (画像)<br>リベP ¥4,500 DR-10×1本 サウナさん</div>
+</div>
+<div class="step-card">
+<span class="step-num">3</span><strong>あとはCCが自動で記帳します</strong>
+<p>画像をAIが読み取って、取引タブに自動入力します。パパさんは何もしなくてOK。</p>
+</div>
+<div class="tip-box">
+画像が無い場合は文字だけでもOKですが、後で「証拠は?」と聞かれた時に困るので、できれば画像を撮ってください。
+</div>
+</div>
+
+<div class="card">
+<h2>📅 毎月末にやること(月末実査)</h2>
+<p style="color:#ea580c;font-weight:bold;">月の最終日(または翌月1〜3日)に、各アカウントの残高をスクショして送ってください。</p>
+<div class="step-card">
+<span class="step-num">1</span><strong>各アカウントの残高画面をスクショ</strong>
+</div>
+<div class="account-grid">
+<div class="account-card">
+<div class="name">①事業口座<br>(住信SBI/楽天)</div>
+<div class="what">通帳/オンラインバンキング画面</div>
+</div>
+<div class="account-card">
+<div class="name">PayPay</div>
+<div class="what">残高画面</div>
+</div>
+<div class="account-card">
+<div class="name">メルペイ</div>
+<div class="what">メルカリ → 残高画面</div>
+</div>
+<div class="account-card">
+<div class="name">ラクマP</div>
+<div class="what">楽天ラクマ → ポイント残高</div>
+</div>
+<div class="account-card">
+<div class="name">Square</div>
+<div class="what">Square管理画面 → 残高</div>
+</div>
+<div class="account-card">
+<div class="name">リベP<br>(事業由来分)</div>
+<div class="what">リベシティ → ポイント<br>※個人分とは分けて把握</div>
+</div>
+<div class="account-card" style="grid-column: 1 / -1;">
+<div class="name">パパ手元現金</div>
+<div class="what">あれば数えて「¥XX,XXX」と書いて送る</div>
+</div>
+</div>
+<div class="step-card">
+<span class="step-num">2</span><strong>LINE経理にまとめて送信</strong>
+<div class="example-box">📸 (画像7枚)<br>2026年5月末 残高<br>①事業口座: ¥XX,XXX<br>PayPay: ¥XX,XXX<br>メルペイ: ¥XX,XXX<br>ラクマP: ¥XX,XXX<br>Square: ¥XX,XXX<br>リベP: ¥XX,XXX<br>現金: ¥X,XXX</div>
+</div>
+<div class="step-card">
+<span class="step-num">3</span><strong>CCが照合・差額調整して報告</strong>
+<p>帳簿との差額が¥10以下なら自動調整・¥10超ならアラート報告。<br>パパさんはCCの報告を見て、不自然な差額がないか確認するだけ。</p>
+</div>
+<div class="tip-box">
+リベシティポイントは「事業の販売で得たもの」と「パパさん個人で他のことに使った/受けた」で混ざるので、事業由来分だけ判定して報告してください(難しければ目安でOK)。
+</div>
+</div>
+
+<div class="card">
+<h2>💳 立替経費の精算フロー</h2>
+<p>パパさんが個人カード・個人現金で事業の経費を立替えた時の流れです。</p>
+<h3>パパさんがやること</h3>
+<ol>
+<li>立替えた時にレシート/領収書をスクショ → LINE経理に送る</li>
+<li>1行コメント追記: 「メルカリ梱包材 ¥4,877 パパ立替」など</li>
+</ol>
+<h3>CCが自動でやること</h3>
+<ul>
+<li>取引タブに「N=パパ借」で記帳</li>
+<li>月末締めで合計算出</li>
+<li>パパさんに通知: 「今月のパパ立替合計 ¥XX,XXX」</li>
+</ul>
+<h3>月初に精算実行</h3>
+<div class="callout-big" style="font-size:0.95em;">
+楽天事業口座 ➡ パパ楽天個人口座<br>
+(<strong>同行振込なので無料・即時・通帳に履歴残る</strong>)
+</div>
+<div class="tip-box">
+楽天事業口座が開設されるまで(約1ヶ月)はパパ立替は溜めておいてOK。開設後にまとめて精算します。
+</div>
+</div>
+
+<div class="card">
+<h2>🔄 「事業のお金」と「パパさん個人のお金」を分ける</h2>
+<div class="callout-big" style="font-size:1em;">
+これがいちばん大事!<br>
+パパさんの事業意識を高めるための仕組みです。
+</div>
+<h3>分け方</h3>
+<div class="account-grid">
+<div class="account-card" style="border-color:#34A853;">
+<div class="name" style="color:#34A853;">🏢 事業のお金</div>
+<div class="what">①事業口座(楽天)・PayPay・メルペイ・ラクマP・Square・リベP(事業由来分)</div>
+</div>
+<div class="account-card" style="border-color:#4285F4;">
+<div class="name" style="color:#4285F4;">👤 個人のお金</div>
+<div class="what">パパ個人楽天・個人カード・個人現金・リベP個人分</div>
+</div>
+</div>
+<h3>意識すること</h3>
+<ul>
+<li>事業のお金で個人の買い物をしない</li>
+<li>個人のお金で事業の経費を払ったら → 必ず「立替」として記録(LINE報告)</li>
+<li>立替は月末に必ず楽天で精算 → パパさん個人口座にお金が戻る</li>
+<li>「お金が戻ってきた感」が大事 → 領収書感覚で記録する</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🚫 やってはいけないこと</h2>
+<div class="dont-box">
+<strong>推測で記帳しない</strong><br>
+「たぶんメルペイで来た」「だいたい¥5,000ぐらい」 → ダメ。実際の数字を画像で確認してから。
+</div>
+<div class="dont-box">
+<strong>口頭・手打ちだけで報告しない</strong><br>
+「今月¥XX売れたよ」だけだと証拠が残りません。必ず画面スクショとセットで。
+</div>
+<div class="dont-box">
+<strong>事業のお金を個人で使い回さない</strong><br>
+事業預金を生活費に使う・個人カードを事業仕入れに使うを混ぜると、後から分からなくなります。
+</div>
+<div class="dont-box">
+<strong>「分からない」を隠さない</strong><br>
+不明なものは「分からない」とCCに伝えてください。雑損益で調整できます。
+</div>
+</div>
+
+<div class="card">
+<h2>✅ やるべきこと(まとめ)</h2>
+<div class="do-box">売上発生したら → 画像+1行コメント</div>
+<div class="do-box">経費立替したら → レシート画像+1行コメント</div>
+<div class="do-box">月末になったら → 全アカウント残高スクショ</div>
+<div class="do-box">分からないことは → 「分からない」とCCに伝える</div>
+<div class="do-box">事業と個人のお金を → 物理的に分けて管理</div>
+</div>
+
+<div class="card">
+<h2>❓ 困ったら</h2>
+<p style="font-size:1.1em;">
+分からないことがあったら、<strong>パパCCに聞いてください</strong>。<br>
+パパCCが調べて教えてくれます。
+</p>
+<p>パパCCで分からない場合は、フジCC・くみCCと連携して解決します(cc-dialogue という仕組みでCC同士やり取りします)。</p>
+</div>
+
+<footer>
+作成: フジ&CC / 2026-05-04<br>
+質問・修正依頼はパパCCまで
+</footer>
+
+</div>
+</body>
+</html>
