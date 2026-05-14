@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>K011 質問リマインド帯</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: linear-gradient(135deg, #f8f9fc 0%, #e8eef9 100%);
+      color: #1a1a2e;
+      line-height: 1.7;
+      padding: 16px;
+    }
+    .container { max-width: 640px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+      color: white;
+      padding: 28px 22px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.5em; margin-bottom: 6px; }
+    header p { opacity: 0.95; font-size: 0.95em; }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .blue-band {
+      background: linear-gradient(90deg, #4285F4 0%, #5a9eff 100%);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 10px;
+      margin: 10px 0;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 0.92em;
+    }
+    .green-band {
+      background: linear-gradient(90deg, #34A853 0%, #4dc46c 100%);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 10px;
+      margin: 10px 0;
+      font-family: "SF Mono", Monaco, monospace;
+      font-size: 0.92em;
+    }
+    .label {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: 0.85em;
+      font-weight: bold;
+      color: white;
+      margin-right: 6px;
+    }
+    .label.blue { background: #4285F4; }
+    .label.green { background: #34A853; }
+    .install {
+      background: #fffbeb;
+      border-left: 4px solid #FBBC04;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .install strong { color: #d97706; }
+    .footer-note {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.85em;
+      padding: 16px 0;
+    }
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      header { padding: 22px 16px; }
+      header h1 { font-size: 1.3em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>💬 質問リマインド帯</h1>
+      <p>こんな機能つくったよ。よかったら入れてみて。</p>
+    </header>
+
+    <div class="card">
+      <p>CCの返事の最後に、こんな色帯が出るようになります ↓</p>
+
+      <div class="blue-band">
+        🟦━━━━━━━━━━━━━━<br>
+        💬 さっき何を聞いてた?の要約<br>
+        🟦━━━━━━━━━━━━━━
+      </div>
+
+      <div class="green-band">
+        🟩━━━━━━━━━━━━━━<br>
+        💬 CCからの質問・選んでね<br>
+        🟩━━━━━━━━━━━━━━
+      </div>
+
+      <p style="margin-top: 12px;">複数ターミナルを行き来する時、戻ってきた瞬間に <strong>「ここ何の話だっけ」</strong> が一瞬でわかる。</p>
+    </div>
+
+    <div class="card">
+      <p style="margin-bottom: 10px;">
+        <span class="label blue">🟦 青</span> 自分が聞いたことの再掲
+      </p>
+      <p>
+        <span class="label green">🟩 緑</span> CCから自分への質問
+      </p>
+
+      <div class="install">
+        <strong>導入したい人</strong> → 自分のCCに「<strong>K011 入れて</strong>」と言うだけ。<br>
+        うざかったら「外して」で即削除OK。
+      </div>
+    </div>
+
+    <div class="footer-note">
+      ランスポ / 2026-05-14<br>
+      詳しい中身は担当CCに聞いてください
+    </div>
+
+  </div>
+</body>
+</html>
