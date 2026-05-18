@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>N列ルール変更(2026-05-18)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: linear-gradient(135deg, #f8f9fc 0%, #e8eef9 100%);
+    color: #1a1a2e;
+    line-height: 1.5;
+    padding: 14px;
+  }
+  .container { max-width: 720px; margin: 0 auto; }
+  header {
+    background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+    color: white;
+    padding: 18px 16px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  header h1 { font-size: 1.25em; font-weight: 700; }
+  header .sub { font-size: 0.85em; opacity: 0.92; margin-top: 4px; }
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  h2 {
+    font-size: 1.05em;
+    color: #4285F4;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #e8eef9;
+  }
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 8px 0 4px;
+  }
+  .pill {
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 0.85em;
+    color: white;
+  }
+  .p1 { background: #EA4335; }
+  .p2 { background: #34A853; }
+  .p3 { background: #FBBC04; color: #5a4a00; }
+  .p4 { background: #4285F4; }
+  .p5 { background: #1e8e3e; }
+  .p6 { background: #9b59b6; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 0.88em;
+  }
+  th {
+    background: #f0f4fb;
+    color: #1a1a2e;
+    padding: 6px 8px;
+    text-align: left;
+    font-weight: 700;
+  }
+  td {
+    padding: 6px 8px;
+    border-top: 1px solid #eef0f6;
+  }
+  td.right { color: #4285F4; font-weight: 700; }
+  .note {
+    background: #fff9e6;
+    border-left: 3px solid #FBBC04;
+    padding: 8px 10px;
+    margin-top: 8px;
+    font-size: 0.85em;
+    border-radius: 4px;
+  }
+  footer {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.78em;
+    margin-top: 16px;
+    padding: 10px;
+  }
+  @media (max-width: 600px) {
+    body { padding: 10px; }
+    header h1 { font-size: 1.1em; }
+    table { font-size: 0.82em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>🎯 N列(入出金場所)ルール変更</h1>
+  <div class="sub">2026-05-18 確定 — プルダウン14個→<strong>6個</strong>に整理</div>
+</header>
+
+<div class="card">
+  <h2>📦 新しいN列 = 6個だけ</h2>
+  <div class="pills">
+    <span class="pill p1">フジ借</span>
+    <span class="pill p2">くみ借</span>
+    <span class="pill p3">パパ借</span>
+    <span class="pill p4">Square</span>
+    <span class="pill p5">事業口座</span>
+    <span class="pill p6">事業クレカ</span>
+  </div>
+  <div class="note">
+    💡 事業口座=楽天/SBI区別なし1個(現在楽天・6月SBI移行) / 事業クレカ=マネフォCC
+  </div>
+</div>
+
+<div class="card">
+  <h2>💰 売上 → どれを書く?</h2>
+  <table>
+    <tr><th>売上</th><th>N列</th></tr>
+    <tr><td>Square売上</td><td class="right">Square</td></tr>
+    <tr><td>Square→事業口座 振替</td><td class="right">新仕分(精算)<br>N=事業口座</td></tr>
+    <tr><td>フジ直販</td><td class="right">フジ借</td></tr>
+    <tr><td>くみ直販</td><td class="right">くみ借</td></tr>
+    <tr><td>パパ直販</td><td class="right">パパ借</td></tr>
+    <tr><td>メルカリ / ラクマ / リベP / PayPay</td><td class="right">パパ借<br>(全部パパ集約)</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>💳 経費 → どれを書く?</h2>
+  <table>
+    <tr><th>経費</th><th>N列</th></tr>
+    <tr><td>フジ立替</td><td class="right">フジ借</td></tr>
+    <tr><td>くみ立替</td><td class="right">くみ借</td></tr>
+    <tr><td>パパ立替</td><td class="right">パパ借</td></tr>
+    <tr><td>事業マネフォCC払い</td><td class="right">事業クレカ</td></tr>
+    <tr><td>事業口座から直接引落</td><td class="right">事業口座</td></tr>
+  </table>
+  <div class="note">
+    💴 現金売上(直販): M=現金 / N=各借(受取人の借) / 月末に各借を事業口座へ清算
+  </div>
+</div>
+
+<footer>
+  📋 詳細は担当CC(フジCC/パパCC/くみCC)に「K014見て」と聞いてください<br>
+  廃止: メルペイ/ラクマP/リベP/PayPay/現金フジ・くみ・パパ/会社CC 等 → 過去仕分はパパが手動訂正
+</footer>
+
+</div>
+</body>
+</html>
