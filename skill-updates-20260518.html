@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>5/18 スキル変動まとめ</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: linear-gradient(135deg, #f8f9fc 0%, #e8eef9 100%);
+      color: #1a1a2e;
+      line-height: 1.6;
+      padding: 16px;
+    }
+    .container { max-width: 760px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+      color: white;
+      padding: 28px 24px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.8em; margin-bottom: 6px; }
+    header p { font-size: 0.95em; opacity: 0.95; }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    h2 {
+      font-size: 1.2em;
+      color: #4285F4;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8eef9;
+    }
+    .skill-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px dashed #eee;
+    }
+    .skill-row:last-child { border-bottom: none; }
+    .skill-emoji { font-size: 1.6em; flex-shrink: 0; width: 36px; }
+    .skill-name {
+      font-weight: bold;
+      color: #1a1a2e;
+      font-size: 1.05em;
+    }
+    .skill-desc { color: #555; font-size: 0.92em; margin-top: 2px; }
+    .badge-new {
+      display: inline-block;
+      background: #34A853;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.72em;
+      font-weight: bold;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .badge-update {
+      display: inline-block;
+      background: #FBBC04;
+      color: #5a4500;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.72em;
+      font-weight: bold;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.85em;
+      padding: 14px 0;
+    }
+    .summary-stat {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      margin: 6px 0 14px 0;
+      flex-wrap: wrap;
+    }
+    .stat-pill {
+      background: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.95em;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .stat-pill .num { font-weight: bold; color: #4285F4; font-size: 1.2em; }
+    .note {
+      background: #fffbea;
+      border-left: 4px solid #FBBC04;
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      color: #5a4500;
+      margin-top: 8px;
+    }
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      header h1 { font-size: 1.4em; }
+      .skill-emoji { font-size: 1.3em; width: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎨 5/18 スキル変動まとめ</h1>
+      <p>フジCC・今日1日の新設&更新ダイジェスト</p>
+    </header>
+
+    <div class="summary-stat">
+      <div class="stat-pill"><span class="num">5</span> 新設</div>
+      <div class="stat-pill"><span class="num">2</span> 更新</div>
+    </div>
+
+    <div class="card">
+      <h2>🆕 今日できたスキル(5つ)</h2>
+
+      <div class="skill-row">
+        <div class="skill-emoji">🔄</div>
+        <div>
+          <div class="skill-name"><span class="badge-new">NEW</span>/引き継ぎ</div>
+          <div class="skill-desc">ターミナルが重い時、新しいターミナルに前提ごと完全引き継ぎ</div>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-emoji">📥</div>
+        <div>
+          <div class="skill-name"><span class="badge-new">NEW</span>/memory-load</div>
+          <div class="skill-desc">新ターミナルで「あの話の続きから」を即再開する読み込み専用</div>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-emoji">🧪</div>
+        <div>
+          <div class="skill-name"><span class="badge-new">NEW</span>/subagent-check</div>
+          <div class="skill-desc">CCの提案を第三者AIが100点満点採点・90点未満は自動再修正</div>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-emoji">📝</div>
+        <div>
+          <div class="skill-name"><span class="badge-new">NEW</span>/まとめて</div>
+          <div class="skill-desc">セッションの学びをメモリに統廃合(積み上げじゃなく上書き更新)</div>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-emoji">📱</div>
+        <div>
+          <div class="skill-name"><span class="badge-new">NEW</span>/shortcut-create</div>
+          <div class="skill-desc">iPhone/Macショートカットの新規作成を伴走サポート</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🔧 今日更新したスキル(2つ)</h2>
+
+      <div class="skill-row">
+        <div class="skill-emoji">📂</div>
+        <div>
+          <div class="skill-name"><span class="badge-update">UPDATE</span>/cc-inbox v2.2</div>
+          <div class="skill-desc">音声+手入力+画像を「フォルダ単位」で紐付け・キャンセル耐性UP</div>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-emoji">🤝</div>
+        <div>
+          <div class="skill-name"><span class="badge-update">UPDATE</span>/チーム共有</div>
+          <div class="skill-desc">CC用ファイルの確認カット・人間用HTMLだけフジ確認に簡略化</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>💡 パパ・くみへ</h2>
+      <p>気になるスキルがあったら担当CCに<br><strong>「K016 のあのスキル入れて」</strong>と言うだけでOKです。</p>
+      <div class="note">
+        <strong>おすすめセット:</strong> /引き継ぎ + /memory-load + /まとめて<br>
+        → セッションが重くなった時の切替・続き再開がぐっと楽になります。
+      </div>
+    </div>
+
+    <footer>
+      🎨 RUNSPO チーム頭脳シェア — 2026-05-18
+    </footer>
+  </div>
+</body>
+</html>
