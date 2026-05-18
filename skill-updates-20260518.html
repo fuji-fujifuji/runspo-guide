@@ -76,6 +76,35 @@
       margin-right: 6px;
       vertical-align: middle;
     }
+    .badge-must {
+      display: inline-block;
+      background: #EA4335;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.72em;
+      font-weight: bold;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .badge-star {
+      display: inline-block;
+      background: linear-gradient(135deg, #FBBC04 0%, #EA4335 100%);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.72em;
+      font-weight: bold;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .skill-row.recommend {
+      background: linear-gradient(90deg, #fffbea 0%, #ffffff 100%);
+      border-left: 4px solid #FBBC04;
+      padding-left: 10px;
+      border-radius: 6px;
+      margin: 4px 0;
+    }
     footer {
       text-align: center;
       color: #777;
@@ -136,11 +165,11 @@
         </div>
       </div>
 
-      <div class="skill-row">
+      <div class="skill-row recommend">
         <div class="skill-emoji">📥</div>
         <div>
-          <div class="skill-name"><span class="badge-new">NEW</span>/memory-load</div>
-          <div class="skill-desc">新ターミナルで「あの話の続きから」を即再開する読み込み専用</div>
+          <div class="skill-name"><span class="badge-new">NEW</span><span class="badge-star">⭐全員推奨</span>/memory-load</div>
+          <div class="skill-desc">過去のメモリを読み込んで、前提が揃った状態で作業を再開できる</div>
         </div>
       </div>
 
@@ -148,14 +177,14 @@
         <div class="skill-emoji">🧪</div>
         <div>
           <div class="skill-name"><span class="badge-new">NEW</span>/subagent-check</div>
-          <div class="skill-desc">CCの提案を第三者AIが100点満点採点・90点未満は自動再修正</div>
+          <div class="skill-desc">AI同士でアイディアを揉んで、90点以上になるまで自動で再修正</div>
         </div>
       </div>
 
-      <div class="skill-row">
+      <div class="skill-row recommend">
         <div class="skill-emoji">📝</div>
         <div>
-          <div class="skill-name"><span class="badge-new">NEW</span>/まとめて</div>
+          <div class="skill-name"><span class="badge-new">NEW</span><span class="badge-must">🔴必須</span><span class="badge-star">⭐全員推奨</span>/まとめて</div>
           <div class="skill-desc">セッションの学びをメモリに統廃合(積み上げじゃなく上書き更新)</div>
         </div>
       </div>
@@ -176,26 +205,27 @@
         <div class="skill-emoji">📂</div>
         <div>
           <div class="skill-name"><span class="badge-update">UPDATE</span>/cc-inbox v2.2</div>
-          <div class="skill-desc">音声+手入力+画像を「フォルダ単位」で紐付け・キャンセル耐性UP</div>
+          <div class="skill-desc">iPhoneショートカットの更新。音声+手入力+画像を「フォルダ単位」で紐付け・キャンセル耐性UP</div>
         </div>
       </div>
 
-      <div class="skill-row">
+      <div class="skill-row recommend">
         <div class="skill-emoji">🤝</div>
         <div>
-          <div class="skill-name"><span class="badge-update">UPDATE</span>/チーム共有</div>
-          <div class="skill-desc">CC用ファイルの確認カット・人間用HTMLだけフジ確認に簡略化</div>
+          <div class="skill-name"><span class="badge-update">UPDATE</span><span class="badge-star">⭐全員推奨</span>/チーム共有</div>
+          <div class="skill-desc">チームへ情報共有する時に使うスキル。見やすいHTML化までセットでやってくれる</div>
         </div>
       </div>
     </div>
 
     <div class="card">
-      <h2>💡 パパ・くみへ</h2>
-      <p>気になるスキルがあったら担当CCに<br><strong>「K016 のあのスキル入れて」</strong>と言うだけでOKです。</p>
-      <div class="note">
-        <strong>おすすめセット:</strong> /引き継ぎ + /memory-load + /まとめて<br>
-        → セッションが重くなった時の切替・続き再開がぐっと楽になります。
+      <h2>⭐ チーム全員アップロード推奨(3つ)</h2>
+      <div class="note" style="background: #fff3e0; border-left-color: #EA4335; font-size: 0.95em;">
+        <strong>📥 /memory-load</strong> ＋ <strong>📝 /まとめて</strong> ＋ <strong>🤝 /チーム共有</strong><br>
+        この3つはチーム全員にアップロードしてほしいセット。<br>
+        担当CCに <strong>「K016 の全員推奨スキル3つ入れて」</strong> と言うだけでOK。
       </div>
+      <p style="margin-top: 12px; font-size: 0.9em; color: #555;">他のスキルも気になったら担当CCに<br><strong>「K016 の◯◯入れて」</strong>と言ってください。</p>
     </div>
 
     <footer>
