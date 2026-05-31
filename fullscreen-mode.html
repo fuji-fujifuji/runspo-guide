@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>CCフルスクリーンモード</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: linear-gradient(135deg, #f8f9fc 0%, #e8eef9 100%);
+      color: #1a1a2e;
+      line-height: 1.6;
+      padding: 16px;
+    }
+    .container { max-width: 760px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+      color: white;
+      padding: 28px 24px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.6em; margin-bottom: 6px; }
+    header p { font-size: 0.95em; opacity: 0.95; }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    h2 {
+      font-size: 1.2em;
+      color: #4285F4;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e8eef9;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .mini {
+      background: #f3f7ff;
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+    }
+    .mini .emoji { font-size: 1.8em; display: block; margin-bottom: 4px; }
+    .mini .label { font-size: 0.9em; font-weight: bold; }
+    .step {
+      background: #f6fbf7;
+      border-left: 4px solid #34A853;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      font-size: 0.95em;
+    }
+    .step b { color: #34A853; }
+    code {
+      background: #2b2b3a;
+      color: #ffd866;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
+    .warn {
+      background: #fff8e1;
+      border-left: 4px solid #FBBC04;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.92em;
+    }
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.85em;
+      padding: 14px;
+    }
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      header h1 { font-size: 1.4em; }
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🖥️ CCの画面、ちらつき消えます</h1>
+      <p>設定1行で快適に。よかったら入れてみて。</p>
+    </header>
+
+    <div class="card">
+      <h2>✨ 何が良くなる?</h2>
+      <div class="grid">
+        <div class="mini"><span class="emoji">🖱️</span><span class="label">マウスで<br>スクロール</span></div>
+        <div class="mini"><span class="emoji">✨</span><span class="label">チラつき<br>ゼロ</span></div>
+        <div class="mini"><span class="emoji">📌</span><span class="label">入力欄が<br>下に固定</span></div>
+        <div class="mini"><span class="emoji">🪶</span><span class="label">長い会話でも<br>軽いまま</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🔧 入れ方(3ステップ)</h2>
+      <div class="step"><b>① 担当のCCに頼むだけでOK</b><br>「<b>K017のフルスクリーンモード入れて</b>」と言えばCCが設定してくれます。</div>
+      <div class="step"><b>② 中身</b><br>設定ファイルに <code>CLAUDE_CODE_NO_FLICKER=1</code> を1行足すだけ。</div>
+      <div class="step"><b>③ CCを再起動</b><br>一度閉じて開き直すと有効になります。</div>
+    </div>
+
+    <div class="card">
+      <h2>⚠️ 1つだけ注意</h2>
+      <div class="warn">
+        このモードにすると、ターミナルのいつもの文字検索(<code>Cmd+F</code>等)が効かなくなります。<br>
+        検索したい時は <code>Ctrl+O</code> を押すと会話の中を <code>/</code> で検索できます。<br>
+        <br>
+        Windowsの人・マウス選択を残したい人は、担当CCが別の入れ方を案内します。気軽に聞いてください。
+      </div>
+    </div>
+
+    <footer>
+      詳しい中身は担当のCCに聞いてね 🙂<br>
+      提案: フジ / 2026-05-31
+    </footer>
+  </div>
+</body>
+</html>
