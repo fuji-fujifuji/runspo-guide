@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>共有フォルダが重くなっています</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+  background: linear-gradient(135deg, #f8f9fc 0%, #e8eef9 100%);
+  color: #1a1a2e; line-height: 1.65; padding: 16px;
+}
+.container { max-width: 760px; margin: 0 auto; }
+header {
+  background: linear-gradient(135deg, #EA4335 0%, #FBBC04 100%);
+  color: white; padding: 26px 22px; border-radius: 14px;
+  margin-bottom: 16px; text-align: center;
+}
+header h1 { font-size: 1.45em; margin-bottom: 6px; }
+header p { font-size: .95em; opacity: .95; }
+.card {
+  background: white; border-radius: 12px; padding: 20px;
+  margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+h2 { font-size: 1.1em; color: #4285F4; margin-bottom: 12px;
+     padding-bottom: 6px; border-bottom: 2px solid #e8eef9; }
+.bar { display: flex; height: 34px; border-radius: 7px; overflow: hidden; margin-bottom: 10px; }
+.bar span { display: flex; align-items: center; justify-content: center;
+            color: white; font-size: .8em; font-weight: bold; }
+.b1 { background: #EA4335; flex: 462; }
+.b2 { background: #FBBC04; flex: 96; }
+.b3 { background: #34A853; flex: 45; }
+.legend { font-size: .87em; color: #555; }
+.legend b { color: #EA4335; }
+.cols { display: flex; gap: 12px; }
+.col { flex: 1; border-radius: 9px; padding: 14px; }
+.ng { background: #fdecea; border: 2px solid #EA4335; }
+.ok { background: #e8f5e9; border: 2px solid #34A853; }
+.col h3 { font-size: .95em; margin-bottom: 8px; }
+.ng h3 { color: #C5221F; } .ok h3 { color: #1E7E34; }
+.col ul { list-style: none; font-size: .88em; }
+.col li { padding: 3px 0; }
+.note { background: #fff8e1; border-left: 4px solid #FBBC04;
+        padding: 12px 14px; border-radius: 6px; font-size: .9em; margin-top: 12px; }
+.opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px;
+       border-radius: 9px; margin-bottom: 9px; background: #f6f8fc; }
+.opt.reco { background: #e8f0fe; border: 2px solid #4285F4; }
+.num { background: #4285F4; color: white; width: 26px; height: 26px; flex-shrink: 0;
+       border-radius: 50%; display: flex; align-items: center; justify-content: center;
+       font-weight: bold; font-size: .85em; }
+.opt div b { display: block; font-size: .95em; margin-bottom: 2px; }
+.opt div small { color: #555; font-size: .85em; }
+.badge { display: inline-block; background: #4285F4; color: white; padding: 1px 8px;
+         border-radius: 10px; font-size: .72em; font-weight: bold; margin-left: 5px; }
+footer { text-align: center; color: #666; font-size: .85em; padding: 14px; }
+@media (max-width: 600px) {
+  body { padding: 10px; }
+  header h1 { font-size: 1.25em; }
+  .cols { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>⚠️ 共有フォルダが 934MB になりました</h1>
+  <p>目安の500MBを超えています。整理の判断をお願いします</p>
+</header>
+
+<div class="card">
+  <h2>📊 何が重いのか</h2>
+  <div class="bar">
+    <span class="b1">シャトル撮影写真 462MB</span>
+    <span class="b2">証跡 96MB</span>
+    <span class="b3">他</span>
+  </div>
+  <p class="legend"><b>重さの8割は、去年DR-10/12/14を撮影したときの写真</b>です。<br>
+  110枚の中から21枚を選んで出品に使い、残りは使っていません。</p>
+  <div class="note">
+    🔍 <b>調べたこと</b>：この写真が会計の証拠として管理表に載っていないか、
+    管理表の添付URL 316件を全部チェックしました。<br>
+    → <b>1件も使われていませんでした。</b>会計の証拠写真は別フォルダにきちんと入っています。
+  </div>
+</div>
+
+<div class="card">
+  <h2>🗂️ 消せるもの・消せないもの</h2>
+  <div class="cols">
+    <div class="col ng">
+      <h3>🔴 消せない</h3>
+      <ul>
+        <li>📤 出品用の写真42枚</li>
+        <li style="font-size:.82em;color:#777;padding-left:14px">
+          メルカリ・ヤフーフリマ・ラクマの出品作業が<br>ここから直接アップしています</li>
+        <li>🖼️ 加工済みの写真30枚</li>
+      </ul>
+    </div>
+    <div class="col ok">
+      <h3>🟢 外に出せる</h3>
+      <ul>
+        <li>📷 撮影の元データ 233枚</li>
+        <li style="font-size:.82em;color:#777;padding-left:14px">
+          約350MB。編集はもう終わっていて<br>普段は誰も開きません</li>
+        <li>※ 消すのではなく<br>別の場所に保管します</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">
+    💡 <b>「たまったら消す」では軽くなりません。</b>
+    この仕組みは一度入れたファイルの記録が永久に残るため、
+    消しても容量は変わらないのです。軽くするには特別な作業が要ります。
+  </div>
+</div>
+
+<div class="card">
+  <h2>✅ 決めてほしいこと</h2>
+  <div class="opt reco">
+    <div class="num">1</div>
+    <div><b>しっかり軽くする<span class="badge">934MB → 約350MB</span></b>
+    <small>元データを別の場所に保管してから、記録ごと消します。
+    ただし<b>全員がフォルダを一度取り直す</b>作業が必要です</small></div>
+  </div>
+  <div class="opt">
+    <div class="num">2</div>
+    <div><b>軽い整理だけ</b>
+    <small>普段の作業に影響なし。ただし効果は小さめです（934MB → 約850MB）</small></div>
+  </div>
+  <div class="opt">
+    <div class="num">3</div>
+    <div><b>今回は何もしない</b>
+    <small>もっと重くなってから考える</small></div>
+  </div>
+  <div class="note">
+    🙋 <b>くみさんへ1点だけ確認です</b>：4/26に「親分さん共有用」で入れた写真28枚、
+    もう役目は終わっていますか？終わっていれば一緒に外へ出します。
+  </div>
+</div>
+
+<footer>
+  手順や詳しい調査結果はぜんぶ担当CCが持っています。<br>
+  「K021の件」と言ってもらえれば説明します 🙌
+</footer>
+
+</div>
+</body>
+</html>
