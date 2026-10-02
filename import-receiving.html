@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>荷物が届いたら・大事な紙をもらったら</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif; background: linear-gradient(135deg, #f8f9fc 0%, #e8eef9 100%); color: #1a1a2e; line-height: 1.6; padding: 16px; }
+.container { max-width: 760px; margin: 0 auto; }
+header { background: linear-gradient(135deg, #4285F4 0%, #34A853 100%); color: #fff; padding: 24px 20px; border-radius: 14px; margin-bottom: 16px; text-align: center; }
+header h1 { font-size: 1.5em; margin-bottom: 6px; }
+header p { font-size: 0.95em; opacity: .95; }
+.card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
+h2 { font-size: 1.15em; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #e8eef9; }
+.blue h2 { color: #4285F4; } .green h2 { color: #34A853; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.step { border-radius: 10px; padding: 12px 8px; text-align: center; font-size: .9em; font-weight: bold; color: #1a1a2e; }
+.step .ic { font-size: 1.8em; display: block; margin-bottom: 4px; }
+.s1 { background: #e8f0fe; } .s2 { background: #fef7e0; } .s3 { background: #e6f4ea; } .s4 { background: #fce8e6; }
+.step small { display: block; font-weight: normal; font-size: .85em; color: #555; margin-top: 2px; }
+.point { margin-top: 12px; background: #fef7e0; border-left: 5px solid #FBBC04; border-radius: 8px; padding: 10px 12px; font-size: .95em; }
+.flow { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.pill { background: #e6f4ea; border-radius: 22px; padding: 10px 14px; font-weight: bold; font-size: .95em; text-align: center; }
+.pill.y { background: #fef7e0; }
+.arrow { font-size: 1.3em; color: #34A853; font-weight: bold; }
+.kinds { margin-top: 12px; font-size: .9em; color: #444; text-align: center; }
+.why { margin-top: 12px; background: #e8f0fe; border-radius: 8px; padding: 10px 12px; font-size: .95em; text-align: center; }
+footer { text-align: center; font-size: .85em; color: #666; padding: 6px; }
+@media (max-width: 600px) {
+  body { padding: 10px; }
+  header h1 { font-size: 1.25em; }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>📦 荷物が届いたら・📄 大事な紙をもらったら</h1>
+  <p>まず写真でチームに共有 → 現物も保管。これだけで後から助かります</p>
+</header>
+
+<div class="card blue">
+  <h2>📦 輸入の荷物が届いた日に撮る4枚</h2>
+  <div class="steps">
+    <div class="step s1"><span class="ic">🧾</span>伝票<small>UPSの請求書・代引の控え</small></div>
+    <div class="step s2"><span class="ic">📦</span>外箱とラベル<small>箱の数が分かるように</small></div>
+    <div class="step s3"><span class="ic">📂</span>開けた中身<small>箱ごとに</small></div>
+    <div class="step s4"><span class="ic">🏷️</span>品番シール<small>DR-10など全品番</small></div>
+  </div>
+  <div class="point">⚠️ 前にも買った品番も、<b>毎回ぜんぶ撮る</b>。撮った写真はスマホから<b>消さない</b>（撮った日時が証拠になります）</div>
+</div>
+
+<div class="card green">
+  <h2>📄 大事そうな紙はぜんぶ同じ流れ</h2>
+  <div class="flow">
+    <div class="pill">📸 写真を撮る</div><span class="arrow">→</span>
+    <div class="pill">💬 チームに共有</div><span class="arrow">→</span>
+    <div class="pill y">📁 現物は「ランスポ用ファイル」へ</div>
+  </div>
+  <p class="kinds">銀行・役所の手続き・領収書・納品書・UPSや税関の書類 など。迷ったら共有＆保管</p>
+  <div class="why">💡 データで残しておけば、あとでCCが探して照合できます。<br>今回の関税の払い戻しは、到着日の写真が足りずに苦労しました</div>
+</div>
+
+<footer>わからない時は、担当のCCに「K025を教えて」と聞いてください</footer>
+</div>
+</body>
+</html>
