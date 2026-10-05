@@ -1,0 +1,66 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>サイト選別チェックリスト</title>
+<style>
+:root{--bg:#f6f8f7;--card:#fff;--ink:#222;--sub:#666;--line:#d8ded9;--ok:#1f9d55;--ng:#c0392b;--q:#b7791f;--acc:#22663f}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Hiragino Sans',sans-serif;font-size:15px}
+.wrap{max-width:980px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:4px 0 6px}.lead{color:var(--sub);font-size:13px;margin-bottom:12px}
+.bar{position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line)}
+.cnt span{display:inline-block;margin-right:10px;font-weight:600}
+button{border:0;border-radius:8px;padding:8px 12px;font-size:14px;background:var(--acc);color:#fff;cursor:pointer}
+button.sec{background:#e3e9e5;color:var(--ink)}
+h2{font-size:15px;margin:18px 0 6px;color:var(--acc);border-left:5px solid var(--acc);padding-left:6px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0}
+.item.yes{border-left:6px solid var(--ok)}.item.no{border-left:6px solid var(--ng);opacity:.6}.item.q{border-left:6px solid var(--q)}
+.top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.nm{font-weight:700;font-size:16px}.meta{color:var(--sub);font-size:12.5px;margin-top:3px}
+.ch{display:flex;gap:6px}.ch label{border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer;font-size:14px;user-select:none}
+.ch input{display:none}
+.ch input[value=yes]:checked+span{color:var(--ok);font-weight:700}.ch input[value=no]:checked+span{color:var(--ng);font-weight:700}.ch input[value=q]:checked+span{color:var(--q);font-weight:700}
+.ch label:has(input:checked){background:#f0f4f1;border-color:#999}
+input.memo,textarea{width:100%;box-sizing:border-box;margin-top:8px;padding:7px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit}
+.add .row{display:grid;grid-template-columns:1fr 1fr 1.4fr auto;gap:6px;margin:6px 0}
+.add .row input{margin:0;padding:7px;border:1px solid var(--line);border-radius:8px;font-size:14px}
+@media(max-width:640px){.add .row{grid-template-columns:1fr}}
+#out{white-space:pre-wrap;background:#fff;border:1px dashed #999;padding:10px;border-radius:8px;font-size:12.5px;display:none}
+</style></head><body><div class="wrap">
+<h1>ランスポ関連サイト 選別チェックリスト</h1>
+<div class="lead">各サイトに「いる／いらない／わからない」を付けてください（プライベートなものは「いらない」）。メモ欄は自由記入。最後に「追加でほしいサイト」を書いて、「結果を保存」を押すとファイルが「ダウンロード」フォルダに保存されます。入力はこのブラウザに自動で残ります。</div>
+<div class="bar"><div class="cnt"><span id="c-yes">いる 0</span><span id="c-no">いらない 0</span><span id="c-q">わからない 0</span><span id="c-none">未選択 0</span></div>
+<button onclick="save()">結果を保存</button><button class="sec" onclick="copyOut()">結果をコピー</button></div>
+<div id="list"></div>
+<h2>追加でほしいサイト</h2>
+<div class="add" id="adds"></div><button class="sec" onclick="addRow()">＋ 行を追加</button>
+<h2>全体メモ</h2><textarea id="gmemo" rows="3" placeholder="気づいたこと・CCへの指示など"></textarea>
+<pre id="out"></pre>
+</div>
+<script>
+const D=[{"cat": "お金", "name": "楽天銀行 事業口座", "use": "入出金の本体", "rows": "—", "login": "記載あり", "cc": "パパCC", "note": ""}, {"cat": "お金", "name": "住信SBI 事業口座", "use": "Square入金先・税金", "rows": "—", "login": "記載あり", "cc": "パパCC", "note": ""}, {"cat": "お金", "name": "MFビジネスカード(事業カード)", "use": "経費・仕入の支払", "rows": "—", "login": "名称のみ", "cc": "パパCC", "note": "仕分のVisa/Masterとの対応は未確認"}, {"cat": "お金", "name": "マネーフォワードクラウド", "use": "カード・銀行の自動連携", "rows": "—", "login": "記載あり", "cc": "パパCC", "note": "使用中か未確認"}, {"cat": "お金", "name": "リアルタイム口座", "use": "ラクマート立替(手数料¥0)", "rows": "—", "login": "記載あり", "cc": "パパCC", "note": ""}, {"cat": "お金", "name": "PayPay", "use": "直販の受取", "rows": "—", "login": "未記載", "cc": "未定", "note": "誰のPayPayか未確認"}, {"cat": "お金", "name": "docomo SMTB(利子税の支払)", "use": "税金の支払", "rows": "—", "login": "未記載", "cc": "パパCC", "note": "証跡がevidenceに1件"}, {"cat": "売る", "name": "メルカリ", "use": "主力販路", "rows": "175", "login": "記載あり", "cc": "パパCC(またはサブ携帯)", "note": ""}, {"cat": "売る", "name": "Yahoo!フリマ", "use": "販路", "rows": "51", "login": "記載あり ・OTP=パパ端末", "cc": "パパCC(またはサブ携帯)", "note": ""}, {"cat": "売る", "name": "リベ市場", "use": "販路", "rows": "33", "login": "記載あり", "cc": "パパCC", "note": ""}, {"cat": "売る", "name": "ラクマ", "use": "販路", "rows": "12", "login": "記載あり ・OTP=パパ端末", "cc": "パパCC(またはサブ携帯)", "note": ""}, {"cat": "売る", "name": "Square(EC・対面)", "use": "EC・カード決済", "rows": "26", "login": "記載あり", "cc": "フジCC", "note": "くみ・ぱぱも各自アカウントあり"}, {"cat": "売る", "name": "LINE公式(RUNSPO)", "use": "問い合わせ・注文窓口", "rows": "—", "login": "未記載", "cc": "くみCC", "note": "リンクタブには内部ボット「Claude C」のみ記載"}, {"cat": "買う", "name": "ラクマート(1688代行)", "use": "中国仕入", "rows": "25", "login": "記載あり", "cc": "フジCC", "note": "10/3に普段のChromeで読めた"}, {"cat": "買う", "name": "Alibaba.com(DunRun)", "use": "中国仕入", "rows": "34", "login": "未記載", "cc": "フジCC", "note": "フジがGoogleで手動ログイン"}, {"cat": "買う", "name": "楽天市場", "use": "YONEX仕入(ノータッチエース等)", "rows": "2", "login": "未記載", "cc": "未定", "note": "誰の楽天IDか未確認"}, {"cat": "買う", "name": "Amazon", "use": "消耗品", "rows": "5", "login": "未記載", "cc": "未定", "note": "誰のアカウントか未確認"}, {"cat": "買う", "name": "EAGNAS / ハセスポ / LARKSショップ", "use": "シャトル仕入", "rows": "12", "login": "未記載", "cc": "未定", "note": "購入サイト・アカウント未確認"}, {"cat": "買う", "name": "しょへさん(YONEX AS)", "use": "YONEX仕入", "rows": "7", "login": "未記載", "cc": "—", "note": "サイトなし=LINEが証拠"}, {"cat": "送る", "name": "ヤマトビジネスメンバーズ", "use": "発送・請求", "rows": "9", "login": "記載あり", "cc": "パパCC", "note": ""}, {"cat": "送る", "name": "日本郵便", "use": "発送・輸入税", "rows": "4", "login": "未記載", "cc": "—", "note": "窓口払い?"}, {"cat": "送る", "name": "UPS(輸入)", "use": "輸入通関・関税", "rows": "2", "login": "未記載", "cc": "フジCC(Gmail経由)", "note": "請求はメールで届く"}, {"cat": "送る", "name": "税関(関空)", "use": "関税・更正請求", "rows": "3", "login": "未記載", "cc": "フジCC(Gmail経由)", "note": "ログイン不要・書類はメール"}, {"cat": "連絡", "name": "Gmail runspo26", "use": "請求書・税関・各サイト通知", "rows": "—", "login": "記載あり", "cc": "フジCC(コネクタ)", "note": ""}, {"cat": "連絡", "name": "Gmail runspo.shuttle", "use": "営業窓口", "rows": "—", "login": "記載あり", "cc": "フジCC(~/bin/gmail)", "note": ""}, {"cat": "連絡", "name": "LINEグループ【売上/経費/共有】", "use": "日々の報告=現行の証拠", "rows": "—", "login": "未記載", "cc": "未定(T7)", "note": "個人LINE"}, {"cat": "広告", "name": "ラクスル", "use": "チラシ印刷", "rows": "—", "login": "未記載", "cc": "未定", "note": "8/1発注・証跡あり"}, {"cat": "広告", "name": "Canva", "use": "チラシ・画像作成", "rows": "—", "login": "未記載", "cc": "未定", "note": "誰のアカウントか未確認"}, {"cat": "広告", "name": "Instagram / X", "use": "SNS", "rows": "—", "login": "記載あり", "cc": "くみCC", "note": ""}, {"cat": "基盤", "name": "Cloudflare", "use": "LINE連携の中継", "rows": "1", "login": "記載あり", "cc": "くみCC", "note": ""}, {"cat": "基盤", "name": "GitHub / Vercel", "use": "チーム頭脳・LP", "rows": "—", "login": "名称のみ", "cc": "全員", "note": ""}, {"cat": "行政", "name": "古物商(警察署)・税務署/e-Tax", "use": "許可・申告", "rows": "—", "login": "未記載", "cc": "パパさん", "note": "サイトより紙中心"}];const KEY='runspo-site-check-v1';
+let st={};try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+st.sel=st.sel||{};st.memo=st.memo||{};st.adds=st.adds||[["","",""]];st.g=st.g||"";
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}count()}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function render(){let h='',cat='';D.forEach((d,i)=>{if(d.cat!==cat){cat=d.cat;h+=`<h2>${esc(cat)}</h2>`}
+const v=st.sel[i]||'';h+=`<div class="item ${v}" id="it${i}"><div class="top"><div><div class="nm">${esc(d.name)}</div>
+<div class="meta">用途: ${esc(d.use)}　／ 仕分の行数: ${esc(d.rows)}　／ ログイン情報: ${esc(d.login)}　／ 担当CC(案): ${esc(d.cc)}${d.note?'　／ '+esc(d.note):''}</div></div>
+<div class="ch">${[['yes','いる'],['no','いらない'],['q','わからない']].map(([k,t])=>`<label><input type="radio" name="r${i}" value="${k}" ${v===k?'checked':''} onchange="pick(${i},'${k}')"><span>${t}</span></label>`).join('')}</div></div>
+<input class="memo" placeholder="メモ（例: これはフジ個人用／くみさんに聞く）" value="${esc(st.memo[i]||'')}" oninput="st.memo[${i}]=this.value;persist()"></div>`});
+document.getElementById('list').innerHTML=h;renderAdds();document.getElementById('gmemo').value=st.g;count()}
+function pick(i,k){st.sel[i]=k;document.getElementById('it'+i).className='item '+k;persist()}
+function renderAdds(){document.getElementById('adds').innerHTML=st.adds.map((a,j)=>`<div class="row">
+<input placeholder="サイト名" value="${esc(a[0])}" oninput="st.adds[${j}][0]=this.value;persist()">
+<input placeholder="用途" value="${esc(a[1])}" oninput="st.adds[${j}][1]=this.value;persist()">
+<input placeholder="メモ（誰のアカウント等）" value="${esc(a[2])}" oninput="st.adds[${j}][2]=this.value;persist()">
+<button class="sec" onclick="st.adds.splice(${j},1);if(!st.adds.length)st.adds.push(['','','']);renderAdds();persist()">削除</button></div>`).join('')}
+function addRow(){st.adds.push(['','','']);renderAdds();persist()}
+document.addEventListener('input',e=>{if(e.target.id==='gmemo'){st.g=e.target.value;persist()}});
+function count(){const c={yes:0,no:0,q:0};D.forEach((d,i)=>{if(st.sel[i])c[st.sel[i]]++});
+document.getElementById('c-yes').textContent='いる '+c.yes;document.getElementById('c-no').textContent='いらない '+c.no;
+document.getElementById('c-q').textContent='わからない '+c.q;document.getElementById('c-none').textContent='未選択 '+(D.length-c.yes-c.no-c.q)}
+function result(){const L={yes:'いる',no:'いらない',q:'わからない'};
+return JSON.stringify({saved:new Date().toISOString(),items:D.map((d,i)=>({name:d.name,choice:L[st.sel[i]]||'未選択',memo:st.memo[i]||''})),adds:st.adds.filter(a=>a.join('').trim()).map(a=>({name:a[0],use:a[1],memo:a[2]})),memo:st.g},null,1)}
+function save(){const b=new Blob([result()],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='サイト選別結果.json';a.click()}
+function copyOut(){const t=result();const o=document.getElementById('out');o.style.display='block';o.textContent=t;
+navigator.clipboard&&navigator.clipboard.writeText(t).catch(()=>{})}
+render();
+</script></body></html>
