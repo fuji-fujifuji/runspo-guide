@@ -1,0 +1,106 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>第5回エリア対抗 運営スケジュール</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* 体育館のコート床の緑に、日付を縦に流すだけの1列。人の色で絞り込む */
+:root{--bg:#f3f7f4;--fg:#14251e;--mut:#55685f;--line:#cfdcd4;--band:#0f4f3e;--band-fg:#f2fbf6;--mark:#ffd54a;--fu:#1f5fbf;--ku:#c8325a;--ta:#8a5a00;--tint:#e2eee7;
+--dsp:"Dela Gothic One","Hiragino Kaku Gothic ProN",sans-serif;--txt:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1714;--fg:#e8f2ed;--mut:#9db0a7;--line:#2a3b34;--band:#123f33;--band-fg:#f2fbf6;--mark:#ffd54a;--fu:#7fb0ff;--ku:#ff8fab;--ta:#e0b050;--tint:#18261f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1714;--fg:#e8f2ed;--mut:#9db0a7;--line:#2a3b34;--band:#123f33;--band-fg:#f2fbf6;--mark:#ffd54a;--fu:#7fb0ff;--ku:#ff8fab;--ta:#e0b050;--tint:#18261f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:400 15px/1.6 var(--txt)}
+.w{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{background:var(--band);color:var(--band-fg);padding-block:24px 20px}
+.ey{margin:0;font-size:13px;opacity:.85}
+h1{font:400 clamp(24px,7vw,32px)/1.3 var(--dsp);margin:4px 0 14px;text-wrap:balance}
+.cd{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0;font-size:14px}
+.cd b{font:400 26px/1 var(--dsp);color:var(--mark);margin:0 3px;font-variant-numeric:tabular-nums}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5;padding-block:10px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:700 14px var(--txt);padding:7px 12px;border-radius:99px;border:1.5px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;min-height:38px}
+.chip small{font-weight:400;margin-left:5px;color:var(--mut)}
+.chip.fu{border-color:var(--fu)}.chip.ku{border-color:var(--ku)}.chip.ta{border-color:var(--ta)}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip[aria-pressed="true"] small{color:inherit}
+.chip:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.kime{padding-block:18px 2px}
+.kime h2,.grp h2{font:700 13px var(--txt);letter-spacing:.06em;color:var(--mut);margin:0 0 8px}
+.kime ul{margin:0;padding:12px 14px;background:var(--tint);border-radius:8px;list-style:none;display:grid;gap:4px}
+.grp{padding-block:18px 0}
+.grp:first-of-type h2{color:var(--fg);font-size:15px}
+ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;padding-block:11px;border-bottom:1px solid var(--line)}
+li[hidden]{display:none}
+.d{font-weight:700;font-variant-numeric:tabular-nums;line-height:1.35}
+.from{display:block;font-weight:400;font-size:12px;color:var(--mut)}
+h3{font:500 15px/1.45 var(--txt);margin:0;overflow-wrap:anywhere}
+.note{margin:2px 0 0;font-size:13px;line-height:1.5;color:var(--mut)}
+.c{display:flex;flex-wrap:wrap;gap:4px 8px;margin-top:6px;align-items:center}
+.p{font-size:13px;font-weight:700}.p.fu{color:var(--fu)}.p.ku{color:var(--ku)}.p.ta{color:var(--ta)}
+.s{font-size:12px;color:var(--mut)}
+.peak{background:var(--tint);margin-inline:-8px;padding-inline:8px}
+.peak h3{font-weight:700}
+footer{padding-block:20px 32px;font-size:12px;color:var(--mut)}
+body{margin:0}*{box-sizing:border-box}</style></head><body>
+<header><div class="w">
+<p class="ey">運営メンバー共有｜11/4時点</p>
+<h1>第5回 愛知エリア対抗 スケジュールとタスク</h1>
+<p class="cd"><span>募集開始まで<b>4</b>日</span><span>大会本番まで<b>79</b>日</span></p>
+</div></header>
+<div class="bar"><div class="w"><div class="chips" role="group" aria-label="担当で絞り込む"><button type="button" class="chip" data-f="" aria-pressed="true">全員</button><button type="button" class="chip fu" data-f="fu" aria-pressed="false">ふじ<small>11件</small></button><button type="button" class="chip ku" data-f="ku" aria-pressed="false">くみ<small>18件</small></button><button type="button" class="chip ta" data-f="ta" aria-pressed="false">たかな<small>15件</small></button></div></div></div>
+<main class="w">
+<section class="kime"><h2>11/3までに決まったこと</h2><ul>
+<li style="display:block;border:0;padding:0">参加費 2,200円で予算組み（72人想定）</li>
+<li style="display:block;border:0;padding:0">各軍へ先着申請。中日本はA・Bを同時に集め、後日振り分け</li>
+<li style="display:block;border:0;padding:0">申請の承認と当日の進行はくみの範囲</li>
+</ul></section>
+<section class="grp"><h2>募集開始まで（〜11/8）</h2><ol>
+<li class="" data-who="fu ku ta"><div class="d">11/7</div><div class="b"><h3>キーマン声掛け</h3><p class="note">前回参加で予告に未リアクションの人へDM。西日本はふじ済（11/3）</p><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span></div></div></li>
+<li class="" data-who="fu ku ta"><div class="d">11/7</div><div class="b"><h3>申請の流れを決める</h3><p class="note">残り4点：運営3人の枠／中日本の範囲／満員時／A・Bの振り分け</p><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span></div></div></li>
+<li class="" data-who="ku"><div class="d">11/7</div><div class="b"><h3>申請の流れの図解</h3><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="" data-who="ku fu"><div class="d"><span class="from">10/19〜</span>11/7</div><div class="b"><h3>募集文</h3><p class="note">投稿はふじ。チーム分けの分かりにくさはここで解消</p><div class="c"><span class="p ku">くみ</span><span class="s">サポ ふじ</span></div></div></li>
+<li class="" data-who="ku"><div class="d"><span class="from">10/19〜</span>11/7</div><div class="b"><h3>選手系・集金系スプシ</h3><p class="note">選手リストはまだ前回のまま</p><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="" data-who="fu ku"><div class="d">11/7</div><div class="b"><h3>チャット作成（大会全体・各軍）</h3><p class="note">観戦・サポのチャットは作成済み（10/27）</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ くみ</span></div></div></li>
+<li class="" data-who="ku"><div class="d">11/7</div><div class="b"><h3>アクセス情報</h3><p class="note">会場・アクセスタブに中村版あり</p><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="" data-who="ta"><div class="d">11/7</div><div class="b"><h3>各軍＋2名でいけるか回答</h3><p class="note">対戦表しだい。ふじから確認中（11/3）。募集文の定員に関わる</p><div class="c"><span class="p ta">たかな</span></div></div></li>
+<li class="peak" data-who="fu"><div class="d">11/8</div><div class="b"><h3>18:00 選手・観戦・コートサポーター募集開始／各軍チャット開放</h3><p class="note">投稿はふじ</p><div class="c"><span class="p fu">ふじ</span></div></div></li>
+<li class="" data-who="ku"><div class="d"><span class="from">11/8〜</span>随時</div><div class="b"><h3>申請の承認</h3><p class="note">分担せず、いったんくみが承認</p><div class="c"><span class="p ku">くみ</span></div></div></li>
+</ol></section>
+<section class="grp"><h2>11月後半</h2><ol>
+<li class="peak" data-who="ku"><div class="d">11/23</div><div class="b"><h3>集金開始</h3><p class="note">参加費2,200円で予算組み</p><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="" data-who="fu ku"><div class="d">11月末</div><div class="b"><h3>会場打ち合わせ＆予約</h3><p class="note">バド会のついで。「2か月前までに打合せ」は要確認</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ くみ</span></div></div></li>
+</ol></section>
+<section class="grp"><h2>12月</h2><ol>
+<li class="" data-who="ta ku"><div class="d"><span class="from">11/8〜</span>12/6</div><div class="b"><h3>各軍協力者の選定</h3><p class="note">西=くみ／東=たかな。団長制なし</p><div class="c"><span class="p ta">たかな</span><span class="s">サポ くみ</span></div></div></li>
+<li class="" data-who="ta"><div class="d">12/6</div><div class="b"><h3>ゲームルール</h3><p class="note">得点は団体勝利ポイントをつける方向</p><div class="c"><span class="p ta">たかな</span></div></div></li>
+<li class="peak" data-who="ta"><div class="d">12/7</div><div class="b"><h3>ゲームルール発表</h3><div class="c"><span class="p ta">たかな</span></div></div></li>
+<li class="" data-who="fu"><div class="d">12/21</div><div class="b"><h3>打上げ会場確保</h3><p class="note">候補：焼肉 あみやき</p><div class="c"><span class="p fu">ふじ</span></div></div></li>
+<li class="" data-who="ku"><div class="d">12/21</div><div class="b"><h3>打上げ集金系スプシ</h3><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="peak" data-who="ku"><div class="d">12/22</div><div class="b"><h3>打上げ参加者募集開始</h3><div class="c"><span class="p ku">くみ</span></div></div></li>
+</ol></section>
+<section class="grp"><h2>1月・本番まで</h2><ol>
+<li class="" data-who="fu ta"><div class="d"><span class="from">11/8〜</span>1/11</div><div class="b"><h3>選手レベルのランク分け</h3><p class="note">パパに協力をお願いする</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ たかな</span></div></div></li>
+<li class="" data-who="fu ta"><div class="d"><span class="from">12/22〜</span>1/11</div><div class="b"><h3>軍オーダー表</h3><div class="c"><span class="p fu">ふじ</span><span class="s">サポ たかな</span></div></div></li>
+<li class="peak" data-who="ku"><div class="d">1/11</div><div class="b"><h3>23:59 選手キャンセル〆切／打上げキャンセル〆切</h3><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="peak" data-who="ta"><div class="d">1/12</div><div class="b"><h3>軍オーダー締切</h3><div class="c"><span class="p ta">たかな</span></div></div></li>
+<li class="" data-who="ku ta"><div class="d"><span class="from">12/7〜</span>1/14</div><div class="b"><h3>当日試合タイムスケジュール</h3><p class="note">当日の進行もくみの範囲</p><div class="c"><span class="p ku">くみ</span><span class="s">サポ たかな</span></div></div></li>
+<li class="" data-who="ku"><div class="d"><span class="from">12/7〜</span>1/14</div><div class="b"><h3>当日タスク表・コートサポーターのシフト</h3><p class="note">シフトの形は12/6までに。サポーター最大20人目安</p><div class="c"><span class="p ku">くみ</span><span class="s">サポ 未定</span></div></div></li>
+<li class="" data-who="ta"><div class="d"><span class="from">1/12〜</span>1/14</div><div class="b"><h3>対戦表</h3><div class="c"><span class="p ta">たかな</span><span class="s">サポ パパ</span></div></div></li>
+<li class="" data-who="ta"><div class="d">1/14</div><div class="b"><h3>得点アプリ</h3><p class="note">管理者の交代・選手交代の反映を本番前に確認</p><div class="c"><span class="p ta">たかな</span></div></div></li>
+<li class="" data-who="fu"><div class="d">1/14</div><div class="b"><h3>シャトル・道具確保</h3><p class="note">シャトルは13本想定</p><div class="c"><span class="p fu">ふじ</span></div></div></li>
+<li class="" data-who="ku"><div class="d">1/14</div><div class="b"><h3>印刷系</h3><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="" data-who="ta"><div class="d">日付未定</div><div class="b"><h3>シャトル6本をくみへ渡す</h3><div class="c"><span class="p ta">たかな</span></div></div></li>
+<li class="peak" data-who="ta"><div class="d">1/15</div><div class="b"><h3>対戦表公開</h3><div class="c"><span class="p ta">たかな</span></div></div></li>
+<li class="peak" data-who="fu ku ta"><div class="d">1/22</div><div class="b"><h3>大会本番（中村スポーツセンター 9:30〜）</h3><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span></div></div></li>
+</ol></section>
+</main>
+<footer class="w">運営スプシ「準備日程・タスク」と運営LINE（11/3まで）から作成。太字の帯は山場。件数はサポと全員タスクを含みます。</footer>
+<script>
+var bs=document.querySelectorAll('.chip'),ls=document.querySelectorAll('.grp li'),gs=document.querySelectorAll('.grp');
+bs.forEach(function(b){b.addEventListener('click',function(){var f=b.dataset.f;
+bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+ls.forEach(function(l){l.hidden=!!f&&l.dataset.who.split(' ').indexOf(f)<0});
+gs.forEach(function(g){g.hidden=!g.querySelector('li:not([hidden])')});});});
+</script>
+</body></html>
