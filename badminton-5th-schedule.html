@@ -4,10 +4,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <style>
 /* 体育館のコート床の緑に、日付を縦に流すだけの1列。人の色で絞り込む */
-:root{--bg:#f3f7f4;--fg:#14251e;--mut:#55685f;--line:#cfdcd4;--band:#0f4f3e;--band-fg:#f2fbf6;--mark:#ffd54a;--fu:#1f5fbf;--ku:#c8325a;--ta:#8a5a00;--tint:#e2eee7;
+:root{--bg:#f3f7f4;--fg:#14251e;--mut:#55685f;--line:#cfdcd4;--band:#0f4f3e;--band-fg:#f2fbf6;--mark:#ffd54a;--fu:#1f5fbf;--ku:#c8325a;--ta:#8a5a00;--tint:#e2eee7;--late:#b3261e;--soon:#8a5a00;
 --dsp:"Dela Gothic One","Hiragino Kaku Gothic ProN",sans-serif;--txt:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1714;--fg:#e8f2ed;--mut:#9db0a7;--line:#2a3b34;--band:#123f33;--band-fg:#f2fbf6;--mark:#ffd54a;--fu:#7fb0ff;--ku:#ff8fab;--ta:#e0b050;--tint:#18261f;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e1714;--fg:#e8f2ed;--mut:#9db0a7;--line:#2a3b34;--band:#123f33;--band-fg:#f2fbf6;--mark:#ffd54a;--fu:#7fb0ff;--ku:#ff8fab;--ta:#e0b050;--tint:#18261f;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1714;--fg:#e8f2ed;--mut:#9db0a7;--line:#2a3b34;--band:#123f33;--band-fg:#f2fbf6;--mark:#ffd54a;--fu:#7fb0ff;--ku:#ff8fab;--ta:#e0b050;--tint:#18261f;--late:#ff8a80;--soon:#ffd54a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1714;--fg:#e8f2ed;--mut:#9db0a7;--line:#2a3b34;--band:#123f33;--band-fg:#f2fbf6;--mark:#ffd54a;--fu:#7fb0ff;--ku:#ff8fab;--ta:#e0b050;--tint:#18261f;--late:#ff8a80;--soon:#ffd54a;color-scheme:dark}
 body{background:var(--bg);color:var(--fg);font:400 15px/1.6 var(--txt)}
 .w{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 header{background:var(--band);color:var(--band-fg);padding-block:24px 20px}
@@ -41,61 +41,53 @@ h3{font:500 15px/1.45 var(--txt);margin:0;overflow-wrap:anywhere}
 .s{font-size:12px;color:var(--mut)}
 .peak{background:var(--tint);margin-inline:-8px;padding-inline:8px}
 .peak h3{font-weight:700}
+.tag{display:inline-block;margin-left:8px;font-size:12px;font-weight:700;padding:0 7px;border-radius:99px;border:1.5px solid currentColor;vertical-align:1px}.tag.late{color:var(--late)}.tag.soon{color:var(--soon)}
+.kime li{display:block;border:0;padding:0}
+.done summary{font:700 14px var(--txt);color:var(--mut);cursor:pointer;padding-block:6px;min-height:38px}
+.done li{padding-block:7px}.done h3{font-size:14px;color:var(--mut)}
 footer{padding-block:20px 32px;font-size:12px;color:var(--mut)}
 body{margin:0}*{box-sizing:border-box}</style></head><body>
 <header><div class="w">
-<p class="ey">運営メンバー共有｜11/4時点</p>
+<p class="ey">運営メンバー共有｜11/19時点</p>
 <h1>第5回 愛知エリア対抗 スケジュールとタスク</h1>
-<p class="cd"><span>募集開始まで<b>4</b>日</span><span>大会本番まで<b>79</b>日</span></p>
+<p class="cd"><span>次の山場「集金開始」まで<b>4</b>日</span><span>大会本番まで<b>64</b>日</span></p>
 </div></header>
-<div class="bar"><div class="w"><div class="chips" role="group" aria-label="担当で絞り込む"><button type="button" class="chip" data-f="" aria-pressed="true">全員</button><button type="button" class="chip fu" data-f="fu" aria-pressed="false">ふじ<small>11件</small></button><button type="button" class="chip ku" data-f="ku" aria-pressed="false">くみ<small>18件</small></button><button type="button" class="chip ta" data-f="ta" aria-pressed="false">たかな<small>15件</small></button></div></div></div>
+<div class="bar"><div class="w"><div class="chips" role="group" aria-label="担当で絞り込む"><button type="button" class="chip" data-f="" aria-pressed="true">全員</button><button type="button" class="chip fu" data-f="fu" aria-pressed="false">ふじ<small>6件</small></button><button type="button" class="chip ku" data-f="ku" aria-pressed="false">くみ<small>11件</small></button><button type="button" class="chip ta" data-f="ta" aria-pressed="false">たかな<small>12件</small></button></div></div></div>
 <main class="w">
-<section class="kime"><h2>11/3までに決まったこと</h2><ul>
-<li style="display:block;border:0;padding:0">参加費 2,200円で予算組み（72人想定）</li>
-<li style="display:block;border:0;padding:0">各軍へ先着申請。中日本はA・Bを同時に集め、後日振り分け</li>
-<li style="display:block;border:0;padding:0">申請の承認と当日の進行はくみの範囲</li>
-</ul></section>
-<section class="grp"><h2>募集開始まで（〜11/8）</h2><ol>
-<li class="" data-who="fu ku ta"><div class="d">11/7</div><div class="b"><h3>キーマン声掛け</h3><p class="note">前回参加で予告に未リアクションの人へDM。西日本はふじ済（11/3）</p><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span></div></div></li>
-<li class="" data-who="fu ku ta"><div class="d">11/7</div><div class="b"><h3>申請の流れを決める</h3><p class="note">残り4点：運営3人の枠／中日本の範囲／満員時／A・Bの振り分け</p><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span></div></div></li>
-<li class="" data-who="ku"><div class="d">11/7</div><div class="b"><h3>申請の流れの図解</h3><div class="c"><span class="p ku">くみ</span></div></div></li>
-<li class="" data-who="ku fu"><div class="d"><span class="from">10/19〜</span>11/7</div><div class="b"><h3>募集文</h3><p class="note">投稿はふじ。チーム分けの分かりにくさはここで解消</p><div class="c"><span class="p ku">くみ</span><span class="s">サポ ふじ</span></div></div></li>
-<li class="" data-who="ku"><div class="d"><span class="from">10/19〜</span>11/7</div><div class="b"><h3>選手系・集金系スプシ</h3><p class="note">選手リストはまだ前回のまま</p><div class="c"><span class="p ku">くみ</span></div></div></li>
-<li class="" data-who="fu ku"><div class="d">11/7</div><div class="b"><h3>チャット作成（大会全体・各軍）</h3><p class="note">観戦・サポのチャットは作成済み（10/27）</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ くみ</span></div></div></li>
-<li class="" data-who="ku"><div class="d">11/7</div><div class="b"><h3>アクセス情報</h3><p class="note">会場・アクセスタブに中村版あり</p><div class="c"><span class="p ku">くみ</span></div></div></li>
-<li class="" data-who="ta"><div class="d">11/7</div><div class="b"><h3>各軍＋2名でいけるか回答</h3><p class="note">対戦表しだい。ふじから確認中（11/3）。募集文の定員に関わる</p><div class="c"><span class="p ta">たかな</span></div></div></li>
-<li class="peak" data-who="fu"><div class="d">11/8</div><div class="b"><h3>18:00 選手・観戦・コートサポーター募集開始／各軍チャット開放</h3><p class="note">投稿はふじ</p><div class="c"><span class="p fu">ふじ</span></div></div></li>
-<li class="" data-who="ku"><div class="d"><span class="from">11/8〜</span>随時</div><div class="b"><h3>申請の承認</h3><p class="note">分担せず、いったんくみが承認</p><div class="c"><span class="p ku">くみ</span></div></div></li>
-</ol></section>
-<section class="grp"><h2>11月後半</h2><ol>
-<li class="peak" data-who="ku"><div class="d">11/23</div><div class="b"><h3>集金開始</h3><p class="note">参加費2,200円で予算組み</p><div class="c"><span class="p ku">くみ</span></div></div></li>
-<li class="" data-who="fu ku"><div class="d">11月末</div><div class="b"><h3>会場打ち合わせ＆予約</h3><p class="note">バド会のついで。「2か月前までに打合せ」は要確認</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ くみ</span></div></div></li>
+<section class="kime"><h2>決まったこと・変わったこと</h2><ul><li>11/8 募集開始。大会info・リベ大バド部・スポ流・東海支部に投稿</li><li>定員は中日本A/B 37名（運営含む）・西日本21名・東日本20名＝78名（募集文）</li><li>参加費は「2,200円前後（後日確定）」で告知</li><li>申請の承認と当日の進行はくみ（11/3）</li></ul></section>
+<section class="grp"><h2>11月</h2><ol>
+<li class="" data-who="ku"><div class="d"><span class="from">11/8〜</span>随時</div><div class="b"><h3>申請の承認</h3><p class="note">分担せず、いったんくみが承認（11/3）</p><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="peak" data-who="ku"><div class="d">11/23</div><div class="b"><h3>集金開始<span class="tag soon">あと4日</span></h3><p class="note">募集文では参加費「2,200円前後（後日確定）」。予算は72人で組んだが、募集の定員は78人（11/8）</p><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="" data-who="fu ku"><div class="d">11/30</div><div class="b"><h3>会場・打上げ 打ち合わせ</h3><p class="note">日程未定。打上げ候補：焼肉 あみやき</p><p class="note">11月末（11/3 ふじ）。「2か月前までに打合せ」が今回も効くなら11/22＝要確認</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ くみ</span></div></div></li>
 </ol></section>
 <section class="grp"><h2>12月</h2><ol>
-<li class="" data-who="ta ku"><div class="d"><span class="from">11/8〜</span>12/6</div><div class="b"><h3>各軍協力者の選定</h3><p class="note">西=くみ／東=たかな。団長制なし</p><div class="c"><span class="p ta">たかな</span><span class="s">サポ くみ</span></div></div></li>
-<li class="" data-who="ta"><div class="d">12/6</div><div class="b"><h3>ゲームルール</h3><p class="note">得点は団体勝利ポイントをつける方向</p><div class="c"><span class="p ta">たかな</span></div></div></li>
+<li class="" data-who="ta ku"><div class="d"><span class="from">11/8〜</span>12/6</div><div class="b"><h3>各軍協力者の選定</h3><p class="note">西=くみ／東=たかな。団長制なし。募集後に選ぶ</p><div class="c"><span class="p ta">たかな</span><span class="s">サポ くみ</span></div></div></li>
+<li class="" data-who="ta"><div class="d">12/6</div><div class="b"><h3>ゲームルール</h3><p class="note">12/7発表。前回は団体戦2セット先取・1部21点。アプリ使用／お手伝いフリー参加</p><div class="c"><span class="p ta">たかな</span></div></div></li>
 <li class="peak" data-who="ta"><div class="d">12/7</div><div class="b"><h3>ゲームルール発表</h3><div class="c"><span class="p ta">たかな</span></div></div></li>
-<li class="" data-who="fu"><div class="d">12/21</div><div class="b"><h3>打上げ会場確保</h3><p class="note">候補：焼肉 あみやき</p><div class="c"><span class="p fu">ふじ</span></div></div></li>
-<li class="" data-who="ku"><div class="d">12/21</div><div class="b"><h3>打上げ集金系スプシ</h3><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="" data-who="fu"><div class="d">12/21</div><div class="b"><h3>打上げ会場確保</h3><p class="note">12/22募集開始</p><div class="c"><span class="p fu">ふじ</span></div></div></li>
+<li class="" data-who="ku"><div class="d">12/21</div><div class="b"><h3>打上げ集金系スプシ</h3><p class="note">12/22 打上げ参加者募集開始に合わせる</p><div class="c"><span class="p ku">くみ</span></div></div></li>
 <li class="peak" data-who="ku"><div class="d">12/22</div><div class="b"><h3>打上げ参加者募集開始</h3><div class="c"><span class="p ku">くみ</span></div></div></li>
 </ol></section>
 <section class="grp"><h2>1月・本番まで</h2><ol>
-<li class="" data-who="fu ta"><div class="d"><span class="from">11/8〜</span>1/11</div><div class="b"><h3>選手レベルのランク分け</h3><p class="note">パパに協力をお願いする</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ たかな</span></div></div></li>
-<li class="" data-who="fu ta"><div class="d"><span class="from">12/22〜</span>1/11</div><div class="b"><h3>軍オーダー表</h3><div class="c"><span class="p fu">ふじ</span><span class="s">サポ たかな</span></div></div></li>
-<li class="peak" data-who="ku"><div class="d">1/11</div><div class="b"><h3>23:59 選手キャンセル〆切／打上げキャンセル〆切</h3><div class="c"><span class="p ku">くみ</span></div></div></li>
-<li class="peak" data-who="ta"><div class="d">1/12</div><div class="b"><h3>軍オーダー締切</h3><div class="c"><span class="p ta">たかな</span></div></div></li>
-<li class="" data-who="ku ta"><div class="d"><span class="from">12/7〜</span>1/14</div><div class="b"><h3>当日試合タイムスケジュール</h3><p class="note">当日の進行もくみの範囲</p><div class="c"><span class="p ku">くみ</span><span class="s">サポ たかな</span></div></div></li>
-<li class="" data-who="ku"><div class="d"><span class="from">12/7〜</span>1/14</div><div class="b"><h3>当日タスク表・コートサポーターのシフト</h3><p class="note">シフトの形は12/6までに。サポーター最大20人目安</p><div class="c"><span class="p ku">くみ</span><span class="s">サポ 未定</span></div></div></li>
-<li class="" data-who="ta"><div class="d"><span class="from">1/12〜</span>1/14</div><div class="b"><h3>対戦表</h3><div class="c"><span class="p ta">たかな</span><span class="s">サポ パパ</span></div></div></li>
-<li class="" data-who="ta"><div class="d">1/14</div><div class="b"><h3>得点アプリ</h3><p class="note">管理者の交代・選手交代の反映を本番前に確認</p><div class="c"><span class="p ta">たかな</span></div></div></li>
-<li class="" data-who="fu"><div class="d">1/14</div><div class="b"><h3>シャトル・道具確保</h3><p class="note">シャトルは13本想定</p><div class="c"><span class="p fu">ふじ</span></div></div></li>
-<li class="" data-who="ku"><div class="d">1/14</div><div class="b"><h3>印刷系</h3><div class="c"><span class="p ku">くみ</span></div></div></li>
-<li class="" data-who="ta"><div class="d">日付未定</div><div class="b"><h3>シャトル6本をくみへ渡す</h3><div class="c"><span class="p ta">たかな</span></div></div></li>
-<li class="peak" data-who="ta"><div class="d">1/15</div><div class="b"><h3>対戦表公開</h3><div class="c"><span class="p ta">たかな</span></div></div></li>
+<li class="peak" data-who="ku"><div class="d">1/11</div><div class="b"><h3>23:59 選手キャンセル〆切／打上げキャンセル〆切</h3><p class="note">前回は1週間前 → 11日前に前倒し</p><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="" data-who="fu ta"><div class="d"><span class="from">11/8〜</span>1/11</div><div class="b"><h3>選手レベルのランク分け</h3><p class="note">各軍に聞ける人を選定して確認。ぱぱしに協力要請</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ たかな</span></div></div></li>
+<li class="" data-who="fu ta"><div class="d"><span class="from">12/22〜</span>1/11</div><div class="b"><h3>軍オーダー表</h3><p class="note">「運営が決めました」ぐらいの曖昧さで</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ たかな</span></div></div></li>
+<li class="peak" data-who="ta"><div class="d">1/12</div><div class="b"><h3>軍オーダー締切</h3><p class="note">確定メンバーでオーダーを組めるようキャンセル〆切の後に</p><div class="c"><span class="p ta">たかな</span></div></div></li>
+<li class="" data-who="ku ta"><div class="d"><span class="from">12/7〜</span>1/14</div><div class="b"><h3>当日試合タイムスケジュール</h3><div class="c"><span class="p ku">くみ</span><span class="s">サポ たかな</span></div></div></li>
+<li class="" data-who="ku"><div class="d"><span class="from">12/7〜</span>1/14</div><div class="b"><h3>当日タスク表・コートサポーターのシフト</h3><p class="note">コートサポーター最大20人目安・シフト制</p><p class="note">ゆうきが運営を抜けたので、サポは未定</p><div class="c"><span class="p ku">くみ</span><span class="s">サポ 未定</span></div></div></li>
+<li class="" data-who="ta"><div class="d"><span class="from">1/12〜</span>1/14</div><div class="b"><h3>対戦表</h3><p class="note">1/15公開</p><div class="c"><span class="p ta">たかな</span><span class="s">サポ ぱぱ</span></div></div></li>
+<li class="" data-who="ta"><div class="d">1/14</div><div class="b"><h3>得点アプリ</h3><p class="note">たかな・ももすけ作成（パパ補助）。管理者の交代・選手交代の反映を本番前に検証</p><div class="c"><span class="p ta">たかな</span></div></div></li>
+<li class="" data-who="fu"><div class="d">1/14</div><div class="b"><h3>シャトル・道具確保</h3><p class="note">シャトル=ふじがニューオフィシャル4箱購入済＋運営在庫17本。買い足しはメルカリ相場から。道具は印刷物・持ち物タブ</p><p class="note">使うのは13本想定（11/3）</p><div class="c"><span class="p fu">ふじ</span></div></div></li>
+<li class="" data-who="ku"><div class="d">1/14</div><div class="b"><h3>印刷系</h3><p class="note">印刷物・持ち物タブ</p><div class="c"><span class="p ku">くみ</span></div></div></li>
+<li class="peak" data-who="ta"><div class="d">1/15</div><div class="b"><h3>対戦表公開</h3><p class="note">前回は6日前(土) → 1週間前(金)</p><div class="c"><span class="p ta">たかな</span></div></div></li>
 <li class="peak" data-who="fu ku ta"><div class="d">1/22</div><div class="b"><h3>大会本番（中村スポーツセンター 9:30〜）</h3><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span></div></div></li>
 </ol></section>
+<section class="grp"><h2>期限未定</h2><ol>
+<li class="" data-who="ta"><div class="d">未定</div><div class="b"><h3>シャトル6本をくみへ渡す</h3><p class="note">精算済み10本のうち、たかなの持ち分（11/3時点で未渡し）</p><div class="c"><span class="p ta">たかな</span></div></div></li>
+</ol></section>
+<section class="grp done"><details><summary>済んだもの 18件</summary><ol><li class="" data-who="fu ku ta"><div class="d">10/8</div><div class="b"><h3>運営MTG （日程・進捗・タスク分担・相談事）</h3><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span></div></div></li><li class="" data-who="ku fu"><div class="d">10/17</div><div class="b"><h3>予告文</h3><div class="c"><span class="p ku">くみ</span><span class="s">サポ ふじ</span></div></div></li><li class="" data-who="ku"><div class="d">10/17</div><div class="b"><h3>アイキャッチ</h3><div class="c"><span class="p ">ゆうき</span><span class="s">サポ くみ</span></div></div></li><li class="" data-who="ku"><div class="d">10/17</div><div class="b"><h3>準備タスク表（このタブ）</h3><div class="c"><span class="p ku">くみ</span></div></div></li><li class="" data-who="fu"><div class="d">10/18</div><div class="b"><h3>予告投稿（スポ流・全国バド部）／応援・コートサポーター募集予告</h3><div class="c"><span class="p fu">ふじ</span></div></div></li><li class="" data-who="fu ku ta"><div class="d">10/25</div><div class="b"><h3>Mtg（※本募集前） 予算、申請の流れ</h3><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span></div></div></li><li class="" data-who="fu ku ta"><div class="d">11/7</div><div class="b"><h3>キーマン声掛け</h3><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span></div></div></li><li class="" data-who="ku fu"><div class="d">11/7</div><div class="b"><h3>募集文</h3><div class="c"><span class="p ku">くみ</span><span class="s">サポ ふじ</span></div></div></li><li class="" data-who="ku"><div class="d">11/7</div><div class="b"><h3>図解作成（仮 ｜申請の流れ</h3><div class="c"><span class="p ku">くみ</span></div></div></li><li class="" data-who="ku"><div class="d">11/7</div><div class="b"><h3>選手系・集金系スプシ</h3><div class="c"><span class="p ku">くみ</span></div></div></li><li class="" data-who="fu ku"><div class="d">11/7</div><div class="b"><h3>チャット作成（大会全体・各軍・観戦／コートサポーター）</h3><div class="c"><span class="p fu">ふじ</span><span class="s">サポ くみ</span></div></div></li><li class="" data-who="ku"><div class="d">11/7</div><div class="b"><h3>チャット概要欄編集（大会全体・各軍・観戦／コートサポーター）</h3><div class="c"><span class="p ku">くみ</span></div></div></li><li class="" data-who="ku"><div class="d">11/7</div><div class="b"><h3>チャット「テンプレート」編集（大会全体・各軍・観戦／コートサポーター）</h3><div class="c"><span class="p ku">くみ</span></div></div></li><li class="" data-who="ku"><div class="d">11/7</div><div class="b"><h3>チャット「最初の投稿」編集（大会全体・各軍・観戦／コートサポーター）</h3><div class="c"><span class="p ku">くみ</span></div></div></li><li class="" data-who="ku"><div class="d">11/7</div><div class="b"><h3>アクセス情報（選手info、観戦、キャン待ち）</h3><div class="c"><span class="p ku">くみ</span></div></div></li><li class="" data-who="fu ku"><div class="d">11/8</div><div class="b"><h3>18:00 選手・観戦・コートサポーター募集開始／各軍チャット開放</h3><div class="c"><span class="p fu">ふじ</span><span class="s">サポ くみ</span></div></div></li><li class="" data-who="fu ku ta"><div class="d">未定</div><div class="b"><h3>参加費決め（予算仮試算）</h3><div class="c"><span class="p fu">ふじ</span><span class="s">サポ 全員</span></div></div></li><li class="" data-who="fu ku ta"><div class="d">未定</div><div class="b"><h3>申請の流れ確認</h3><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span></div></div></li></ol></details></section>
 </main>
-<footer class="w">運営スプシ「準備日程・タスク」と運営LINE（11/3まで）から作成。太字の帯は山場。件数はサポと全員タスクを含みます。</footer>
+<footer class="w">運営スプシ「準備日程・タスク」から自動で作成（11/19時点）。済・担当・期限を直す時はスプシへ→作り直すと同じURLのまま新しくなります。色の帯は山場。件数はサポと全員タスクを含みます。</footer>
 <script>
 var bs=document.querySelectorAll('.chip'),ls=document.querySelectorAll('.grp li'),gs=document.querySelectorAll('.grp');
 bs.forEach(function(b){b.addEventListener('click',function(){var f=b.dataset.f;
