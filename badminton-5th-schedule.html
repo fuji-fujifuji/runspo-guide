@@ -196,7 +196,7 @@ function item(m,orph){
   var mine=m.who===g('who')&&m.st!=='ok';
   return '<div class="mi '+c+'" data-mid="'+esc(m.mid)+'">'+(orph?'<div class="ot">もとのタスク：'+esc(m.title)+'</div>':'')+
     '<span class="k">'+k[0]+'</span>'+body+
-    '<div class="mf"><b class="mw '+c+'">'+esc(m.who)+'</b><span>'+esc(m.at)+(m.eat?'（'+esc(m.eat)+' 直した）':'')+'</span>'+s+
+    '<div class="mf"><b class="mw '+c+'">'+esc(m.who)+'</b>'+(m.src==='line'?'<span>LINEから</span>':'')+'<span>'+esc(m.at)+(m.eat?'（'+esc(m.eat)+' 直した）':'')+'</span>'+s+
     (mine?'<button type="button" class="lk" data-ed>直す</button><button type="button" class="lk" data-del>消す</button>':'')+'</div>'+
     (m.st==='ok'?'<div class="rp">🤖 CC（'+esc(m.rat)+'）：'+esc(m.reply||'反映しました')+'</div>':'')+'</div>';
 }
