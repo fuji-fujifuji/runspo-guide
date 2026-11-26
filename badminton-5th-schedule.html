@@ -61,7 +61,6 @@ button{font-family:var(--txt)}
 .sw,.sk{font-weight:700;padding:0 7px;border-radius:99px;border:1.5px solid currentColor}.sw{color:var(--soon)}.sk{color:var(--ok)}
 .lk{background:none;border:0;padding:6px 4px;margin:-6px 0;color:var(--mut);text-decoration:underline;font-size:12px;cursor:pointer}
 .lk.warn{color:var(--late);font-weight:700}
-.tag.ok{color:var(--ok)}.ovdone h3{color:var(--mut)}.ovdone h3 .tag.late,.ovdone h3 .tag.soon{display:none}
 .rp{margin-top:4px;padding-top:4px;border-top:1px dashed var(--line);font-size:13px;color:var(--ok)}
 .more{justify-self:start;background:none;border:0;padding:4px 0;color:var(--mut);text-decoration:underline;font-size:13px;cursor:pointer}
 .mst{margin:14px 0 0;padding:10px 12px;border-radius:8px;border:1.5px solid var(--line);font-size:14px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
@@ -85,49 +84,52 @@ button{font-family:var(--txt)}
 .pn input[type=date]{font:16px var(--txt);padding:6px 8px;border:1.5px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}
 .ok{color:var(--ok);font-weight:700;font-size:13px}
 .mb:focus-visible,.nb:focus-visible,.kb:focus-visible,.btn:focus-visible,.lk:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.tag.ok{color:var(--ok)}.tag.warn{color:var(--late)}.tag.chk{color:var(--chk)}
+:root{--chk:#a14b00;--lateb:#fbe4e2;--soonb:#fdf1d0;--chkb:#fbe9d7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--chk:#ffb066;--lateb:#3a1d1b;--soonb:#352c12;--chkb:#3a2614}}
+:root[data-theme="dark"]{--chk:#ffb066;--lateb:#3a1d1b;--soonb:#352c12;--chkb:#3a2614}
+.bar .w{display:flex;align-items:center;gap:8px}.chips{flex:1}
+.rl{flex:none;font-size:18px;width:42px;height:38px;border-radius:99px;border:1.5px solid var(--line);background:transparent;color:var(--mut);cursor:pointer}
+.note.chk{color:var(--chk);font-weight:700}
+li.risk{box-shadow:inset 3px 0 0 var(--late);padding-left:8px;margin-left:-8px}
+li.hl{animation:hl 1.6s ease-out}@keyframes hl{0%{background:var(--mark)}100%{background:transparent}}
+.al{margin:14px 0 0;padding:10px 12px;border-radius:10px;border:1.5px solid var(--late);background:var(--card)}
+.al.calm{border-color:var(--line)}.al h2{font:700 14px var(--txt);margin:0 0 6px}.al.calm h2{margin:0;color:var(--ok)}
+.al ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}.al li{display:block;border:0;padding:0;font-size:14px;line-height:1.55}
+.al a{color:inherit;text-decoration:underline}.al li.r{color:var(--late)}.al li.w{color:var(--late)}.al li.k{color:var(--chk)}
+.me,.grid{margin:14px 0 0;padding:12px;border-radius:10px;background:var(--card);border:1.5px solid var(--line)}
+.me h2,.grid h2{font:700 15px var(--txt);margin:0 0 8px}.grid h2 small{font-weight:400;font-size:12px;color:var(--mut)}
+.mts{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px}
+.mt{border-radius:8px;padding:8px 10px;font-size:13px;font-weight:700}.mt b{display:block;font:400 28px/1.1 var(--dsp)}
+.mt.r{background:var(--lateb);color:var(--late)}.mt.y{background:var(--soonb);color:var(--soon)}.mt.k{background:var(--chkb);color:var(--chk)}
+.mxs{display:grid;gap:6px;margin-top:10px}
+.mx{display:block;width:100%;text-align:left;font:700 16px/1.45 var(--txt);padding:9px 10px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer}
+.mx .md{display:inline-block;min-width:3.2em;font-variant-numeric:tabular-nums;color:var(--mut)}.mx em{font-style:normal;font-size:13px;color:var(--soon);margin-left:4px}.mx em.r{color:var(--late)}.mx em.k{color:var(--chk)}
+.calmtx{margin:10px 0 0;font-size:15px}
+.grid table{width:100%;border-collapse:separate;border-spacing:4px;table-layout:fixed}
+.grid th{font-size:13px;font-weight:700;color:var(--mut);text-align:left;padding:0 2px}.grid th.fu{color:var(--fu)}.grid th.ku{color:var(--ku)}.grid th.ta{color:var(--ta)}
+.grid tr th:first-child{width:7em}
+.cell{width:100%;height:38px;border-radius:6px;border:1px solid var(--line);background:transparent;color:var(--fg);font:400 18px var(--dsp);cursor:pointer}
+.cell.v1{background:var(--c1)}.cell.v2{background:var(--c2)}.cell.v3{background:var(--c3);color:var(--c3f)}
+:root{--c1:rgba(15,111,79,.16);--c2:rgba(15,111,79,.38);--c3:rgba(15,79,62,.85);--c3f:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c1:rgba(111,211,168,.16);--c2:rgba(111,211,168,.38);--c3:#6fd3a8;--c3f:#0e1714}}
+:root[data-theme="dark"]{--c1:rgba(111,211,168,.16);--c2:rgba(111,211,168,.38);--c3:#6fd3a8;--c3f:#0e1714}
+.me[hidden],.grid[hidden]{display:none}
+.mx:focus-visible,.cell:focus-visible,.rl:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
 body{margin:0}*{box-sizing:border-box}</style></head><body>
 <header><div class="w">
-<p class="ey">運営メンバー共有｜11/26時点</p>
+<p class="ey">運営メンバー共有｜<span id="built"></span>時点のスプシから</p>
 <h1>第5回 愛知エリア対抗 スケジュールとタスク</h1>
-<p class="cd"><span>次の山場「ゲームルール発表」まで<b>11</b>日</span><span>大会本番まで<b>57</b>日</span></p>
+<p class="cd" id="cd"></p>
 </div></header>
-<div class="bar"><div class="w"><div class="chips" role="group" aria-label="担当で絞り込む"><button type="button" class="chip" data-f="" aria-pressed="true">全員</button><button type="button" class="chip fu" data-f="fu" aria-pressed="false">ふじ<small>7件</small></button><button type="button" class="chip ku" data-f="ku" aria-pressed="false">くみ<small>12件</small></button><button type="button" class="chip ta" data-f="ta" aria-pressed="false">たかな<small>13件</small></button></div></div></div>
+<div class="bar"><div class="w"><div class="chips" id="chips" role="group" aria-label="だれの分を見る"></div><button type="button" class="rl" id="rl" title="最新にする" aria-label="最新にする">🔁</button></div></div>
 <main class="w">
 <div class="mst" id="mst" aria-live="polite"></div>
-<section class="kime"><h2>決まったこと・変わったこと</h2><ul><li>選手72人がそろった（11/19）。各軍チャットの人数は運営がだぶって入っている分を含む</li><li>参加費は2,200円で確定（11/19）</li><li>打上げは今月末に、ふじが会場へ下見・予約</li><li>11/8 募集開始。大会info・リベ大バド部・スポ流・東海支部に投稿</li><li>当日の進行はくみ（11/3）</li></ul></section>
-<section class="grp"><h2>11月</h2><ol>
-<li class="peak" data-who="ku" data-tid="f74809bbf0" data-title="集金開始" data-due="2026-11-23" data-row="23"><div class="d">11/23</div><div class="b"><h3>集金開始<span class="tag late">期限切れ</span></h3><p class="note">参加費2,200円（11/19 確定）</p><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="fu" data-tid="843f51cd0f" data-title="打上げ会場確保" data-due="2026-11-30" data-row="27"><div class="d">11/30</div><div class="b"><h3>打上げ会場確保<span class="tag soon">あと4日</span></h3><p class="note">12/22募集開始。今月末に会場へ下見・予約（ふじ 11/19）</p><div class="c"><span class="p fu">ふじ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="fu ku" data-tid="ff4e3778b5" data-title="会場・打上げ 打ち合わせ" data-due="2026-11-30" data-row="44"><div class="d">11/30</div><div class="b"><h3>会場・打上げ 打ち合わせ<span class="tag soon">あと4日</span></h3><p class="note">日程未定。打上げ候補：焼肉 あみやき</p><p class="note">11月末（11/3 ふじ）。「2か月前までに打合せ」が今回も効くなら11/22＝要確認</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-</ol></section>
-<section class="grp"><h2>12月</h2><ol>
-<li class="" data-who="ta ku" data-tid="77c4c5a419" data-title="各軍協力者の選定" data-due="2026-12-06" data-row="24"><div class="d"><span class="from">11/8〜</span>12/6</div><div class="b"><h3>各軍協力者の選定</h3><p class="note">西=くみ／東=たかな。団長制なし。募集後に選ぶ</p><div class="c"><span class="p ta">たかな</span><span class="s">サポ くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="ta" data-tid="2bb96b40e1" data-title="ゲームルール" data-due="2026-12-06" data-row="25"><div class="d">12/6</div><div class="b"><h3>ゲームルール</h3><p class="note">12/7発表。前回は団体戦2セット先取・1部21点。アプリ使用／お手伝いフリー参加</p><div class="c"><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="peak" data-who="ta" data-tid="af521af9a7" data-title="ゲームルール発表" data-due="2026-12-07" data-row="26"><div class="d">12/7</div><div class="b"><h3>ゲームルール発表</h3><div class="c"><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="ku" data-tid="0510d281a2" data-title="打上げ集金系スプシ" data-due="2026-12-21" data-row="28"><div class="d">12/21</div><div class="b"><h3>打上げ集金系スプシ</h3><p class="note">12/22 打上げ参加者募集開始に合わせる</p><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="peak" data-who="ku" data-tid="68080ad3fc" data-title="打上げ参加者募集開始" data-due="2026-12-22" data-row="29"><div class="d">12/22</div><div class="b"><h3>打上げ参加者募集開始</h3><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-</ol></section>
-<section class="grp"><h2>1月・本番まで</h2><ol>
-<li class="peak" data-who="ku" data-tid="9712a237f4" data-title="23:59 選手キャンセル〆切／打上げキャンセル〆切" data-due="2027-01-11" data-row="30"><div class="d">1/11</div><div class="b"><h3>23:59 選手キャンセル〆切／打上げキャンセル〆切</h3><p class="note">前回は1週間前 → 11日前に前倒し</p><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="fu ta" data-tid="f56029898c" data-title="選手レベルのランク分け" data-due="2027-01-11" data-row="31"><div class="d"><span class="from">11/8〜</span>1/11</div><div class="b"><h3>選手レベルのランク分け</h3><p class="note">各軍に聞ける人を選定して確認。ぱぱしに協力要請。西=ふじ／東=たかな。各軍のサポートの方にもアプリを配って順位を動かしてもらう（ふじ 11/19）</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="fu ta" data-tid="6993d9ab2e" data-title="軍オーダー表" data-due="2027-01-11" data-row="34"><div class="d"><span class="from">12/22〜</span>1/11</div><div class="b"><h3>軍オーダー表</h3><p class="note">「運営が決めました」ぐらいの曖昧さで</p><div class="c"><span class="p fu">ふじ</span><span class="s">サポ たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="peak" data-who="ta" data-tid="0dbf2b85de" data-title="軍オーダー締切" data-due="2027-01-12" data-row="35"><div class="d">1/12</div><div class="b"><h3>軍オーダー締切</h3><p class="note">確定メンバーでオーダーを組めるようキャンセル〆切の後に</p><div class="c"><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="ku ta" data-tid="f094e439fa" data-title="当日試合タイムスケジュール" data-due="2027-01-14" data-row="36"><div class="d"><span class="from">12/7〜</span>1/14</div><div class="b"><h3>当日試合タイムスケジュール</h3><div class="c"><span class="p ku">くみ</span><span class="s">サポ たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="ku" data-tid="8f20045d87" data-title="当日タスク表・コートサポーターのシフト" data-due="2027-01-14" data-row="37"><div class="d"><span class="from">12/7〜</span>1/14</div><div class="b"><h3>当日タスク表・コートサポーターのシフト</h3><p class="note">コートサポーター最大20人目安・シフト制</p><p class="note">ゆうきが運営を抜けたので、サポは未定</p><div class="c"><span class="p ku">くみ</span><span class="s">サポ 未定</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="ta" data-tid="f21a73b437" data-title="対戦表" data-due="2027-01-14" data-row="38"><div class="d"><span class="from">1/12〜</span>1/14</div><div class="b"><h3>対戦表</h3><p class="note">1/15公開</p><div class="c"><span class="p ta">たかな</span><span class="s">サポ ぱぱ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="ta" data-tid="0f1ad0039c" data-title="得点アプリ" data-due="2027-01-14" data-row="39"><div class="d">1/14</div><div class="b"><h3>得点アプリ</h3><p class="note">たかな・ももすけ作成（パパ補助）。管理者の交代・選手交代の反映を本番前に検証</p><div class="c"><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="fu" data-tid="b5a1b51c29" data-title="シャトル・道具確保" data-due="2027-01-14" data-row="40"><div class="d">1/14</div><div class="b"><h3>シャトル・道具確保</h3><p class="note">シャトル=ふじがニューオフィシャル4箱購入済＋運営在庫17本。買い足しはメルカリ相場から。道具は印刷物・持ち物タブ</p><p class="note">使うのは13本想定（11/3）</p><div class="c"><span class="p fu">ふじ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="ku" data-tid="316a2428d0" data-title="印刷系" data-due="2027-01-14" data-row="41"><div class="d">1/14</div><div class="b"><h3>印刷系</h3><p class="note">印刷物・持ち物タブ</p><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="peak" data-who="ta" data-tid="bb375d4fc5" data-title="対戦表公開" data-due="2027-01-15" data-row="42"><div class="d">1/15</div><div class="b"><h3>対戦表公開</h3><p class="note">前回は6日前(土) → 1週間前(金)</p><div class="c"><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="peak" data-who="fu ku ta" data-tid="5598b96319" data-title="大会本番（中村スポーツセンター 9:30〜）" data-due="2027-01-22" data-row="43"><div class="d">1/22</div><div class="b"><h3>大会本番（中村スポーツセンター 9:30〜）</h3><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-</ol></section>
-<section class="grp"><h2>期限なし</h2><ol>
-<li class="" data-who="fu ku ta" data-tid="5053544eb3" data-title="中日本のA/B分け" data-due="" data-row="32"><div class="d">なし</div><div class="b"><h3>中日本のA/B分け</h3><p class="note">メンバー72人そろった後に運営で分ける（ランキングでは分けない・11/7）</p><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="ku" data-tid="b390d2ba3a" data-title="キャンセル待ちの確保" data-due="" data-row="33"><div class="d">なし</div><div class="b"><h3>キャンセル待ちの確保</h3><p class="note">キャンセル待ちチャットあり（11/8 開設）</p><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-<li class="" data-who="ta" data-tid="bbcce6808f" data-title="シャトル6本をくみへ渡す" data-due=""><div class="d">なし</div><div class="b"><h3>シャトル6本をくみへ渡す</h3><p class="note">精算済み10本のうち、たかなの持ち分（11/3時点で未渡し）</p><div class="c"><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>
-</ol></section>
-<section class="grp all"><h2>ほかの依頼・全体メモ</h2><ol><li data-who="fu ku ta" data-tid="_all" data-title="全体" data-due=""><div class="d">全体</div><div class="b"><h3>新しいタスクを足して、など</h3><p class="note">どのタスクにも当たらない依頼・メモはここへ</p><div class="c"><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li></ol></section>
-<section class="grp done"><details><summary>済んだもの 19件</summary><ol><li class="" data-who="fu ku ta" data-tid="15aec7caad" data-title="運営MTG （日程・進捗・タスク分担・相談事）" data-due="2026-10-08" data-row="5"><div class="d">10/8</div><div class="b"><h3>運営MTG （日程・進捗・タスク分担・相談事）</h3><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="ku fu" data-tid="3309666d50" data-title="予告文" data-due="2026-10-17" data-row="6"><div class="d">10/17</div><div class="b"><h3>予告文</h3><div class="c"><span class="p ku">くみ</span><span class="s">サポ ふじ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="ku" data-tid="696afbd580" data-title="アイキャッチ" data-due="2026-10-17" data-row="7"><div class="d">10/17</div><div class="b"><h3>アイキャッチ</h3><div class="c"><span class="p ">ゆうき</span><span class="s">サポ くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="ku" data-tid="5d5be0f08e" data-title="準備タスク表（このタブ）" data-due="2026-10-17" data-row="8"><div class="d">10/17</div><div class="b"><h3>準備タスク表（このタブ）</h3><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="fu" data-tid="d83ea5268e" data-title="予告投稿（スポ流・全国バド部）／応援・コートサポーター募集予告" data-due="2026-10-18" data-row="9"><div class="d">10/18</div><div class="b"><h3>予告投稿（スポ流・全国バド部）／応援・コートサポーター募集予告</h3><div class="c"><span class="p fu">ふじ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="fu ku ta" data-tid="cba4976b4f" data-title="Mtg（※本募集前） 予算、申請の流れ" data-due="2026-10-25" data-row="10"><div class="d">10/25</div><div class="b"><h3>Mtg（※本募集前） 予算、申請の流れ</h3><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="fu ku ta" data-tid="e65c61ecdb" data-title="キーマン声掛け" data-due="2026-11-07" data-row="11"><div class="d">11/7</div><div class="b"><h3>キーマン声掛け</h3><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="ku fu" data-tid="d27c4e764f" data-title="募集文" data-due="2026-11-07" data-row="14"><div class="d">11/7</div><div class="b"><h3>募集文</h3><div class="c"><span class="p ku">くみ</span><span class="s">サポ ふじ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="ku" data-tid="d2a44dec22" data-title="図解作成（仮 ｜申請の流れ" data-due="2026-11-07" data-row="15"><div class="d">11/7</div><div class="b"><h3>図解作成（仮 ｜申請の流れ</h3><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="ku" data-tid="600868a032" data-title="選手系・集金系スプシ" data-due="2026-11-07" data-row="16"><div class="d">11/7</div><div class="b"><h3>選手系・集金系スプシ</h3><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="fu ku" data-tid="0cd5a55b35" data-title="チャット作成（大会全体・各軍・観戦／コートサポーター）" data-due="2026-11-07" data-row="17"><div class="d">11/7</div><div class="b"><h3>チャット作成（大会全体・各軍・観戦／コートサポーター）</h3><div class="c"><span class="p fu">ふじ</span><span class="s">サポ くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="ku" data-tid="99a12f59a9" data-title="チャット概要欄編集（大会全体・各軍・観戦／コートサポーター）" data-due="2026-11-07" data-row="18"><div class="d">11/7</div><div class="b"><h3>チャット概要欄編集（大会全体・各軍・観戦／コートサポーター）</h3><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="ku" data-tid="00fe223925" data-title="チャット「テンプレート」編集（大会全体・各軍・観戦／コートサポーター）" data-due="2026-11-07" data-row="19"><div class="d">11/7</div><div class="b"><h3>チャット「テンプレート」編集（大会全体・各軍・観戦／コートサポーター）</h3><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="ku" data-tid="dc953b80ce" data-title="チャット「最初の投稿」編集（大会全体・各軍・観戦／コートサポーター）" data-due="2026-11-07" data-row="20"><div class="d">11/7</div><div class="b"><h3>チャット「最初の投稿」編集（大会全体・各軍・観戦／コートサポーター）</h3><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="ku" data-tid="64a6876f08" data-title="アクセス情報（選手info、観戦、キャン待ち）" data-due="2026-11-07" data-row="21"><div class="d">11/7</div><div class="b"><h3>アクセス情報（選手info、観戦、キャン待ち）</h3><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="fu ku" data-tid="e72cf2ecad" data-title="18:00 選手・観戦・コートサポーター募集開始／各軍チャット開放" data-due="2026-11-08" data-row="22"><div class="d">11/8</div><div class="b"><h3>18:00 選手・観戦・コートサポーター募集開始／各軍チャット開放</h3><div class="c"><span class="p fu">ふじ</span><span class="s">サポ くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="ku" data-tid="692a5bd42a" data-title="申請の承認（72人そろった）" data-due="2026-11-19"><div class="d">11/19</div><div class="b"><h3>申請の承認（72人そろった）</h3><div class="c"><span class="p ku">くみ</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="fu ku ta" data-tid="af9784c39d" data-title="参加費決め（予算仮試算）" data-due="" data-row="12"><div class="d">なし</div><div class="b"><h3>参加費決め（予算仮試算）</h3><div class="c"><span class="p fu">ふじ</span><span class="s">サポ 全員</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li><li class="" data-who="fu ku ta" data-tid="ce2802abc9" data-title="申請の流れ確認" data-due="" data-row="13"><div class="d">なし</div><div class="b"><h3>申請の流れ確認</h3><div class="c"><span class="p fu">ふじ</span><span class="p ku">くみ</span><span class="p ta">たかな</span><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li></ol></details></section>
+<section class="me" id="me" hidden></section>
+<section class="grid" id="grid" hidden></section>
+<section class="al" id="al"></section>
+<section class="kime"><h2>決まったこと・変わったこと</h2><ul id="kime"></ul></section>
+<div id="list"></div>
 <div class="pn" id="pn" hidden>
  <div class="row" id="pgate"><span class="lbl">合言葉（運営メンバーだけ・最初の1回）</span><span class="gate"><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" data-pw><button type="button" class="btn" data-go>入る</button><span class="er" data-er></span></span></div>
  <div class="row" id="pnm"><span class="lbl">書く人</span><button type="button" class="nb fu" data-n="ふじ">ふじ</button><button type="button" class="nb ku" data-n="くみ">くみ</button><button type="button" class="nb ta" data-n="たかな">たかな</button><label class="nb" data-n=""><input type="text" placeholder="ほかの名前" maxlength="20" id="pother"></label></div>
@@ -138,18 +140,11 @@ body{margin:0}*{box-sizing:border-box}</style></head><body>
  <div class="row"><button type="button" class="btn" id="psv">保存</button><button type="button" class="btn sub" id="pcx">やめる</button><span class="er" id="per"></span></div>
 </div>
 </main>
-<footer class="w">運営スプシ「準備日程・タスク」から自動で作成（11/26時点）。済・担当・期限を変えたい時は、そのタスクの「📝 メモ・CCへ」から「✅ 終わった」「📅 日付を変える」「✏️ 直して」を送る→ふじかくみがCCに「バドのタスク反映して」と言うと、CCがスプシを直し、このページにもすぐ出ます（同じURLのまま）。メモは運営メンバーだけが見られます（合言葉）。色の帯は山場。件数はサポと全員タスクを含みます。</footer>
+<footer class="w">運営スプシ「準備日程・タスク」から作成（<span id="ft"></span>時点）。右上の🔁で最新に。済・期限を変えたい時は、そのタスクの「📝 メモ・CCへ」から「✅ 終わった」「📅 日付を変える」「✏️ 直して」を送る→ふじかくみのCCがスプシに入れます（「バドのタスク反映して」）。⚠️要確認＝中身が食い違っている所。⚠️危ない＝期限まで10日以内なのに未着手、または前のタスクが遅れている。人のボタンの件数はサポと全員タスクを含みます（マス目は主担当だけ）。メモは運営メンバーだけが見られます（合言葉）。</footer>
 <script>
-var bs=document.querySelectorAll('.chip'),ls=document.querySelectorAll('.grp li'),gs=document.querySelectorAll('.grp');
-bs.forEach(function(b){b.addEventListener('click',function(){var f=b.dataset.f;
-bs.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
-ls.forEach(function(l){l.hidden=!!f&&l.dataset.who.split(' ').indexOf(f)<0});
-gs.forEach(function(g){g.hidden=!g.querySelector('li:not([hidden])')});});});
-</script>
-<script>
-/* メモ・CCへの依頼(保存先=Cloudflare bado5-task・読むのも書くのも合言葉が要る) */
+/* メモ・CCへの依頼(保存先=Cloudflare bado5-task・読むのも書くのも合言葉が要る)＋v4 画面を描く */
 (function(){
-var API='https://bado5-task.runspo26.workers.dev',BUILT=1795680762895;
+var API='https://bado5-task.runspo26.workers.dev',BUILT=1795698682005;
 var P={'ふじ':'fu','くみ':'ku','たかな':'ta'};
 var KD={memo:['💬 メモ','みんなが見られるメモです（CCは何もしません）','例：会場に電話した。返事待ち'],
  prog:['🔄 進んだ','どこまで進んだか（CCは何もしません）','例：候補を3つにしぼった'],
@@ -167,6 +162,119 @@ function esc(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){retur
 function md(iso){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||'');return m?(+m[2])+'/'+(+m[3]):''}
 function $(id){return document.getElementById(id)}
 var ovr={},pn=$('pn'),mst=$('mst'),memos=[],loadedAt='',st={li:null,kind:'memo',edit:null},openMore={},busy=false;
+/* v4 画面を描く(開いた日で毎回計算)。データ=D(スプシから build.py が作る) */
+var D={"tasks": [{"tid": "15aec7caad", "row": 5, "title": "運営MTG （日程・進捗・タスク分担・相談事）", "kind": "タスク", "main": "全員", "sup": "全員", "st": "完了", "start": "10/8", "due": "10/8", "done": true, "memo": "10/18予告の前に実施（ふじ 10/5）。候補日はたかな・ゆうきに合わせる", "note": "", "check": ""}, {"tid": "3309666d50", "row": 6, "title": "予告文", "kind": "タスク", "main": "くみ", "sup": "ふじ", "st": "完了", "start": "10/8", "due": "10/17", "done": true, "memo": "予告が10/22→10/18に前倒し。投稿フロー（ホーム）で", "note": "", "check": ""}, {"tid": "696afbd580", "row": 7, "title": "アイキャッチ", "kind": "タスク", "main": "ゆうき", "sup": "くみ", "st": "完了", "start": "10/5", "due": "10/17", "done": true, "memo": "アイキャッチ=ゆうき・はなぽん", "note": "", "check": ""}, {"tid": "5d5be0f08e", "row": 8, "title": "準備タスク表（このタブ）", "kind": "タスク", "main": "くみ", "sup": "", "st": "完了", "start": "10/5", "due": "10/17", "done": true, "memo": "担当は10/8 ふじ「担当決め」で確定。期限はMTGで確定", "note": "", "check": ""}, {"tid": "d83ea5268e", "row": 9, "title": "予告投稿（スポ流・全国バド部）／応援・コートサポーター募集予告", "kind": "山場", "main": "ふじ", "sup": "", "st": "完了", "start": "10/18", "due": "10/18", "done": true, "memo": "", "note": "", "check": ""}, {"tid": "cba4976b4f", "row": 10, "title": "Mtg（※本募集前） 予算、申請の流れ", "kind": "タスク", "main": "全員", "sup": "", "st": "完了", "start": "", "due": "10/25", "done": true, "memo": "", "note": "", "check": ""}, {"tid": "e65c61ecdb", "row": 11, "title": "キーマン声掛け", "kind": "タスク", "main": "全員", "sup": "", "st": "完了", "start": "", "due": "11/7", "done": true, "memo": "東_たかな・りさ／西_かわけん・サウナ？・女性陣も／東海_もろもろ", "note": "", "check": ""}, {"tid": "af9784c39d", "row": 12, "title": "参加費決め（予算仮試算）", "kind": "タスク", "main": "ふじ", "sup": "全員", "st": "完了", "start": "", "due": "", "done": true, "memo": "", "note": "", "check": ""}, {"tid": "ce2802abc9", "row": 13, "title": "申請の流れ確認", "kind": "タスク", "main": "全員", "sup": "", "st": "完了", "start": "", "due": "", "done": true, "memo": "", "note": "", "check": ""}, {"tid": "d27c4e764f", "row": 14, "title": "募集文", "kind": "タスク", "main": "くみ", "sup": "ふじ", "st": "完了", "start": "10/19", "due": "11/7", "done": true, "memo": "投稿はふじ", "note": "", "check": ""}, {"tid": "d2a44dec22", "row": 15, "title": "図解作成（仮 ｜申請の流れ", "kind": "タスク", "main": "くみ", "sup": "", "st": "完了", "start": "11/7", "due": "11/7", "done": true, "memo": "", "note": "", "check": ""}, {"tid": "600868a032", "row": 16, "title": "選手系・集金系スプシ", "kind": "タスク", "main": "くみ", "sup": "", "st": "完了", "start": "10/19", "due": "11/7", "done": true, "memo": "参加費は2,200円で確定（ふじ 11/19）", "note": "", "check": ""}, {"tid": "0cd5a55b35", "row": 17, "title": "チャット作成（大会全体・各軍・観戦／コートサポーター）", "kind": "タスク", "main": "ふじ", "sup": "くみ", "st": "完了", "start": "11/7", "due": "11/7", "done": true, "memo": "11/8 各軍チャット開放・初投稿はくみ", "note": "", "check": ""}, {"tid": "99a12f59a9", "row": 18, "title": "チャット概要欄編集（大会全体・各軍・観戦／コートサポーター）", "kind": "タスク", "main": "くみ", "sup": "", "st": "完了", "start": "11/7", "due": "11/7", "done": true, "memo": "", "note": "", "check": ""}, {"tid": "00fe223925", "row": 19, "title": "チャット「テンプレート」編集（大会全体・各軍・観戦／コートサポーター）", "kind": "タスク", "main": "くみ", "sup": "", "st": "完了", "start": "11/7", "due": "11/7", "done": true, "memo": "", "note": "", "check": ""}, {"tid": "dc953b80ce", "row": 20, "title": "チャット「最初の投稿」編集（大会全体・各軍・観戦／コートサポーター）", "kind": "タスク", "main": "くみ", "sup": "", "st": "完了", "start": "11/7", "due": "11/7", "done": true, "memo": "", "note": "", "check": ""}, {"tid": "64a6876f08", "row": 21, "title": "アクセス情報（選手info、観戦、キャン待ち）", "kind": "タスク", "main": "くみ", "sup": "", "st": "完了", "start": "11/7", "due": "11/7", "done": true, "memo": "会場・アクセスタブに中村版あり", "note": "", "check": ""}, {"tid": "e72cf2ecad", "row": 22, "title": "18:00 選手・観戦・コートサポーター募集開始／各軍チャット開放", "kind": "山場", "main": "ふじ", "sup": "くみ", "st": "完了", "start": "11/8", "due": "11/8", "done": true, "memo": "", "note": "", "check": ""}, {"tid": "f74809bbf0", "row": 23, "title": "集金開始", "kind": "山場", "main": "くみ", "sup": "", "st": "未着手", "start": "12/2", "due": "12/2", "done": false, "memo": "参加費2,200円（11/19 確定）／未払いの確認も", "note": "", "check": ""}, {"tid": "77c4c5a419", "row": 24, "title": "各軍協力者の選定", "kind": "タスク", "main": "たかな", "sup": "くみ", "st": "進行中", "start": "11/8", "due": "12/6", "done": false, "memo": "西=くみ／東=たかな。団長制なし。募集後に選ぶ／11/26 西は済（サウナ・かわけん・DM済）。東はたかなが済にしたら完了／協力者に頼むこと＝メンバー表アプリで順位付け（細かく決めすぎない）", "note": "", "check": ""}, {"tid": "2bb96b40e1", "row": 25, "title": "ゲームルール", "kind": "タスク", "main": "たかな", "sup": "", "st": "未着手", "start": "", "due": "12/6", "done": false, "memo": "12/7発表。前回は団体戦2セット先取・1部21点。アプリ使用／お手伝いフリー参加", "note": "", "check": ""}, {"tid": "af521af9a7", "row": 26, "title": "ゲームルール発表", "kind": "山場", "main": "たかな", "sup": "", "st": "", "start": "12/7", "due": "12/7", "done": false, "memo": "", "note": "", "check": ""}, {"tid": "843f51cd0f", "row": 27, "title": "打上げ会場確保", "kind": "タスク", "main": "ふじ", "sup": "", "st": "完了", "start": "", "due": "11/30", "done": true, "memo": "12/22募集開始。今月末に会場へ下見・予約（ふじ 11/19）", "note": "", "check": ""}, {"tid": "0510d281a2", "row": 28, "title": "打上げ集金系スプシ", "kind": "タスク", "main": "くみ", "sup": "", "st": "完了", "start": "11/26", "due": "11/26", "done": true, "memo": "12/22 打上げ参加者募集開始に合わせる", "note": "", "check": ""}, {"tid": "68080ad3fc", "row": 29, "title": "打上げ参加者募集開始", "kind": "山場", "main": "くみ", "sup": "", "st": "未着手", "start": "1/4", "due": "1/15", "done": false, "memo": "", "note": "", "check": "済んだ行のメモは「12/22募集開始」、この行は1/4〜1/15"}, {"tid": "9712a237f4", "row": 30, "title": "23:59 選手キャンセル〆切／打上げキャンセル〆切", "kind": "山場", "main": "くみ", "sup": "", "st": "未着手", "start": "1/11", "due": "1/11", "done": false, "memo": "前回は1週間前 → 11日前に前倒し／〆切の後に打上げ店へ最終人数", "note": "", "check": ""}, {"tid": "f56029898c", "row": 31, "title": "選手レベルのランク分け", "kind": "タスク", "main": "ふじ", "sup": "たかな", "st": "未着手", "start": "11/8", "due": "1/11", "done": false, "memo": "各軍に聞ける人を選定して確認。ぱぱしに協力要請。西=ふじ／東=たかな。各軍のサポートの方にもアプリを配って順位を動かしてもらう（ふじ 11/19）", "note": "", "check": ""}, {"tid": "5053544eb3", "row": 32, "title": "中日本のA/B分け", "kind": "タスク", "main": "全員", "sup": "", "st": "進行中", "start": "", "due": "", "done": false, "memo": "メンバー72人そろった後に運営で分ける（ランキングでは分けない・11/7）", "note": "", "check": ""}, {"tid": "b390d2ba3a", "row": 33, "title": "キャンセル待ちの確保", "kind": "タスク", "main": "くみ", "sup": "", "st": "未着手", "start": "", "due": "", "done": false, "memo": "キャンセル待ちチャットあり（11/8 開設）", "note": "", "check": ""}, {"tid": "6993d9ab2e", "row": 34, "title": "軍オーダー表", "kind": "タスク", "main": "ふじ", "sup": "たかな", "st": "未着手", "start": "12/22", "due": "1/11", "done": false, "memo": "「運営が決めました」ぐらいの曖昧さで", "note": "", "check": ""}, {"tid": "0dbf2b85de", "row": 35, "title": "軍オーダー締切", "kind": "山場", "main": "たかな", "sup": "", "st": "", "start": "1/12", "due": "1/12", "done": false, "memo": "確定メンバーでオーダーを組めるようキャンセル〆切の後に", "note": "", "check": ""}, {"tid": "f094e439fa", "row": 36, "title": "当日試合タイムスケジュール", "kind": "タスク", "main": "くみ", "sup": "たかな", "st": "未着手", "start": "12/7", "due": "1/14", "done": false, "memo": "表彰の段取りも（前回の学び）", "note": "", "check": ""}, {"tid": "8f20045d87", "row": 37, "title": "当日タスク表・コートサポーターのシフト", "kind": "タスク", "main": "くみ", "sup": "", "st": "未着手", "start": "12/7", "due": "1/14", "done": false, "memo": "コートサポーター最大20人目安・シフト制／サポーターに＝設営・撮影・受付の補助・対戦表のカット", "note": "", "check": ""}, {"tid": "f21a73b437", "row": 38, "title": "対戦表", "kind": "タスク", "main": "たかな", "sup": "", "st": "未着手", "start": "1/12", "due": "1/14", "done": false, "memo": "1/15公開／公開前に二重チェック（前回の学び）", "note": "", "check": ""}, {"tid": "0f1ad0039c", "row": 39, "title": "得点アプリ", "kind": "タスク", "main": "たかな", "sup": "", "st": "未着手", "start": "", "due": "1/14", "done": false, "memo": "たかな・ももすけ作成（パパ補助）。管理者の交代・選手交代の反映を本番前に検証", "note": "", "check": ""}, {"tid": "b5a1b51c29", "row": 40, "title": "シャトル・道具確保", "kind": "タスク", "main": "ふじ", "sup": "", "st": "未着手", "start": "", "due": "1/14", "done": false, "memo": "シャトル=ふじがニューオフィシャル4箱購入済＋運営在庫17本。買い足しはメルカリ相場から。道具は印刷物・持ち物タブ", "note": "使うのは13本想定（11/3）", "check": ""}, {"tid": "316a2428d0", "row": 41, "title": "印刷系", "kind": "タスク", "main": "くみ", "sup": "", "st": "未着手", "start": "", "due": "1/14", "done": false, "memo": "印刷物・持ち物タブ", "note": "", "check": ""}, {"tid": "bb375d4fc5", "row": 42, "title": "対戦表公開", "kind": "山場", "main": "たかな", "sup": "", "st": "", "start": "1/15", "due": "1/15", "done": false, "memo": "前回は6日前(土) → 1週間前(金)", "note": "", "check": ""}, {"tid": "5598b96319", "row": 43, "title": "大会本番（中村スポーツセンター 9:30〜）", "kind": "山場", "main": "全員", "sup": "", "st": "", "start": "1/22", "due": "1/22", "done": false, "memo": "", "note": "", "check": ""}, {"tid": "ff4e3778b5", "row": 44, "title": "会場・打上げ 打ち合わせ", "kind": "タスク", "main": "ふじ", "sup": "くみ", "st": "完了", "start": "11/25", "due": "11/26", "done": true, "memo": "日程未定。打上げ候補：焼肉 あみやき", "note": "", "check": ""}, {"tid": "c567f3c26d", "row": 45, "title": "ポスター印刷手配", "kind": "タスク", "main": "くみ", "sup": "", "st": "未着手", "start": "12/11", "due": "12/20", "done": false, "memo": "12月中旬（くみ 11/26 追加）", "note": "", "check": ""}, {"tid": "13f413074d", "row": 46, "title": "景品選定", "kind": "タスク", "main": "くみ", "sup": "", "st": "未着手", "start": "", "due": "", "done": false, "memo": "くみ 11/26 追加・期限は未定", "note": "", "check": ""}, {"tid": "692a5bd42a", "row": "", "title": "申請の承認（72人そろった）", "kind": "タスク", "main": "くみ", "sup": "", "st": "完了", "start": "11/8", "due": "11/19", "done": true, "memo": "", "note": "分担せず、いったんくみが承認（11/3）", "check": ""}, {"tid": "bbcce6808f", "row": "", "title": "シャトル6本をくみへ渡す", "kind": "タスク", "main": "たかな", "sup": "", "st": "", "start": "", "due": "", "done": false, "memo": "", "note": "精算済み10本のうち、たかなの持ち分（11/3時点で未渡し）", "check": ""}], "kime": ["会場の打合せは済（11/26）。体育館は当日現金払い39,100円", "選手72人がそろった（11/19）。各軍チャットの人数は運営がだぶって入っている分を含む", "参加費は2,200円で確定（11/19）", "11/8 募集開始。大会info・リベ大バド部・スポ流・東海支部に投稿", "当日の進行はくみ（11/3）"], "stale": [{"name": "ホームの未決事項リスト", "at": "10/8", "url": "https://docs.google.com/spreadsheets/d/1bi5noTps-8nhVGc8g6mFZZQy-8FxiLmu8B0EZGTMpeY/edit#gid=435679762"}, {"name": "決定事項ログ", "at": "10/8", "url": "https://docs.google.com/spreadsheets/d/1bi5noTps-8nhVGc8g6mFZZQy-8FxiLmu8B0EZGTMpeY/edit#gid=1026517630"}], "honban": "2027-01-22", "sheet": "https://docs.google.com/spreadsheets/d/1bi5noTps-8nhVGc8g6mFZZQy-8FxiLmu8B0EZGTMpeY/edit#gid=1674459984", "built": "11/26"},NAMES=['ふじ','くみ','たかな'],pend=false,ovrKey='',cur='';
+var DAY=864e5,T0=new Date();T0.setHours(0,0,0,0);
+function pdate(x){var m=/^\s*(\d{1,2})\/(\d{1,2})\s*$/.exec(x||'');if(!m)return null;var mo=+m[1];return new Date(mo>=10?2026:2027,mo-1,+m[2])}
+function dd(a){return Math.round((a-T0)/DAY)}
+function mdS(d){return (d.getMonth()+1)+'/'+d.getDate()}
+function isoS(d){return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function whoOf(r){var w=r.main==='全員'?NAMES.slice():[r.main];if(r.sup==='全員')w=NAMES.slice();else if(P[r.sup]&&r.sup!==r.main)w.push(r.sup);
+  return w.filter(function(x,i){return P[x]&&w.indexOf(x)===i})}
+var CHAIN=['23:59 選手キャンセル〆切','軍オーダー締切','対戦表','対戦表公開'];
+function chainIdx(t){for(var i=CHAIN.length-1;i>=0;i--){if(i===2?t===CHAIN[2]:t.indexOf(CHAIN[i])===0)return i}return -1}
+function tasks(){
+  var xs=D.tasks.map(function(r){
+    var t={};for(var k in r)t[k]=r[k];var o=ovr[t.tid];
+    if(o&&o.ts>=BUILT){if(o.due){var p=o.due.split('-');t.due=(+p[1])+'/'+(+p[2]);t.chg=1}if(o.done){t.done=true;t.ovd=1}}
+    t.D=pdate(t.due);t.S=pdate(t.start);t.n=t.D?dd(t.D):null;t.w=whoOf(t);t.late=!t.done&&t.n!=null&&t.n<0;return t});
+  var lateChain=-1;xs.forEach(function(t){var i=chainIdx(t.title);if(i>=0&&t.late&&(lateChain<0||i<lateChain))lateChain=i});
+  xs.forEach(function(t){
+    if(t.done)return;var i=chainIdx(t.title);
+    if(t.check)t.tag=['chk','⚠️ 要確認'];
+    else if(t.late)t.tag=['late','期限切れ'];
+    else if(lateChain>=0&&i>lateChain)t.tag=['warn','⚠️ 前が遅れ'];
+    else if(t.n!=null&&t.n<=10&&t.st==='未着手')t.tag=['warn','⚠️ 未着手・あと'+t.n+'日'];
+    else if(t.n!=null&&t.n<=7)t.tag=['soon','あと'+t.n+'日'];
+    t.risk=t.late||(t.tag&&t.tag[0]==='warn');
+  });
+  return xs;
+}
+function key(t){return t.D||t.S||new Date(2099,0,1)}
+function liHtml(t,done){
+  var d=t.due?esc(t.due):'なし';
+  if(t.chg&&!done)d='<span class="from">変更</span>'+d;
+  else if(t.start&&t.start!==t.due&&!done)d='<span class="from">'+esc(t.start)+'〜</span>'+d;
+  var ch=t.main==='全員'?NAMES.map(function(x){return '<span class="p '+P[x]+'">'+x+'</span>'}).join(''):'<span class="p '+(P[t.main]||'')+'">'+(esc(t.main)||'担当未定')+'</span>';
+  if(t.sup&&t.sup!==t.main)ch+='<span class="s">サポ '+esc(t.sup)+'</span>';
+  var notes=done?[]:[t.memo,t.note].filter(Boolean),nh=notes.map(function(x){return '<p class="note">'+esc(x)+'</p>'}).join('');
+  if(t.check&&!done)nh+='<p class="note chk">⚠️ '+esc(t.check)+'</p>';
+  var tag=t.tag?'<span class="tag '+t.tag[0]+'">'+esc(t.tag[1])+'</span>':'';
+  if(t.ovd)tag='<span class="tag ok">済（反映済）</span>';
+  var cl=(t.kind==='山場'&&!done?'peak':'')+(t.risk?' risk':'');
+  return '<li class="'+cl+'" data-who="'+t.w.map(function(x){return P[x]}).join(' ')+'" data-tid="'+esc(t.tid)+'" data-title="'+esc(t.title)+'" data-due="'+(t.D?isoS(t.D):'')+'"'+(t.row?' data-row="'+t.row+'"':'')+'>'+
+    '<div class="d">'+d+'</div><div class="b"><h3>'+esc(t.title)+tag+'</h3>'+nh+'<div class="c">'+ch+'<button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li>';
+}
+function grpOf(t){var k=key(t);if(k.getFullYear()===2099)return '期限なし';if(k<=new Date(2026,10,30))return '11月';if(k.getMonth()===11)return '12月';return '1月・本番まで'}
+function draw(){
+  var main=document.querySelector('main');if(pn.parentNode!==main)main.appendChild(pn);
+  var xs=tasks(),open=xs.filter(function(t){return !t.done}).sort(function(a,b){return key(a)-key(b)}),dn=xs.filter(function(t){return t.done}).sort(function(a,b){return key(a)-key(b)});
+  ovrKey=JSON.stringify(ovr);
+  // 上の数え
+  var hb=new Date(D.honban+'T00:00:00'),nx=open.filter(function(t){return t.kind==='山場'&&t.D&&t.n>=0&&t.title.indexOf('本番')<0})[0];
+  $('cd').innerHTML=(nx?'<span>次の山場「'+esc(nx.title)+'」まで<b>'+nx.n+'</b>日</span>':'')+'<span>大会本番まで<b>'+dd(hb)+'</b>日</span>';
+  $('built').textContent=D.built;$('ft').textContent=D.built;
+  // 人のボタン(件数=サポと全員タスクを含む)
+  var cnt={};NAMES.forEach(function(x){cnt[x]=0});open.forEach(function(t){t.w.forEach(function(x){cnt[x]++})});
+  $('chips').innerHTML='<button type="button" class="chip" data-f="">全員</button>'+NAMES.map(function(x){return '<button type="button" class="chip '+P[x]+'" data-f="'+P[x]+'">'+x+'<small>'+cnt[x]+'件</small></button>'}).join('');
+  // アラーム
+  var cn=NAMES.filter(function(n){return P[n]===cur})[0],mineA=open.filter(function(t){return !cn||t.w.indexOf(cn)>=0});
+  var al=[],late=mineA.filter(function(t){return t.late}),risk=mineA.filter(function(t){return t.tag&&t.tag[0]==='warn'}),chk=mineA.filter(function(t){return t.check});
+  function nm(t){return '<a href="#" data-jump="'+esc(t.tid)+'">'+esc(t.title)+'</a>（'+esc(t.main||'担当未定')+'）'}
+  if(late.length)al.push('<li class="r">🟥 期限切れ：'+late.map(nm).join('・')+'</li>');
+  if(risk.length)al.push('<li class="w">⚠️ 危ない：'+risk.map(function(t){return nm(t)+' '+esc(t.tag[1].replace('⚠️ ',''))}).join('・')+'</li>');
+  if(chk.length)al.push('<li class="k">⚠️ 要確認：'+chk.map(nm).join('・')+'</li>');
+  if(!cn)(D.stale||[]).forEach(function(s){var d=pdate(s.at);if(d&&-dd(d)>21)al.push('<li class="y">🟨 更新が止まっている表：<a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.name)+'</a>（'+esc(s.at)+'から）</li>')});
+  $('al').className='al'+(al.length?'':' calm');
+  $('al').innerHTML=al.length?'<h2>🔔 アラーム'+(cn?'（'+esc(cn)+'）':'')+'</h2><ul>'+al.join('')+'</ul>':'<h2>✅ アラームなし'+(cn?'（'+esc(cn)+'）':'')+'</h2>';
+  // マス目(主担当だけ・全員タスクは3人に1つずつ)
+  var sun=new Date(T0);sun.setDate(T0.getDate()+((7-T0.getDay())%7));var nsun=new Date(sun);nsun.setDate(sun.getDate()+7);
+  var B=[['期限切れ',function(t){return t.late}],['今週',function(t){return t.D&&t.n>=0&&t.D<=sun}],['来週',function(t){return t.D&&t.D>sun&&t.D<=nsun}],
+    ['12月',function(t){return t.D&&t.D>nsun&&t.D<new Date(2027,0,1)}],['1月1〜15日',function(t){return t.D&&t.D>nsun&&t.D>=new Date(2027,0,1)&&t.D<=new Date(2027,0,15)}],
+    ['1/16〜本番',function(t){return t.D&&t.D>nsun&&t.D>new Date(2027,0,15)}],['期限なし',function(t){return !t.D}]];
+  var gh='<h2>👥 いつ・だれに重なっているか <small>（主担当の件数・押すとその人の分）</small></h2><table><tr><th></th>'+NAMES.map(function(x){return '<th class="'+P[x]+'">'+x+'</th>'}).join('')+'</tr>';
+  B.forEach(function(b){
+    var row=NAMES.map(function(x){return open.filter(function(t){return (t.main===x||t.main==='全員')&&b[1](t)}).length});
+    if(b[0]==='期限切れ'&&!row.some(Boolean))return;
+    gh+='<tr><th>'+b[0]+'</th>'+row.map(function(n,i){return '<td><button type="button" class="cell v'+Math.min(n,3)+'" data-f="'+P[NAMES[i]]+'">'+(n||'')+'</button></td>'}).join('')+'</tr>'});
+  $('grid').innerHTML=gh+'</table>';
+  // 決まったこと
+  $('kime').innerHTML=(D.kime||[]).map(function(x){return '<li>'+esc(x)+'</li>'}).join('');
+  // 一覧
+  var G=['11月','12月','1月・本番まで','期限なし'],out='';
+  G.forEach(function(g){var ys=open.filter(function(t){return grpOf(t)===g});if(!ys.length)return;
+    out+='<section class="grp"><h2>'+g+'</h2><ol>'+ys.map(function(t){return liHtml(t)}).join('')+'</ol></section>'});
+  out+='<section class="grp all"><h2>ほかの依頼・全体メモ</h2><ol><li data-who="fu ku ta" data-tid="_all" data-title="全体" data-due=""><div class="d">全体</div><div class="b"><h3>新しいタスクを足して、など</h3><p class="note">どのタスクにも当たらない依頼・メモはここへ</p><div class="c"><button type="button" class="mb">📝 メモ・CCへ</button></div><div class="mm"></div></div></li></ol></section>';
+  out+='<section class="grp done"><details><summary>済んだもの '+dn.length+'件</summary><ol>'+dn.map(function(t){return liHtml(t,true)}).join('')+'</ol></details></section>';
+  $('list').innerHTML=out;
+  me(open);filt();render();
+}
+function me(open){ /* その人の画面の上=急ぎだけ大きく */
+  var box=$('me'),f=cur;if(!f){box.hidden=true;return}
+  var x=NAMES.filter(function(n){return P[n]===f})[0],mine=open.filter(function(t){return t.w.indexOf(x)>=0});
+  var late=mine.filter(function(t){return t.late}),soon=mine.filter(function(t){return !t.late&&!t.check&&((t.n!=null&&t.n<=7)||(t.tag&&t.tag[0]==='warn'))}),chk=mine.filter(function(t){return t.check&&!t.late});
+  function it(t){return '<button type="button" class="mx" data-jump="'+esc(t.tid)+'"><span class="md">'+esc(t.due||'')+'</span>'+esc(t.title)+(t.late?' <em class="r">期限切れ</em>':t.check?' <em class="k">⚠️ 要確認</em>':(t.tag&&t.tag[0]==='warn'?' <em class="r">'+esc(t.tag[1])+'</em>':(t.n!=null?' <em>あと'+t.n+'日</em>':'')))+'</button>'}
+  var h='<h2>'+esc(x)+' の今やること</h2><div class="mts"><div class="mt r"><b>'+late.length+'</b>🟥 期限切れ</div><div class="mt y"><b>'+soon.length+'</b>🟨 急ぎ</div>'+(chk.length?'<div class="mt k"><b>'+chk.length+'</b>⚠️ 要確認</div>':'')+'</div>';
+  var top=late.concat(soon,chk).slice(0,6);
+  if(top.length)h+='<div class="mxs">'+top.map(it).join('')+'</div>';
+  else{var nx=mine.filter(function(t){return t.D})[0];h+='<p class="calmtx">🎉 急ぎはありません'+(nx?'。次は '+esc(nx.due)+'「'+esc(nx.title)+'」':'')+'</p>'}
+  box.innerHTML=h;box.hidden=false;
+}
+function filt(){
+  document.querySelectorAll('.chip').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===cur?'true':'false')});
+  document.querySelectorAll('.grp li').forEach(function(l){l.hidden=!!cur&&l.dataset.who.split(' ').indexOf(cur)<0});
+  document.querySelectorAll('.grp').forEach(function(g){g.hidden=!g.querySelector('li:not([hidden])')});
+  $('grid').hidden=!!cur;
+}
+function setView(f){cur=f;sv('view',f===''?'all':f);if(!pn.hidden){pn.hidden=true;st.li=null;st.edit=null}pend=false;draw();window.scrollTo(0,0)}
+function setOvr(o){if(!o)return;ovr=o;if(JSON.stringify(ovr)===ovrKey)return;if(pn.hidden)draw();else pend=true}
+(function(){var v=g('view');cur=v==='all'?'':(v||P[g('who')||'']||'')})();
+document.addEventListener('click',function(e){
+  var t=e.target,c=t.closest('.chip,.cell');if(c){setView(c.dataset.f);return}
+  if(t.closest('#rl')){location.reload();return}
+  var j=t.closest('[data-jump]');if(j){e.preventDefault();var li=document.querySelector('li[data-tid="'+j.dataset.jump+'"]');if(li){if(li.hidden)setView('');li.scrollIntoView({block:'center'});li.classList.remove('hl');void li.offsetWidth;li.classList.add('hl')}}
+});
+
 function api(path,body){
   var c=window.AbortController?new AbortController():null,t=setTimeout(function(){if(c)c.abort()},10000);
   var hd={'x-pass':encodeURIComponent(g('pass')||'')};if(body)hd['content-type']='application/json';
@@ -180,14 +288,14 @@ function status(msg){
   if(msg&&!loadedAt){mst.innerHTML='<span class="er">'+esc(msg)+'</span><button type="button" class="btn sub" data-re>もう一度</button>';return}
   var w=memos.filter(function(m){return m.st==='wait'}).length;
   mst.innerHTML='<span>📝 メモ <b>'+memos.length+'</b>件</span>'+(w?'<span class="wt">🤖 CC反映待ち <b>'+w+'</b>件</span>':'<span>🤖 CC反映待ち 0件</span>')+
-    '<span style="color:var(--mut);font-size:12px">'+esc(loadedAt)+' に読み込み</span><button type="button" class="btn sub" data-re>🔄 最新にする</button>'+(msg?'<span class="er">'+esc(msg)+'</span>':'');
+    '<span style="color:var(--mut);font-size:12px">'+esc(loadedAt)+' に読み込み</span>'+(msg?'<span class="er">'+esc(msg)+'</span>':'');
 }
 function load(){
   if(!g('pass')){status();render();return Promise.resolve()}
   return api('/api/memos').then(function(j){
     if(j._s===401){sv('pass',null);status('合言葉が違います');render();return}
     if(j.error){status(j.error);return}
-    memos=j.memos||[];ovr=j.ovr||ovr;loadedAt=j.now||'';status();render();
+    memos=j.memos||[];setOvr(j.ovr);loadedAt=j.now||'';status();render();
   });
 }
 function item(m,orph){
@@ -215,16 +323,6 @@ function render(){
     var b=li.querySelector('.mb');b.innerHTML='📝 メモ・CCへ'+(n?'<b>'+n+'</b>':'');
     b.setAttribute('aria-expanded',st.li===li&&!pn.hidden?'true':'false');
   });
-  applyOvr();
-}
-function applyOvr(){ /* CCがスプシへ反映した内容を、ページを作り直す前でも表示に出す(作り直した後の上書きは使わない) */
-  document.querySelectorAll('li[data-tid]').forEach(function(li){
-    var o=ovr[li.dataset.tid],d=li.querySelector('.d'),h=li.querySelector('h3'),tg=h.querySelector('.ovd');
-    if(li.dataset.d0==null){li.dataset.d0=d.innerHTML;li.dataset.u0=li.dataset.due||''}
-    if(!o||o.ts<BUILT){d.innerHTML=li.dataset.d0;li.dataset.due=li.dataset.u0;if(tg)tg.remove();li.classList.remove('ovdone');return}
-    if(o.due){d.innerHTML='<span class="from">変更</span>'+md(o.due);li.dataset.due=o.due}
-    if(o.done){li.classList.add('ovdone');if(!tg)h.insertAdjacentHTML('beforeend','<span class="tag ok ovd">済（反映済）</span>')}
-  });
 }
 function setKind(k){
   st.kind=k;var kd=KD[k];
@@ -248,7 +346,7 @@ function openPanel(li,m){
   $('psv').disabled=false;render();
   if(!g('pass'))pn.querySelector('[data-pw]').focus();
 }
-function closePanel(){pn.hidden=true;st.li=null;st.edit=null;render()}
+function closePanel(){pn.hidden=true;st.li=null;st.edit=null;if(pend){pend=false;draw()}else render()}
 function login(box){
   var i=box.querySelector('[data-pw]'),er=box.querySelector('[data-er]'),v=norm(i.value);
   if(!v){er.textContent='合言葉を入れてください';return}
@@ -271,8 +369,8 @@ function save(){
   api('/api/op',body).then(function(j){
     busy=false;b.disabled=false;
     if(j._s===401){sv('pass',null);$('pgate').hidden=false;setKind(k);er.textContent='合言葉が違います';status();return}
-    if(j.error){setKind(k);er.textContent=j.error;if(j.memos){memos=j.memos;ovr=j.ovr||ovr;render()}return}
-    memos=j.memos||[];ovr=j.ovr||ovr;loadedAt=j.now||loadedAt;closePanel();status();
+    if(j.error){setKind(k);er.textContent=j.error;if(j.memos){memos=j.memos;setOvr(j.ovr);render()}return}
+    memos=j.memos||[];setOvr(j.ovr);loadedAt=j.now||loadedAt;closePanel();status();
     var ok=document.createElement('span');ok.className='ok';ok.textContent=(TOCC[k]&&!body.mid)?'✅ CCへ送りました（反映待ち）':'✅ 保存しました';
     li.querySelector('.c').appendChild(ok);setTimeout(function(){ok.remove()},4000);
   });
@@ -280,7 +378,7 @@ function save(){
 function del(btn,mid){
   if(!btn.classList.contains('warn')){btn.classList.add('warn');btn.textContent='本当に消す？';setTimeout(function(){if(btn.isConnected){btn.classList.remove('warn');btn.textContent='消す'}},4000);return}
   if(busy)return;busy=true;btn.textContent='消しています…';
-  api('/api/op',{op:'del',mid:mid,who:g('who')}).then(function(j){busy=false;if(j.memos){memos=j.memos;ovr=j.ovr||ovr;loadedAt=j.now||loadedAt}status(j.error||'');render()});
+  api('/api/op',{op:'del',mid:mid,who:g('who')}).then(function(j){busy=false;if(j.memos){memos=j.memos;setOvr(j.ovr);loadedAt=j.now||loadedAt}status(j.error||'');render()});
 }
 $('pkd').addEventListener('click',function(e){var b=e.target.closest('.kb');if(b)setKind(b.dataset.k)});
 $('pnm').addEventListener('click',function(e){var b=e.target.closest('.nb');if(!b)return;if(b.dataset.n)setWho(b.dataset.n);else $('pother').focus()});
@@ -300,7 +398,7 @@ document.addEventListener('click',function(e){
 document.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.matches&&e.target.matches('[data-pw]')){e.preventDefault();login(e.target.closest('.gate'))}});
 window.addEventListener('hashchange',function(){if(fromLink())load()});
 document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&!busy&&g('pass'))load()});
-load();
+draw();load();
 })();
 </script>
 </body></html>
