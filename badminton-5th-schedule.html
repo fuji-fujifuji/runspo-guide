@@ -61,6 +61,7 @@ button{font-family:var(--txt)}
 .sw,.sk{font-weight:700;padding:0 7px;border-radius:99px;border:1.5px solid currentColor}.sw{color:var(--soon)}.sk{color:var(--ok)}
 .lk{background:none;border:0;padding:6px 4px;margin:-6px 0;color:var(--mut);text-decoration:underline;font-size:12px;cursor:pointer}
 .lk.warn{color:var(--late);font-weight:700}
+.tag.ok{color:var(--ok)}.ovdone h3{color:var(--mut)}.ovdone h3 .tag.late,.ovdone h3 .tag.soon{display:none}
 .rp{margin-top:4px;padding-top:4px;border-top:1px dashed var(--line);font-size:13px;color:var(--ok)}
 .more{justify-self:start;background:none;border:0;padding:4px 0;color:var(--mut);text-decoration:underline;font-size:13px;cursor:pointer}
 .mst{margin:14px 0 0;padding:10px 12px;border-radius:8px;border:1.5px solid var(--line);font-size:14px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
@@ -137,7 +138,7 @@ body{margin:0}*{box-sizing:border-box}</style></head><body>
  <div class="row"><button type="button" class="btn" id="psv">保存</button><button type="button" class="btn sub" id="pcx">やめる</button><span class="er" id="per"></span></div>
 </div>
 </main>
-<footer class="w">運営スプシ「準備日程・タスク」から自動で作成（11/26時点）。済・担当・期限を変えたい時は、そのタスクの「📝 メモ・CCへ」から「✅ 終わった」「📅 日付を変える」「✏️ 直して」を送る→ふじがCCに「バドのタスク反映して」と言うと、CCがスプシを直してこのページを作り直します（同じURLのまま）。メモは運営メンバーだけが見られます（合言葉）。色の帯は山場。件数はサポと全員タスクを含みます。</footer>
+<footer class="w">運営スプシ「準備日程・タスク」から自動で作成（11/26時点）。済・担当・期限を変えたい時は、そのタスクの「📝 メモ・CCへ」から「✅ 終わった」「📅 日付を変える」「✏️ 直して」を送る→ふじかくみがCCに「バドのタスク反映して」と言うと、CCがスプシを直し、このページにもすぐ出ます（同じURLのまま）。メモは運営メンバーだけが見られます（合言葉）。色の帯は山場。件数はサポと全員タスクを含みます。</footer>
 <script>
 var bs=document.querySelectorAll('.chip'),ls=document.querySelectorAll('.grp li'),gs=document.querySelectorAll('.grp');
 bs.forEach(function(b){b.addEventListener('click',function(){var f=b.dataset.f;
@@ -148,7 +149,7 @@ gs.forEach(function(g){g.hidden=!g.querySelector('li:not([hidden])')});});});
 <script>
 /* メモ・CCへの依頼(保存先=Cloudflare bado5-task・読むのも書くのも合言葉が要る) */
 (function(){
-var API='https://bado5-task.runspo26.workers.dev';
+var API='https://bado5-task.runspo26.workers.dev',BUILT=1795680441034;
 var P={'ふじ':'fu','くみ':'ku','たかな':'ta'};
 var KD={memo:['💬 メモ','みんなが見られるメモです（CCは何もしません）','例：会場に電話した。返事待ち'],
  prog:['🔄 進んだ','どこまで進んだか（CCは何もしません）','例：候補を3つにしぼった'],
@@ -165,7 +166,7 @@ fromLink();
 function esc(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function md(iso){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||'');return m?(+m[2])+'/'+(+m[3]):''}
 function $(id){return document.getElementById(id)}
-var pn=$('pn'),mst=$('mst'),memos=[],loadedAt='',st={li:null,kind:'memo',edit:null},openMore={},busy=false;
+var ovr={},pn=$('pn'),mst=$('mst'),memos=[],loadedAt='',st={li:null,kind:'memo',edit:null},openMore={},busy=false;
 function api(path,body){
   var c=window.AbortController?new AbortController():null,t=setTimeout(function(){if(c)c.abort()},10000);
   var hd={'x-pass':encodeURIComponent(g('pass')||'')};if(body)hd['content-type']='application/json';
@@ -186,7 +187,7 @@ function load(){
   return api('/api/memos').then(function(j){
     if(j._s===401){sv('pass',null);status('合言葉が違います');render();return}
     if(j.error){status(j.error);return}
-    memos=j.memos||[];loadedAt=j.now||'';status();render();
+    memos=j.memos||[];ovr=j.ovr||ovr;loadedAt=j.now||'';status();render();
   });
 }
 function item(m,orph){
@@ -213,6 +214,16 @@ function render(){
     box.innerHTML=(cut?'<button type="button" class="more" data-more>前のメモ '+cut+'件を見る</button>':'')+xs.slice(cut).map(function(x){return item(x[0],x[1])}).join('');
     var b=li.querySelector('.mb');b.innerHTML='📝 メモ・CCへ'+(n?'<b>'+n+'</b>':'');
     b.setAttribute('aria-expanded',st.li===li&&!pn.hidden?'true':'false');
+  });
+  applyOvr();
+}
+function applyOvr(){ /* CCがスプシへ反映した内容を、ページを作り直す前でも表示に出す(作り直した後の上書きは使わない) */
+  document.querySelectorAll('li[data-tid]').forEach(function(li){
+    var o=ovr[li.dataset.tid],d=li.querySelector('.d'),h=li.querySelector('h3'),tg=h.querySelector('.ovd');
+    if(li.dataset.d0==null){li.dataset.d0=d.innerHTML;li.dataset.u0=li.dataset.due||''}
+    if(!o||o.ts<BUILT){d.innerHTML=li.dataset.d0;li.dataset.due=li.dataset.u0;if(tg)tg.remove();li.classList.remove('ovdone');return}
+    if(o.due){d.innerHTML='<span class="from">変更</span>'+md(o.due);li.dataset.due=o.due}
+    if(o.done){li.classList.add('ovdone');if(!tg)h.insertAdjacentHTML('beforeend','<span class="tag ok ovd">済（反映済）</span>')}
   });
 }
 function setKind(k){
@@ -260,8 +271,8 @@ function save(){
   api('/api/op',body).then(function(j){
     busy=false;b.disabled=false;
     if(j._s===401){sv('pass',null);$('pgate').hidden=false;setKind(k);er.textContent='合言葉が違います';status();return}
-    if(j.error){setKind(k);er.textContent=j.error;if(j.memos){memos=j.memos;render()}return}
-    memos=j.memos||[];loadedAt=j.now||loadedAt;closePanel();status();
+    if(j.error){setKind(k);er.textContent=j.error;if(j.memos){memos=j.memos;ovr=j.ovr||ovr;render()}return}
+    memos=j.memos||[];ovr=j.ovr||ovr;loadedAt=j.now||loadedAt;closePanel();status();
     var ok=document.createElement('span');ok.className='ok';ok.textContent=(TOCC[k]&&!body.mid)?'✅ CCへ送りました（反映待ち）':'✅ 保存しました';
     li.querySelector('.c').appendChild(ok);setTimeout(function(){ok.remove()},4000);
   });
@@ -269,7 +280,7 @@ function save(){
 function del(btn,mid){
   if(!btn.classList.contains('warn')){btn.classList.add('warn');btn.textContent='本当に消す？';setTimeout(function(){if(btn.isConnected){btn.classList.remove('warn');btn.textContent='消す'}},4000);return}
   if(busy)return;busy=true;btn.textContent='消しています…';
-  api('/api/op',{op:'del',mid:mid,who:g('who')}).then(function(j){busy=false;if(j.memos){memos=j.memos;loadedAt=j.now||loadedAt}status(j.error||'');render()});
+  api('/api/op',{op:'del',mid:mid,who:g('who')}).then(function(j){busy=false;if(j.memos){memos=j.memos;ovr=j.ovr||ovr;loadedAt=j.now||loadedAt}status(j.error||'');render()});
 }
 $('pkd').addEventListener('click',function(e){var b=e.target.closest('.kb');if(b)setKind(b.dataset.k)});
 $('pnm').addEventListener('click',function(e){var b=e.target.closest('.nb');if(!b)return;if(b.dataset.n)setWho(b.dataset.n);else $('pother').focus()});
